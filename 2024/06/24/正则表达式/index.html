@@ -14,17 +14,21 @@
   
 
   
-  <title>Archives: 2024/1 | LittleBug&#39;s Home</title>
+  <title>正则表达式 | LittleBug&#39;s Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LittleBug&#39;s Home">
-<meta property="og:url" content="http://example.com/archives/2024/01/index.html">
+  <meta name="description" content="正则表达式入门语法12345678910111213&#x2F;[...]&#x2F;g		#匹配[]中的所有字符	&#x2F;[^...]&#x2F;g		#匹配除了[]中的所有字符&#x2F;[A-Z]&#x2F;g		#表示A-Z之间的所有字符，小写字母: a-z,数字:[0-9]&#x2F;.&#x2F;g			#匹配除了还行符号中的任意单个字符&#x2F;[&#x2F;s&#x2F;S]&#x2F;g		#匹配所有空白符&#x2F;\w&#x2F;g			#匹配字母、数字、下划线等价于[A-Za-z0-9]&#x2F;\d+&#x2F;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://example.com/2024/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
+<meta property="og:description" content="正则表达式入门语法12345678910111213&#x2F;[...]&#x2F;g		#匹配[]中的所有字符	&#x2F;[^...]&#x2F;g		#匹配除了[]中的所有字符&#x2F;[A-Z]&#x2F;g		#表示A-Z之间的所有字符，小写字母: a-z,数字:[0-9]&#x2F;.&#x2F;g			#匹配除了还行符号中的任意单个字符&#x2F;[&#x2F;s&#x2F;S]&#x2F;g		#匹配所有空白符&#x2F;\w&#x2F;g			#匹配字母、数字、下划线等价于[A-Za-z0-9]&#x2F;\d+&#x2F;g">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-06-24T07:19:48.000Z">
+<meta property="article:modified_time" content="2024-06-24T07:37:17.266Z">
 <meta property="article:author" content="LittleBug">
 <meta name="twitter:card" content="summary">
   
@@ -260,63 +264,166 @@
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">Archives</h1>
-      </div>    
+
+<article id="post-正则表达式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        正则表达式
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-06-24T07:19:48.000Z" itemprop="datePublished">2024-06-24</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            364 words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="正则表达式入门"><a href="#正则表达式入门" class="headerlink" title="正则表达式入门"></a>正则表达式入门</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/[...]/g		<span class="comment">#匹配[]中的所有字符	</span></span><br><span class="line"></span><br><span class="line">/[^...]/g		<span class="comment">#匹配除了[]中的所有字符</span></span><br><span class="line"></span><br><span class="line">/[A-Z]/g		<span class="comment">#表示A-Z之间的所有字符，小写字母: a-z,数字:[0-9]</span></span><br><span class="line"></span><br><span class="line">/./g			<span class="comment">#匹配除了还行符号中的任意单个字符</span></span><br><span class="line"></span><br><span class="line">/[/s/S]/g		<span class="comment">#匹配所有空白符</span></span><br><span class="line"></span><br><span class="line">/\w/g			<span class="comment">#匹配字母、数字、下划线等价于[A-Za-z0-9]</span></span><br><span class="line"></span><br><span class="line">/\d+/g			<span class="comment">#匹配任意一个阿拉伯数字[0-9]</span></span><br></pre></td></tr></table></figure>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>X</th>
+<th>Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>含义</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>g</td>
+<td>global-全局匹配</td>
+<td>查找所有匹配选项</td>
+</tr>
+<tr>
+<td>i</td>
+<td>ignore</td>
+<td>不区分大小写</td>
+</tr>
+<tr>
+<td>m</td>
+<td>multi line- 多行匹配</td>
+<td>使边界字符<code>^</code>和<code>$</code>匹配每一行的开头和结尾，记住是多行，而不是整个字符串的开头和结尾。</td>
+</tr>
+<tr>
+<td>s</td>
+<td>特殊字符圆点<code>.</code>中包含换行符<code>\n</code></td>
+<td>默认情况下的圆点<code>.</code>是匹配除换行符<code>\n</code>之外的任何字符，加上<code>s</code>修饰符之后,<code>.</code>中包含换行符 \n。</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+        
+      </div>
+
+         
     </div>
     
-    
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2024</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">2 articles</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2024/01/26/Leetcode121-Best-Time-to-Buy-and-Sell-Stock/" title="Leetcode121 Best Time to Buy and Sell Stock">
-        <div class="date">01-26</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    Leetcode121 Best Time to Buy and Sell Stock
-                
-            </div>
-        </div>
-        <div class="tags">
-            #LeetCode #Array
-        </div>
-      </a>
-    
-      
-      
-      <a class="archive-article-link" href="/2024/01/25/Leetcode169-Majority-Element/" title="Leetcode169_Majority Element">
-        <div class="date">01-25</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    Leetcode169_Majority Element
-                
-            </div>
-        </div>
-        <div class="tags">
-            #LeetCode #Array
-        </div>
-      </a>
-    
+     
   </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2024/06/24/CSS%E5%85%A5%E9%97%A8/"
+      title="CSS入门"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        CSS入门
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/06/17/Vue-Learning-day3/"
+      title="Vue Learning day3"
+     >
+
+    <p class="title-text">
+      
+        Vue Learning day3
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+  <script src="https://cdn.staticfile.org/twikoo/1.6.26/twikoo.all.min.js"></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="tcomment"></div>
+  </div>
+  <script>
+      twikoo.init({
+          envId: '',
+          el: '#tcomment',
+          region: '',
+          path: 'location.pathname',
+          lang: '',
+      })
+  </script>
+  
+
+
     </div>
     <div id="footer-wrapper">
       <footer id="footer">
