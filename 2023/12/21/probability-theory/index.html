@@ -20,15 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="随机变量及其描述\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \overrightarrow{xy} \quad$\sum{i&#x3D;0}^N\int{a}^{b}g(t, i)\text{d}t$ \sum_{i&#x3D;0}^N\int_{a}^{b}g(t, i)\text{d}t \hat{x}_{k}&#x3D;\hat">
+  <meta name="description" content="随机变量及其描述随机变量X的概率密度函数与概率的关系： ∫abp(x)&#x3D;P(a≤x&lt;b)&#x3D;F(b)−F(a)  多维随机变量及其描述    二维随机变量 一维随机变量     联合分布函数 F(x,y)&#x3D;p{X≤x;Y≤y} 分布函数F(x)&#x3D;P{X≤x}   联合分布律P{X&#x3D;x;Y&#x3D;y}&#x3D;pij 分布律P{X&#x3D;x}&#x3D;pi   联合密度函数P{X≤x;Y≤y}&#x3D;∫−∞x∫−∞yp(x,y)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="probability theory">
 <meta property="og:url" content="http://example.com/2023/12/21/probability-theory/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
-<meta property="og:description" content="随机变量及其描述\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \overrightarrow{xy} \quad$\sum{i&#x3D;0}^N\int{a}^{b}g(t, i)\text{d}t$ \sum_{i&#x3D;0}^N\int_{a}^{b}g(t, i)\text{d}t \hat{x}_{k}&#x3D;\hat">
+<meta property="og:description" content="随机变量及其描述随机变量X的概率密度函数与概率的关系： ∫abp(x)&#x3D;P(a≤x&lt;b)&#x3D;F(b)−F(a)  多维随机变量及其描述    二维随机变量 一维随机变量     联合分布函数 F(x,y)&#x3D;p{X≤x;Y≤y} 分布函数F(x)&#x3D;P{X≤x}   联合分布律P{X&#x3D;x;Y&#x3D;y}&#x3D;pij 分布律P{X&#x3D;x}&#x3D;pi   联合密度函数P{X≤x;Y≤y}&#x3D;∫−∞x∫−∞yp(x,y)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-12-21T11:48:11.000Z">
-<meta property="article:modified_time" content="2024-06-15T05:05:43.309Z">
+<meta property="article:modified_time" content="2024-07-01T11:46:31.363Z">
 <meta property="article:author" content="LittleBug">
 <meta property="article:tag" content="概率论">
 <meta name="twitter:card" content="summary">
@@ -164,7 +164,7 @@
         
             <a class="category-link" href="/categories/%E5%A4%8D%E4%B9%A0/">
                 复习
-                <div class="category-count">2</div>
+                <div class="category-count">4</div>
             </a>
         
             <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
@@ -192,6 +192,11 @@
     <div class="widget">
       <h3 class="widget-title">Archives</h3>
       
+      
+        <a class="archive-link" href="/archives/2024/07 ">
+          July 2024 
+          <div class="archive-count">2 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2024/06 ">
           June 2024 
@@ -224,6 +229,18 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2024/07/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" title="计算机网络数据链路层" >
+            <div class="recent-link-text">
+              计算机网络数据链路层
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/07/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%89%A9%E7%90%86%E5%B1%82/" title="计算机网络物理层" >
+            <div class="recent-link-text">
+              计算机网络物理层
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2024/06/30/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/" title="计算机网络概述" >
             <div class="recent-link-text">
               计算机网络概述
@@ -239,18 +256,6 @@
           <a class="recent-link" href="/2024/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式" >
             <div class="recent-link-text">
               正则表达式
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/17/Vue-Learning-day3/" title="Vue Learning day3" >
-            <div class="recent-link-text">
-              Vue Learning day3
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/06/16/async-await%E7%94%A8%E6%B3%95/" title="async/await用法" >
-            <div class="recent-link-text">
-              async/await用法
             </div>
           </a>
         
@@ -298,7 +303,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.1k words 
+            688 words 
           </div>
         </div>
         
@@ -307,15 +312,9 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h3 id="随机变量及其描述"><a href="#随机变量及其描述" class="headerlink" title="随机变量及其描述"></a>随机变量及其描述</h3><script type="math/tex; mode=display">\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \overrightarrow{xy} \quad</script><p>$\sum<em>{i=0}^N\int</em>{a}^{b}g(t, i)\text{d}t$</p>
-<script type="math/tex; mode=display">\sum_{i=0}^N\int_{a}^{b}g(t, i)\text{d}t</script><script type="math/tex; mode=display">
-\hat{x}_{k}=\hat{x}_{k}^{-}+K_{t}\left(y_{k}\right)</script><!-- 
-<div>
-$$
-\hat{x}_{k}=\hat{x}_{k}^{-}+K_{t}\left(y_{k}\right)
-$$
-</div> -->
-<p>随机变量X的概率密度函数与概率的关系：<script type="math/tex">\int_{a}^{b}p(x)=P(a\leq x< b)=F(b)-F(a)</script></p>
+          <h3 id="随机变量及其描述"><a href="#随机变量及其描述" class="headerlink" title="随机变量及其描述"></a>随机变量及其描述</h3><p>随机变量X的概率密度函数与概率的关系：</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msubsup><mo data-mjx-texclass="OP">∫</mo><mrow><mi>a</mi></mrow><mrow><mi>b</mi></mrow></msubsup><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>P</mi><mo stretchy="false">(</mo><mi>a</mi><mo>≤</mo><mi>x</mi><mo>&lt;</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></math>
+
 <h4 id="多维随机变量及其描述"><a href="#多维随机变量及其描述" class="headerlink" title="多维随机变量及其描述"></a>多维随机变量及其描述</h4><div class="table-container">
 <table>
 <thead>
@@ -326,16 +325,16 @@ $$
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">联合分布函数$F(x,y)=p{ X\leq x;Y\leq y }$</td>
-<td style="text-align:center">分布函数$F(x)=P{X \leq x}$</td>
+<td style="text-align:center">联合分布函数 <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>p</mi><mo fence="false" stretchy="false">{</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo>;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo fence="false" stretchy="false">}</mo></math></td>
+<td style="text-align:center">分布函数<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>P</mi><mo fence="false" stretchy="false">{</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo fence="false" stretchy="false">}</mo></math></td>
 </tr>
 <tr>
-<td style="text-align:center">联合分布律$P{X=x;Y=y}=p_{ij}$</td>
-<td style="text-align:center">分布律$P{X=x}=p_i$</td>
+<td style="text-align:center">联合分布律<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo fence="false" stretchy="false">{</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo>;</mo><mi>Y</mi><mo>=</mo><mi>y</mi><mo fence="false" stretchy="false">}</mo><mo>=</mo><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></math></td>
+<td style="text-align:center">分布律<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo fence="false" stretchy="false">{</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo fence="false" stretchy="false">}</mo><mo>=</mo><msub><mi>p</mi><mi>i</mi></msub></math></td>
 </tr>
 <tr>
-<td style="text-align:center">联合密度函数$P{X \leq x; Y \leq y}=\int<em>{-\infty}^x\int</em>{-\infty}^yp(x,y)dxdy$</td>
-<td style="text-align:center">密度函数$P{X \leq x}=\int_{-\infty}^xp(x)dx$</td>
+<td style="text-align:center">联合密度函数<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo fence="false" stretchy="false">{</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo>;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo fence="false" stretchy="false">}</mo><mo>=</mo><msubsup><mo data-mjx-texclass="OP">∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><msubsup><mo data-mjx-texclass="OP">∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>y</mi></msubsup><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo><mi>d</mi><mi>x</mi><mi>d</mi><mi>y</mi></math></td>
+<td style="text-align:center">密度函数<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo fence="false" stretchy="false">{</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo fence="false" stretchy="false">}</mo><mo>=</mo><msubsup><mo data-mjx-texclass="OP">∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>d</mi><mi>x</mi></math></td>
 </tr>
 </tbody>
 </table>
@@ -352,18 +351,18 @@ $$
 <tbody>
 <tr>
 <td style="text-align:center">X</td>
-<td style="text-align:center">$E(X)=\sum_{i=1}^n [x*X(x_i)]$</td>
-<td style="text-align:center">$D(X)=\sum_{i=1}^n[x_i-E(X)]^2=E(X^2)-[E(X)^2]$</td>
+<td style="text-align:center"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>=</mo><munderover><mo data-mjx-texclass="OP">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false">[</mo><mi>x</mi><mi>X</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo stretchy="false">]</mo></math></td>
+<td style="text-align:center"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>D</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>=</mo><munderover><mo data-mjx-texclass="OP">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mo stretchy="false">[</mo><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><msup><mo stretchy="false">]</mo><mn>2</mn></msup><mo>=</mo><mi>E</mi><mo stretchy="false">(</mo><msup><mi>X</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">[</mo><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo stretchy="false">]</mo></math></td>
 </tr>
 <tr>
-<td style="text-align:center">0~1分布 $X~B(1,p)$</td>
-<td style="text-align:center">$p$</td>
-<td style="text-align:center">$p*(1-p)$</td>
+<td style="text-align:center">0~1分布 X~B(1,p)</td>
+<td style="text-align:center"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>p</mi></math></td>
+<td style="text-align:center"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>p</mi><mo>∗</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false">)</mo></math></td>
 </tr>
 <tr>
 <td style="text-align:center">二向分布$X~ B(n,p)$</td>
-<td style="text-align:center">$np$</td>
-<td style="text-align:center">$n<em>p</em>(1-p)$</td>
+<td style="text-align:center"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>n</mi><mi>p</mi></math></td>
+<td style="text-align:center"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>n</mi><mo>∗</mo><mi>p</mi><mo>∗</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="false">)</mo></math></td>
 </tr>
 <tr>
 <td style="text-align:center">波松分布</td>
@@ -388,13 +387,27 @@ $$
 </tbody>
 </table>
 </div>
-<h4 id="期望的性质"><a href="#期望的性质" class="headerlink" title="期望的性质"></a>期望的性质</h4><script type="math/tex; mode=display">E(f(X))=\int_{-\infty}^{+\infty}f(x)p(x)dx</script><script type="math/tex; mode=display">E(g(x,y))=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}g(x,y)f(x,y)dxdy</script><p>任意X，Y</p>
-<script type="math/tex; mode=display">E(X+Y)=E(X)+E(Y)</script><p>若X和Y相互独立</p>
-<script type="math/tex; mode=display">E(XY)=E(X)E(Y)</script><p>概率积分：<script type="math/tex">\int_{-\infty}^{+\infty}e^{-(x-1)^2}dx=\sqrt{\pi}</script></p>
-<h4 id="方差性质"><a href="#方差性质" class="headerlink" title="方差性质"></a>方差性质</h4><script type="math/tex; mode=display">D(X)=E(X^2)-[E(X)]^2</script><script type="math/tex; mode=display">D(aX+b)=a^2D(X)</script><p>当X，Y相互独立时</p>
-<script type="math/tex; mode=display">D(X\pm Y)=D(X)+D(Y)</script><script type="math/tex; mode=display">E[(X-E(X))(Y-E(Y))]=0</script><h4 id="协方差和相关系数"><a href="#协方差和相关系数" class="headerlink" title="协方差和相关系数"></a>协方差和相关系数</h4><p>协方差的定义：</p>
-<script type="math/tex; mode=display">Cov(X,Y)=E[(X-E(X))(Y-E(Y))]</script><p>相关系数的定义：</p>
-<script type="math/tex; mode=display">\rho_{XY}=Cov(X,Y)/({\sqrt{D(X)}\sqrt{D(Y)}})</script><p>相关系数的性质：<script type="math/tex">X</script></p>
+<h4 id="期望的性质"><a href="#期望的性质" class="headerlink" title="期望的性质"></a>期望的性质</h4><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>E</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><msubsup><mo data-mjx-texclass="OP">∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mi>d</mi><mi>x</mi></math>
+
+<p>任意X，Y</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mo>+</mo><mi>Y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>+</mo><mi>E</mi><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></math>
+
+<p>若X和Y相互独立</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mi>Y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mi>E</mi><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></math>
+
+<p>概率积分：<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msubsup><mo data-mjx-texclass="OP">∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><msup><mi>e</mi><mrow><mo>−</mo><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup>&lt;/mrow&gt;&lt;/msup&gt;<mi>d</mi><mi>x</mi><mo>=</mo><msqrt><mi>π</mi></msqrt></math></p>
+<h4 id="方差性质"><a href="#方差性质" class="headerlink" title="方差性质"></a>方差性质</h4><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>D</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>=</mo><mi>E</mi><mo stretchy="false">(</mo><msup><mi>X</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mo>−</mo><mo stretchy="false">[</mo><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><msup><mo stretchy="false">]</mo><mn>2</mn></msup></math>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>D</mi><mo stretchy="false">(</mo><mi>a</mi><mi>X</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mi>D</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></math>
+
+<p>当X，Y相互独立时</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>D</mi><mo stretchy="false">(</mo><mi>X</mi><mo>±</mo><mi>Y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>D</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>+</mo><mi>D</mi><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>E</mi><mo stretchy="false">[</mo><mo stretchy="false">(</mo><mi>X</mi><mo>−</mo><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>Y</mi><mo>−</mo><mi>E</mi><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mo>=</mo><mn>0</mn></math>
+
+<h4 id="协方差和相关系数"><a href="#协方差和相关系数" class="headerlink" title="协方差和相关系数"></a>协方差和相关系数</h4><p>协方差的定义：</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>C</mi><mi>o</mi><mi>v</mi><mo stretchy="false">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">)</mo><mo>=</mo><mi>E</mi><mo stretchy="false">[</mo><mo stretchy="false">(</mo><mi>X</mi><mo>−</mo><mi>E</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>Y</mi><mo>−</mo><mi>E</mi><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">]</mo></math>
+相关系数的定义：
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>ρ</mi><mrow><mi>X</mi><mi>Y</mi></mrow></msub><mo>=</mo><mfrac><mrow><mi>C</mi><mi>o</mi><mi>v</mi><mo stretchy="false">(</mo><mi>X</mi><mo>,</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mrow><msqrt><mi>D</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></msqrt><msqrt><mi>D</mi><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></msqrt></mrow><mo stretchy="false">)</mo></mrow></mfrac></math>
 
         
       </div>
