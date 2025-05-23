@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>计算机网络数据链路层 | LittleBug&#39;s Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="现实是理想主义的坟墓，埋葬了我的年少时的梦    数据链路层使用点对点信道的数据链路层数据链路和数据帧 链路：一条无源的点到点物理线路，中级那没有任何其他的交换节点。（一条链路只是一条通路的组成部分） 物理链路   数据链路（逻辑链路：物理链路加上必要的通信协议）：实现协议的硬件（网络适配器）和软件（协议）以及链路的总和一般适配器都包含了数据链路层和物理层的功能  数据链路层传送的数据单位为“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络数据链路层">
+<meta property="og:url" content="http://example.com/2024/07/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/index.html">
+<meta property="og:site_name" content="LittleBug&#39;s Home">
+<meta property="og:description" content="现实是理想主义的坟墓，埋葬了我的年少时的梦    数据链路层使用点对点信道的数据链路层数据链路和数据帧 链路：一条无源的点到点物理线路，中级那没有任何其他的交换节点。（一条链路只是一条通路的组成部分） 物理链路   数据链路（逻辑链路：物理链路加上必要的通信协议）：实现协议的硬件（网络适配器）和软件（协议）以及链路的总和一般适配器都包含了数据链路层和物理层的功能  数据链路层传送的数据单位为“">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%B8%A7%E5%AE%9A%E7%95%8C%E7%AC%A6.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E9%94%99%E8%AF%AF%E5%88%A4%E6%96%AD%E5%B8%A7%E5%AE%9A%E7%95%8C%E7%AC%A6.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%AD%97%E8%8A%82%E5%A1%AB%E5%85%85.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%99%A4%E6%B3%95%E6%B1%82FCS%E5%86%97%E4%BD%99%E7%A0%81.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E7%94%A8%E6%88%B7%E6%8E%A5%E5%85%A5ISP.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/PPP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B8%A7%E6%A0%BC%E5%BC%8F.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E9%9B%B6%E6%AF%94%E7%89%B9%E5%A1%AB%E5%85%85.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/PPP%E5%8D%8F%E8%AE%AE%E7%8A%B6%E6%80%81.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%B1%80%E5%9F%9F%E7%BD%91%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/IEEE%E5%AD%90%E5%B1%82%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BF%A1%E5%8F%B7%E4%BC%A0%E6%92%AD%E6%97%B6%E5%BB%B6%E5%AF%B9%E8%BD%BD%E6%B3%A2%E4%BE%A6%E5%90%AC%E7%9A%84%E5%BD%B1%E5%93%8D.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BD%BF%E7%94%A8%E9%9B%86%E7%BA%BF%E5%99%A8%E7%9A%84%E5%B1%80%E5%9F%9F%E7%BD%91.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E9%9B%86%E7%BA%BF%E5%99%A8%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/10BASE-T%E7%A4%BA%E6%84%8F.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BF%A1%E9%81%93%E8%A2%AB%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/48%E4%BD%8DMAC%E5%9C%B0%E5%9D%80.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BB%A5%E5%A4%AA%E7%BD%91V2MAC%E5%B8%A7%E6%A0%BC%E5%BC%8F.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BB%A5%E5%A4%AA%E7%BD%91V2MAC%E5%B8%A7%E6%A0%BC%E5%BC%8F2.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%85%89%E7%BA%A4%E6%89%A9%E5%B1%95.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E8%87%AA%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%951.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E8%87%AA%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%952.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%BE%AA%E7%8E%AF%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91.png">
+<meta property="og:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%B8%A7%E6%A0%BC%E5%BC%8F.png">
+<meta property="article:published_time" content="2024-07-01T11:56:41.000Z">
+<meta property="article:modified_time" content="2024-07-03T05:10:15.474Z">
+<meta property="article:author" content="LittleBug">
+<meta property="article:tag" content="Network">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7.png">
+  
+    <link rel="alternate" href="/atom.xml" title="LittleBug's Home" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/image/%E5%A4%B4%E5%83%8F.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/image/background.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>LittleBug's Home </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/image/%E5%A4%B4%E5%83%8F2.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">LittleBug </div>
+      <div class="dot"></div>
+      <div class="subtitle">A junior maioring in in software </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561199168226982/" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/LittleBugNeverUpset" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">
+                题解
+                <div class="category-count">10</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                技术笔记
+                <div class="category-count">4</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
+                笔记
+                <div class="category-count">5</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E5%A4%8D%E4%B9%A0/">
+                复习
+                <div class="category-count">12</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
+                算法
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                读书笔记
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Array/" rel="tag">Array</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/DoublePointers/" rel="tag">DoublePointers</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamentals-of-AI/" rel="tag">Fundamentals of AI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/LinkList/" rel="tag">LinkList</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/OperatingSystem/" rel="tag">OperatingSystem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/String/" rel="tag">String</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ToolLearning/" rel="tag">ToolLearning</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/db/" rel="tag">db</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%A4%8D%E7%9B%98/" rel="tag">复盘</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%AF%9B%E9%80%89/" rel="tag">毛选</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" rel="tag">社会科学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%A7%84%E5%88%92/" rel="tag">规划</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2025/05 ">
+          May 2025 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/10 ">
+          October 2024 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/09 ">
+          September 2024 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/07 ">
+          July 2024 
+          <div class="archive-count">13 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/06 ">
+          June 2024 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/03 ">
+          March 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/01 ">
+          January 2024 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/12 ">
+          December 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2025/05/22/%E6%97%A5%E5%BF%97/" title="日志" >
+            <div class="recent-link-text">
+              日志
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/10/14/Redis/" title="Redis" >
+            <div class="recent-link-text">
+              Redis
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/10/02/MiNote-%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E6%8A%A5%E5%91%8A/" title="MiNote 源码阅读报告" >
+            <div class="recent-link-text">
+              MiNote 源码阅读报告
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/09/29/SpringFramework/" title="SpringFramework" >
+            <div class="recent-link-text">
+              SpringFramework
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2024/09/28/maven/" title="maven" >
+            <div class="recent-link-text">
+              maven
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-计算机网络数据链路层" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        计算机网络数据链路层
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-07-01T11:56:41.000Z" itemprop="datePublished">2024-07-01</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E5%A4%8D%E4%B9%A0/">复习</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            5.7k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Network/" rel="tag">Network</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <hr>
+<p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size : 20px;
+background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);" 
+> 现实是理想主义的坟墓，埋葬了我的年少时的梦</p>
+
+
+<hr>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><h3 id="使用点对点信道的数据链路层"><a href="#使用点对点信道的数据链路层" class="headerlink" title="使用点对点信道的数据链路层"></a>使用点对点信道的数据链路层</h3><h4 id="数据链路和数据帧"><a href="#数据链路和数据帧" class="headerlink" title="数据链路和数据帧"></a>数据链路和数据帧</h4><ul>
+<li>链路：一条无源的点到点物理线路，中级那没有任何其他的交换节点。（一条链路只是一条通路的组成部分）<ul>
+<li>物理链路<!-- - 逻辑链路（数据链路），物理链路加上必要的通信协议。 --></li>
+</ul>
+</li>
+<li>数据链路（逻辑链路：物理链路加上必要的通信协议）：实现协议的硬件（<strong>网络适配器</strong>）和软件（协议）以及链路的总和<br>一般适配器都包含了数据链路层和物理层的功能</li>
+</ul>
+<p><strong>数据链路层传送的数据单位为“帧”</strong>,两个对等的数据链路层之间像一个数字管道一般传输以帧为单位的数据。不必考虑物理层实现的细节，想方设法水平将帧发送给对方。</p>
+<h3 id="三个基本问题"><a href="#三个基本问题" class="headerlink" title="三个基本问题"></a>三个基本问题</h3><ul>
+<li>封装成帧：在一段数据的前后分别加上首部和尾部构成一个帧，首位的作用为<strong>帧定界</strong><br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7.png" alt="封装成帧"><br>当数据是由可以打印的<code>ASCLL</code>码组成的文本时可使用特殊的<strong>帧定界符</strong>，例如：<br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%B8%A7%E5%AE%9A%E7%95%8C%E7%AC%A6.png" alt="帧定界符"></li>
+<li>透明传输：解决数据中出现<strong>帧定界符</strong>被错误的判断帧的边界的问题。<br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E9%94%99%E8%AF%AF%E5%88%A4%E6%96%AD%E5%B8%A7%E5%AE%9A%E7%95%8C%E7%AC%A6.png" alt="错误判断帧定界"><br>可以使用字节（字符）填充的方法，在帧定界符的前面<strong>插入一个转义字符”ESC”</strong><br>连续出现两个ESC就删掉一个。<br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%AD%97%E8%8A%82%E5%A1%AB%E5%85%85.png" alt="字节填充"></li>
+<li>差错检测：在传输过程中可能会产生<strong>比特差错</strong>：<code>0</code> 变为<code>1</code> ，或者<code>1</code>变成<code>0</code>。<br>一段时间内传输错误占总传输量的比率被称为误码率<code>BER(Bit Error Rate)</code><br>为保证数据传输的可靠性，在计算机传输信息的过程中需要采取各种差错检测的措施。</li>
+</ul>
+<h4 id="循环冗余检验CPC检错技术"><a href="#循环冗余检验CPC检错技术" class="headerlink" title="循环冗余检验CPC检错技术"></a>循环冗余检验<strong>CPC</strong>检错技术</h4><ol>
+<li>在发送端将数据分组，假定每组数据<strong>K</strong>个比特</li>
+<li>发送数据<code>M = 101001</code>，在<code>M</code>后面添加<code>n</code>位<strong>冗余码</strong>一起发送</li>
+<li>冗余码计算：<ol>
+<li>确定一个位数为<code>n + 1</code> 的除数<code>p</code></li>
+<li>在<code>k</code>位需要发送数据<code>M</code>的后面添上<code>n</code>位<code>0</code></li>
+<li>拼接后的<code>M</code>除<code>p</code>，得到的余数即为冗余码<strong>（必定为<code>n</code>）位</strong></li>
+<li>使用冗余码替换刚才用来和<code>M</code>拼接的<code>0</code>得到的便是我们要发送的数据。</li>
+</ol>
+</li>
+<li>接收方获得<code>FCS</code>后使用<code>FCS</code>和<code>p</code>进行除法运算，得到的结果若不为<code>0</code>则传输的数据一定错误，丢弃该数据。但无法判断出错的数据在哪里。只要<code>p</code>的位数足够多，那么出现<strong>检测不到的差错</strong>的概率就会大大降低。</li>
+</ol>
+<p><strong>二进制减法为两个二进制数异或运算</strong><br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%99%A4%E6%B3%95%E6%B1%82FCS%E5%86%97%E4%BD%99%E7%A0%81.png" alt="二进制除法"></p>
+<h4 id="帧检验序列FCS"><a href="#帧检验序列FCS" class="headerlink" title="帧检验序列FCS"></a>帧检验序列FCS</h4><ul>
+<li>在数据后面添加了冗余码后称为<strong>帧检验序列（FCS）</strong></li>
+<li>循环冗余检验CRC只是常用的一种<strong>检错方式（不唯一）</strong>，而FCS是添加在数据后面的冗余码。</li>
+</ul>
+<h3 id="点对点协议PPP"><a href="#点对点协议PPP" class="headerlink" title="点对点协议PPP"></a>点对点协议PPP</h3><h4 id="PPP协议的特点"><a href="#PPP协议的特点" class="headerlink" title="PPP协议的特点"></a>PPP协议的特点</h4><ul>
+<li><strong>目前最广泛应用的</strong>数据链路层协议</li>
+<li>与ISP之间的通讯使用的就是PPP协议<br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E7%94%A8%E6%88%B7%E6%8E%A5%E5%85%A5ISP.png" alt="用户接入ISP"></li>
+</ul>
+<h4 id="ppp协议应满足的要求"><a href="#ppp协议应满足的要求" class="headerlink" title="ppp协议应满足的要求"></a>ppp协议应满足的要求</h4><ul>
+<li>简单——<strong>首要要求</strong></li>
+<li>封装成帧——规定特殊字符作为帧定界符</li>
+<li>透明性——保证数据传输透明性</li>
+<li>多种网络层协议——能够早同一条物理链路上运行多条网络层协议</li>
+<li>支持多种链路——能够在多种类型链路上运行</li>
+<li>差错检测——能够检测接收端收到的帧并且立即丢弃有差错的帧</li>
+<li>检测链接状态</li>
+<li>设置最大传输单元（数据部分的最大长度）以促进各种显示之间的互操作性</li>
+<li>网络层地址协商——提供一种机制使得两个网络层实体可以通过协商指导或能够配置彼此的网络层地址。</li>
+<li>数据压缩协商</li>
+</ul>
+<h4 id="PPP协议的组成"><a href="#PPP协议的组成" class="headerlink" title="PPP协议的组成"></a>PPP协议的组成</h4><ul>
+<li>一个将IP数据包封装到串行链路的方法</li>
+<li>一个建立、配置和测试数据链路连接的链路控制协议LCP</li>
+<li>一套支持不同网络层控制协议的NCP</li>
+</ul>
+<h4 id="PPP数据帧格式"><a href="#PPP数据帧格式" class="headerlink" title="PPP数据帧格式"></a>PPP数据帧格式</h4><ul>
+<li>PPP帧首部和尾部分别为4个字段和2个字段</li>
+<li>标志字段<code>F = 0x7E</code>表示为2进制为<code>0111110</code></li>
+<li>地址字段A只设置<code>0xFF</code> (不起作用)</li>
+<li>控制字段C通常设置为<code>0x03</code>(不起作用)</li>
+</ul>
+<p><strong>PPP是面向字节的，所有PPP帧的长度都是整数字节</strong><br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/PPP%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%B8%A7%E6%A0%BC%E5%BC%8F.png" alt="PPP帧格式"></p>
+<h4 id="透明传输问题"><a href="#透明传输问题" class="headerlink" title="透明传输问题"></a>透明传输问题</h4><p>当PPP用在<strong>同步</strong>传输的链路时，协议规定采用硬件来完成<strong>零比特填充</strong>当PPP使用<strong>异步</strong>传输链路时，使用一种特殊字节填充法</p>
+<ul>
+<li>PPP协议用在<code>SONET/SDH</code>链路时，使用同步传输（一连串的比特联系传送）。这时PPP协议建议使用<strong>零比特填充</strong>的方法来实现透明传输<ul>
+<li>在发送端只要发现5个连续的<code>1</code>立即在其后面填充一个<code>0</code></li>
+<li>在接收端对帧的比特流进行扫描，只要发现5各连续的1时，就将这5个<code>1</code>后面的一个<code>0</code>删掉</li>
+</ul>
+</li>
+</ul>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E9%9B%B6%E6%AF%94%E7%89%B9%E5%A1%AB%E5%85%85.png" alt="零比特填充"></p>
+<h4 id="字节填充"><a href="#字节填充" class="headerlink" title="字节填充"></a>字节填充</h4><ul>
+<li>将信息字段中出现的每一个<code>0x7E</code>字节转变为两个字节序列<code>0x7D,0x5E</code></li>
+<li>若信息字段出现一个<code>0x7D</code>的字节，则将其转变为两个字节序列<code>0x7D,0x5D</code></li>
+<li>若信息字段中出现<code>ASCLL </code>码(数值小于<code>0x20</code>)的控制字符，则在该字符前面加入一个<code>0x7D</code></li>
+</ul>
+<hr>
+<p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size : 20px;
+background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);" 
+> 好多...... 看着有点累 </p>
+
+<hr>
+<h4 id="PPP协议不提供使用序号和确认可靠传输"><a href="#PPP协议不提供使用序号和确认可靠传输" class="headerlink" title="PPP协议不提供使用序号和确认可靠传输"></a>PPP协议不提供使用序号和确认可靠传输</h4><ul>
+<li>在数据链路层出现差错的<strong>概率不大</strong>时简单的PPP协议更为合理</li>
+<li>在因特网环境下，PPP的信息字段放入数据是IP数据报。数据链路层并不能保证网络层的传输也是可靠的。</li>
+<li>帧检验序列FCS字段可以保证无差错接收</li>
+</ul>
+<h4 id="PPP协议的工作状态"><a href="#PPP协议的工作状态" class="headerlink" title="PPP协议的工作状态"></a>PPP协议的工作状态</h4><ul>
+<li>用户拨号接通ISP时路由器的调制解调器对拨号作出确认，并建立一条<strong>物理链路</strong></li>
+<li>PC机向路由器发送一系列的<strong>LCP</strong>分组（封装成多个PPP帧）</li>
+<li>这些分组及其影响选择一些ppp参数，并且进行网络层配置，NCP给新介入的PC机分配一个临时IP地址，使PC机成为因特网上的一个主机</li>
+<li>通信完毕后NCP释放网络层链接，收回原来分配出去的网络地址。接着，LCP释放数据链路层连接。最后释放的是物理层的连接。<br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/PPP%E5%8D%8F%E8%AE%AE%E7%8A%B6%E6%80%81.png" alt="PPP协议工作状态"></li>
+</ul>
+<h3 id="使用广播信道的数据链路层"><a href="#使用广播信道的数据链路层" class="headerlink" title="使用广播信道的数据链路层"></a>使用广播信道的数据链路层</h3><h4 id="局域网的数据链路层"><a href="#局域网的数据链路层" class="headerlink" title="局域网的数据链路层"></a>局域网的数据链路层</h4><ul>
+<li>局域网的组要特点：<ul>
+<li>网络为一个单位所有</li>
+<li>地理范围和站点数目均有限</li>
+</ul>
+</li>
+<li>局域网具有如下的优点：<ul>
+<li>具有广播功能，可以从一个站点很方便的访问拳王，局域网上的主机可以共相连接在局域网上的各种硬件和软件资源</li>
+<li>便于系统的扩展和逐渐演变，各设备的位置可以灵活调整改变、系统有较高的可靠性、可用性、残留性。</li>
+</ul>
+</li>
+</ul>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%B1%80%E5%9F%9F%E7%BD%91%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84.png" alt="局域网拓扑结构"></p>
+<h4 id="媒体共享技术"><a href="#媒体共享技术" class="headerlink" title="媒体共享技术"></a>媒体共享技术</h4><p>静态划分信道</p>
+<ul>
+<li>频分复用</li>
+<li>时分复用</li>
+<li>波分复用</li>
+<li>码分复用<br>动态媒体介入（多点介入）</li>
+<li>随机接入</li>
+<li>受控接入</li>
+</ul>
+<p>以太网的两个标准：</p>
+<ul>
+<li><p><strong>DIX Ethernet V2</strong>:第一个局域网产品（以太网）标准</p>
+</li>
+<li><p><strong>IEEE 802.3</strong>：第一个IEEE的以太网标准（WIFI、蓝牙）</p>
+</li>
+</ul>
+<h4 id="IEEE802-3"><a href="#IEEE802-3" class="headerlink" title="IEEE802.3"></a>IEEE802.3</h4><ul>
+<li><strong>逻辑链路控制LLC</strong>子层</li>
+<li><strong>媒体接入控制MAC</strong>子层<br>接入媒体的有关内容都放在<strong>MAC</strong>层。因为不管采用何种协议对LLC层来说都是透明的。</li>
+</ul>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/IEEE%E5%AD%90%E5%B1%82%E7%BB%93%E6%9E%84.png" alt="IEEE子层结构"></p>
+<p><strong>LLC子层的作用在不断弱化</strong></p>
+<h3 id="网络适配器"><a href="#网络适配器" class="headerlink" title="网络适配器"></a>网络适配器</h3><p>网络接口板又称通信适配器、网卡<br>主要功能：</p>
+<ul>
+<li>串&#x2F;并转换</li>
+<li>对数据进行缓存</li>
+<li>在计算机操作系统安装设备驱动程序</li>
+<li>实现以太网协议</li>
+</ul>
+<h3 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA&#x2F;CD协议"></a>CSMA&#x2F;CD协议</h3><p>最初以太网是用一根总线将许多计算机连接在一起，一个计算机发送的数据信号其他计算机都能收到，但是只有目的地址和其发送数据的目的地址相同的计算机彩绘接收这一信息，其余计算机检测到地址不同则会丢掉这份数据。</p>
+<p>CSMA&#x2F;CD协议的功能就是解决这种数据碰撞。</p>
+<p>以太网采取的两种措施：</p>
+<ul>
+<li>无链接的工作方式<ul>
+<li>不必先建立连接</li>
+<li><strong>不追求可靠交付，而是尽最大努力交付</strong></li>
+<li>出现差错CSMA&#x2F;CD直接丢掉数据帧，不管这个数据帧是第一次传还是重传</li>
+</ul>
+</li>
+<li>以太网发送数据使用曼彻斯特编码<ul>
+<li>缺点：<strong>所占频带宽度增加一倍</strong></li>
+</ul>
+</li>
+</ul>
+<p>CSMA&#x2F;CD含义：<strong>载波监听多点介入&#x2F;碰撞检测</strong></p>
+<ul>
+<li>多点接入：许多计算机接到一跟总线上</li>
+<li>载波监听：在每一个站点发送数据前使用电子技术检测总线上有没有其他计算机发送数据信号，如果有则暂时不发送数据。（局部）</li>
+<li>碰撞检测：计算机以便发送数据以便检测信道上的信号电压大小。若电压摆动值超过一定门限则表明总线上至少有两个站在同时发送数据，表明产生了碰撞。（远处）</li>
+<li>需要碰撞检测的原因：电磁波在总线上传输的速率是有限的。</li>
+</ul>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BF%A1%E5%8F%B7%E4%BC%A0%E6%92%AD%E6%97%B6%E5%BB%B6%E5%AF%B9%E8%BD%BD%E6%B3%A2%E4%BE%A6%E5%90%AC%E7%9A%84%E5%BD%B1%E5%93%8D.png" alt="信号传播对载波侦听的影响"></p>
+<h4 id="CSMA-CD协议的重要特性"><a href="#CSMA-CD协议的重要特性" class="headerlink" title="CSMA&#x2F;CD协议的重要特性"></a>CSMA&#x2F;CD协议的重要特性</h4><ul>
+<li>CSMA&#x2F;CD协议质只能进行<strong>半双工通信</strong></li>
+<li>每个站发送后的一小短时间内都存在发生碰撞的可能性。</li>
+<li>这种发送的<strong>不确定性</strong>使整个以太网的平均通信量远小于以太网的最高数据率</li>
+</ul>
+<h4 id="争用期"><a href="#争用期" class="headerlink" title="争用期"></a>争用期</h4><p>最先发送数据的站在发送数据帧后至多经过时间2T（两倍端到端往返时延）就可知道发送的数据帧是否遭受了碰撞。<br>2T就被称为以太网的<strong>争用期</strong>或<strong>碰撞窗口</strong></p>
+<ul>
+<li><code>10Mbit/s</code>以太网取<code>51.2us</code>为争用期长度。</li>
+<li>对于<code>10Mbit/s</code>以太网在争用期可以发送<code>512bit</code>即64字节</li>
+</ul>
+<p>如果发生冲突，一定在前64字节之内一旦检测到冲突则发送出去的数据一定小于64字节。以太网规定最短有效帧长为64字节，凡小于64字节的帧都属于因冲突而终止的无效帧</p>
+<h3 id="二进制指数类型退避算法"><a href="#二进制指数类型退避算法" class="headerlink" title="二进制指数类型退避算法"></a>二进制指数类型退避算法</h3><p>发生碰撞后站立刻停止重传（退避）一个随机时间才能重新发送数据。<br>基本退避时间取争用期为<code>2T</code>从集合<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mo stretchy="false">(</mo><msup><mn>2</mn><mi>k</mi></msup><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">]</mo></math><br>中随机取一个数r重传时间就是r倍的退避时间。</p>
+<p>参数k的计算公式如下<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>m</mi><mi>i</mi><mi>n</mi><mo stretchy="false">[</mo><mi>S</mi><mo>,</mo><mn>10</mn><mo stretchy="false">]</mo></math></p>
+<p>其中<code>S</code>为重传次数。</p>
+<h4 id="强化碰撞"><a href="#强化碰撞" class="headerlink" title="强化碰撞"></a>强化碰撞</h4><p>当数据发生碰撞时：</p>
+<ol>
+<li>立刻停止发送数据</li>
+<li>在继续发送若干认为干扰信号以便让所有用户得知现在已经发生碰撞。</li>
+</ol>
+<h4 id="CSMA-CD协议的要点"><a href="#CSMA-CD协议的要点" class="headerlink" title="CSMA&#x2F;CD协议的要点"></a>CSMA&#x2F;CD协议的要点</h4><ol>
+<li>准备发送：发送前先检测信道</li>
+<li>若检测到信道忙则不停地检测，一直等到信道转为空闲、并且在96比特时间内信道保持空闲（帧间最小间隔）然后发送这个帧。</li>
+<li>检查碰撞：发送过程中不断监听信道：<ol>
+<li>发送成功：回到  1</li>
+<li>停止发送，执行指数退避算法，返回 2，若重传16次仍失败则停止崇川向上报错。</li>
+</ol>
+</li>
+</ol>
+<h3 id="从总线到星形以太网。"><a href="#从总线到星形以太网。" class="headerlink" title="从总线到星形以太网。"></a>从总线到星形以太网。</h3><p>传统以太网使用同轴电缆、而后发展为更灵活的双绞线。采用双绞线的以太网采用星形拓扑结构中心增加可靠性非常高的设备——<strong>集线器</strong><br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BD%BF%E7%94%A8%E9%9B%86%E7%BA%BF%E5%99%A8%E7%9A%84%E5%B1%80%E5%9F%9F%E7%BD%91.png" alt="集线器局域网"></p>
+<p>集线器在逻辑上属于一个总线网，各工作站共享逻辑上的总线。集线器采用专门的芯片进行<strong>自适应串音回波抵消</strong>，减少近端串音。</p>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E9%9B%86%E7%BA%BF%E5%99%A8%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F.png" alt="集线器"></p>
+<h3 id="星形以太网-10BASE-T"><a href="#星形以太网-10BASE-T" class="headerlink" title="星形以太网 10BASE-T"></a>星形以太网 10BASE-T</h3><p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/10BASE-T%E7%A4%BA%E6%84%8F.png"></p>
+<p>使用无屏蔽双绞线采用<strong>星形</strong>拓扑，每个站需要使用两对双绞线分别用于发送和接收。双绞线两端使用RJ-45插头。集线器使用大规模集成电路芯片大大提高集线器的可靠性。10BASE-T的通信距离较短，每个站点到集线器的距离不超过100m。</p>
+<ul>
+<li>多个站在以太网上同时工作就有可能产生碰撞，且以太网的利用率不会达到百分之百。</li>
+<li>假设τ是以太网但成端到端传播时延。则争用期长度达到2τ。</li>
+<li>设帧长为<code>L(bit)</code>发送数据速率为<code>C(bit/s)</code>则发送时间为</li>
+</ul>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>T</mi><mn>0</mn></msub><mo>&#x3D;</mo><mfrac><mi>L</mi><mi>C</mi></mfrac><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></math></p>
+<p>一个站发送帧时出现的碰撞经过2τ后可能又出现碰撞，经历若干争用期后发送成功。假设发送帧所需时间T0,则成功发送一个帧占用信道的时间为T0+τ。</p>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BF%A1%E9%81%93%E8%A2%AB%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5.png" alt="信道占用"></p>
+<p>定义参数α，它是以太网但成端到端时延与帧的发送时间只比。</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>α</mi><mo>&#x3D;</mo><mfrac><mi>τ</mi><msub><mi>T</mi><mn>0</mn></msub></mfrac></math></p>
+<ul>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" float="right"><mi>α</mi><mo accent="false" stretchy="false">→</mo><mn>0</mn></math>表示一发生碰撞就能检测到并且停止发送。信道利用率很高。</li>
+<li>α越大表明争用期占用比例越大，信道利用率越低。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">math</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.w3.org/1998/Math/MathML&quot;</span> <span class="attr">display</span>=<span class="string">&quot;inline&quot;</span> <span class="attr">float</span>=<span class="string">&quot;right&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">mi</span>&gt;</span>α<span class="tag">&lt;/<span class="name">mi</span>&gt;</span><span class="tag">&lt;<span class="name">mo</span> <span class="attr">accent</span>=<span class="string">&quot;false&quot;</span> <span class="attr">stretchy</span>=<span class="string">&quot;false&quot;</span>&gt;</span>→<span class="tag">&lt;/<span class="name">mo</span>&gt;</span><span class="tag">&lt;<span class="name">mn</span>&gt;</span>0<span class="tag">&lt;/<span class="name">mn</span>&gt;</span><span class="tag">&lt;/<span class="name">math</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 将独占一行居中的元素变为行内元素！css没白学（叉腰） --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>为提高利用率，α应该尽可能小。</p>
+<ul>
+<li>数据率一定时以太网连线的长度不应太常，否则τ会很大</li>
+<li>以太网帧长不能太短，否则<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>T</mi><mn>0</mn></msub></math>会很小。</li>
+</ul>
+<h4 id="信道利用率的最大值为Smax"><a href="#信道利用率的最大值为Smax" class="headerlink" title="信道利用率的最大值为Smax"></a>信道利用率的最大值为<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>S</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></math></h4><p>在<strong>理想化</strong>的情况下，以太网上的各站发送数据都不会产生碰撞，即总线一旦空闲就会有某一个站立即发送数据。发送一帧占用路线的时间是<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>T</mi><mn>0</mn></msub><mo>+</mo><mi>τ</mi></math>由此我们可以计算出理想情况下的极限信道利用率为：</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>S</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>&#x3D;</mo><mfrac><msub><mi>T</mi><mn>0</mn></msub><mrow><msub><mi>T</mi><mn>0</mn></msub><mo>+</mo><mi>τ</mi></mrow></mfrac><mo>&#x3D;</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>α</mi></mrow></mfrac></math></p>
+<p><strong>只有当α远小于1时才能尽可能的提高极限信道利用率</strong></p>
+<h3 id="以太网的MAC层"><a href="#以太网的MAC层" class="headerlink" title="以太网的MAC层"></a>以太网的MAC层</h3><h4 id="MAC硬件地址"><a href="#MAC硬件地址" class="headerlink" title="MAC硬件地址"></a>MAC硬件地址</h4><p>在局域网中，硬件地址也称物理地址或者MAC的地址。</p>
+<p>IEEE802标准规定MAC地址采用6字节（48位）或者2字节（16位）这两种中的一种。</p>
+<p>IEEE注册机构负责向厂家分配高24位（3字节）厂家自行指派后24位（3个字节）确保生产的适配器没有重复地址。</p>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/48%E4%BD%8DMAC%E5%9C%B0%E5%9D%80.png" alt="48位MAC地址"></p>
+<h4 id="MAC帧格式"><a href="#MAC帧格式" class="headerlink" title="MAC帧格式"></a>MAC帧格式</h4><p>常用以太网MAC帧格式有两种标准：<code>DIX Ethernet V2</code>标准和<code>IEEE 802.3</code>标准。<br>最常用的MAC帧是以太网的V2格式。</p>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BB%A5%E5%A4%AA%E7%BD%91V2MAC%E5%B8%A7%E6%A0%BC%E5%BC%8F.png" alt="MAC帧格式"></p>
+<p><strong>MAC帧的帧定界符在MAC帧之外的物理层数据单元中。</strong></p>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E4%BB%A5%E5%A4%AA%E7%BD%91V2MAC%E5%B8%A7%E6%A0%BC%E5%BC%8F2.png"></p>
+<p>MAC帧类型：</p>
+<ul>
+<li>单播：一对一</li>
+<li>多播：一对多</li>
+<li>广播：一对全体目的地址48个1</li>
+</ul>
+<h4 id="无效MAC帧："><a href="#无效MAC帧：" class="headerlink" title="无效MAC帧："></a>无效MAC帧：</h4><ul>
+<li>数据字段的长度与长度字段的值不一致；</li>
+<li>帧的长度不是整个字节；</li>
+<li>收到的序列FCS查出有错误；</li>
+<li>数据长度不在46～1500字节之间；</li>
+<li>有效MAC帧长度位64～1518字节之间。</li>
+</ul>
+<h3 id="扩展的以太网"><a href="#扩展的以太网" class="headerlink" title="扩展的以太网"></a>扩展的以太网</h3><h4 id="在物理上扩展以太网"><a href="#在物理上扩展以太网" class="headerlink" title="在物理上扩展以太网"></a>在物理上扩展以太网</h4><ul>
+<li>使用光纤进行扩展：主机使用光纤和光纤调制解调器连接到集线器。可以使得主机与几公里之外的集线器相连接。</li>
+</ul>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%85%89%E7%BA%A4%E6%89%A9%E5%B1%95.png"></p>
+<p>使用集线器扩展</p>
+<ul>
+<li>使用多个集线器可以连城更大的多级星形结构以太网。</li>
+<li>优点：扩大了以太网覆盖的地理范围，能够进行跨域碰撞的通信。</li>
+<li>缺点：碰撞域增大，但吞吐量并未提高，不同的碰撞域使用不同的数据率那么就不能使用集线器将他们连接起来。通信的质量变差了。</li>
+</ul>
+<h4 id="在数据链路层扩展以太网"><a href="#在数据链路层扩展以太网" class="headerlink" title="在数据链路层扩展以太网"></a>在数据链路层扩展以太网</h4><p>早期使用<strong>网桥</strong>现在使用以太网交换机。<br>以太网交换机的实质其实就是一个多接口网桥。以全双工的方式，以太网交换机具有并行性，同时能连接多接口时的多主机同时通信。其每个接口都具有接口存储器。支持即插即用其内部帧交换表又称地址表通过自学习算法逐步建立。</p>
+<p>使用专用的交换结构芯片使用硬件转发，其转发速率要比使用软件转发的网桥快的多。</p>
+<p>优点：</p>
+<ul>
+<li>用户独享带宽，增加了总容量。</li>
+<li>提供不同速率的接口，方便各种不同情况的用户。</li>
+</ul>
+<p>交换方式：</p>
+<ul>
+<li>存储转发：先缓存，再处理</li>
+<li>直通方式：接收的同时就按照数据帧目的MAC地址决定转发接口，因而提高了转发速率。但其没有差错检查可能会发送一些无效帧</li>
+</ul>
+<h4 id="以太网交换机自学习算法"><a href="#以太网交换机自学习算法" class="headerlink" title="以太网交换机自学习算法"></a>以太网交换机自学习算法</h4><p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E8%87%AA%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%951.png"><br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E8%87%AA%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%952.png"></p>
+<p>交换机不需要手动配置交换表使得其使用非常方便更有利于推广。</p>
+<h4 id="生成树协议"><a href="#生成树协议" class="headerlink" title="生成树协议"></a>生成树协议</h4><p>自学习算法的缺点<br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E5%BE%AA%E7%8E%AF%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE.png" alt="为什么使用生成树协议"></p>
+<p>生成树协议在逻辑拓扑中切断某些链路使一台主机到其他所有主机的路径是<strong>无环路的树状结构</strong>，从而消除“都圈子”的现象。</p>
+<h3 id="虚拟局域网（VLAN）"><a href="#虚拟局域网（VLAN）" class="headerlink" title="虚拟局域网（VLAN）"></a>虚拟局域网（VLAN）</h3><p>利用以太网交换机实现，由一些与物理维位置无关的局域网网段构成的逻辑组。每个VLAN都明确标识符，指明发送这个帧的计算机属于哪一个VLAN</p>
+<p><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91.png" alt="虚拟局域网"></p>
+<p>由于虚拟局域网内相互通信会产生非常多的信息，故需要先哲接收广播信息的工作站数目防止出现<strong>广播风暴</strong></p>
+<p>局域网以太网帧格式：比一般帧多四个字节。<br><img src="/image/Review/Network/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%B8%A7%E6%A0%BC%E5%BC%8F.png" alt="虚拟局域网以太网帧"></p>
+<h3 id="高速以太网"><a href="#高速以太网" class="headerlink" title="高速以太网"></a>高速以太网</h3><h4 id="100BASE-T"><a href="#100BASE-T" class="headerlink" title="100BASE-T"></a>100BASE-T</h4><p>速率达到100Mbit&#x2F;s的以太网都称作高速以太网。其仍使用IEEE 802.3 CSMA&#x2F;CD协议。<br>最短帧长仍为64字节（技术的向后兼容性），传输速度比原来快10倍，故争用期需要缩短到原本的<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mfrac><mn>1</mn><mn>10</mn></mfrac></math></p>
+<p>吉比特以太网半双工方式才使用CSMA&#x2F;CD协议，全双工不使用CSMA&#x2F;CD协议</p>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2024/07/02/Blog-Writing-Tools/"
+      title="Blog Writing Tools"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        Blog Writing Tools
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/07/01/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%89%A9%E7%90%86%E5%B1%82/"
+      title="计算机网络物理层"
+     >
+
+    <p class="title-text">
+      
+        计算机网络物理层
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+  <script src="https://cdn.staticfile.org/twikoo/1.6.26/twikoo.all.min.js"></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="tcomment"></div>
+  </div>
+  <script>
+      twikoo.init({
+          envId: '',
+          el: '#tcomment',
+          region: '',
+          path: 'location.pathname',
+          lang: '',
+      })
+  </script>
+  
+
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2025 LittleBug<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
