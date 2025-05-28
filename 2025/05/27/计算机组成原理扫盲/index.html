@@ -28,7 +28,7 @@
 <meta property="og:description" content="完整的计算机系统包含软硬件系统1. 表示指令执行过程的描述中：IR -&gt; CU(IR) -&gt; CU2. 可重定位目标文件？其中()强调IR中的数据本身，而不带()强调的时数据从IR到CU。3. 速度提升50%后的速度是1.5倍  IPC&#x3D;1CPI5. 程序员可以通过jmp指令来设置程序跳转到需要执行的指令，这就是通过更改PC的值来完成的，因此PC对于程序员来说不透明而cpu中">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-27T08:07:55.000Z">
-<meta property="article:modified_time" content="2025-05-27T08:29:16.958Z">
+<meta property="article:modified_time" content="2025-05-28T09:42:57.474Z">
 <meta property="article:author" content="LittleBug">
 <meta name="twitter:card" content="summary">
   
@@ -175,13 +175,13 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
-                读书笔记
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
+            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                读书笔记
                 <div class="category-count">1</div>
             </a>
         </div>
@@ -257,15 +257,15 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/05/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%89%AB%E7%9B%B2/" title="计算机组成原理扫盲" >
+          <a class="recent-link" href="/2025/05/28/%E6%97%A5%E5%BF%97/" title="日志" >
             <div class="recent-link-text">
-              计算机组成原理扫盲
+              日志
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/05/26/%E6%97%A5%E5%BF%97/" title="日志" >
+          <a class="recent-link" href="/2025/05/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%89%AB%E7%9B%B2/" title="计算机组成原理扫盲" >
             <div class="recent-link-text">
-              日志
+              计算机组成原理扫盲
             </div>
           </a>
         
@@ -331,7 +331,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            470 words 
+            1.3k words 
           </div>
         </div>
         
@@ -341,7 +341,23 @@
           <h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>完整的计算机系统包含软硬件系统<br><strong>1. 表示指令执行过程的描述中：</strong><br>IR -&gt; CU<br>(IR) -&gt; CU<br><strong>2. 可重定位目标文件？</strong><br>其中<code>()</code>强调IR中的数据本身，而不带<code>()</code>强调的时数据从IR到CU。<br>3. 速度提升<code>50%</code>后的速度是<code>1.5倍</code></p>
 <p> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>I</mi><mi>P</mi><mi>C</mi><mo>&#x3D;</mo><mfrac><mn>1</mn><mrow><mi>C</mi><mi>P</mi><mi>I</mi></mrow></mfrac></math><br>5. 程序员可以通过jmp指令来设置程序跳转到需要执行的指令，这就是通过更改PC的值来完成的，因此PC对于程序员来说<code>不透明</code>而cpu中的其他寄存器对于程序员来说都是透明的<br>6. 计算机中的单位:<code>K、M 、G、T、P、E、Z</code><br>7. 数据总线无处不在</p>
 <p>相联存储器是什么<br>相联存储器也称关联存储器，是一种不根据地址而是根据存储内容来进行存取的存储器，可以实现快速地查找块表。既可以按照地址寻址也可以按照内容寻址（通常是某些字段），为了与传统寄存器作区别，称为按内容寻址的存储器。<br>向相联存储器写入信息时按顺序写入，不需要地址。读出时，要求CPU给出一个相联关键字，用它和存储器中所有单元中的一部分信息进行比较，若它们相等，则将此单元中余下的信息读出。这是实现存储器并行操作的一种有效途径，特别适合于信息的检索和更新。</p>
+<h2 id="数据表示与运算"><a href="#数据表示与运算" class="headerlink" title="数据表示与运算"></a>数据表示与运算</h2><h3 id="补码运算溢出判断"><a href="#补码运算溢出判断" class="headerlink" title="补码运算溢出判断"></a>补码运算溢出判断</h3><p>在补码表示法中，双符号位（也称为模4补码）是一种用于检测算术运算溢出的技术。它通过扩展符号位（最高位）到两位，从而更直观地判断运算结果是否发生了上溢（正溢出）或下溢（负溢出）。</p>
+<p><strong>双符号位扩展</strong>：将符号位扩展到两位（如 00 表示正数，11 表示负数），其余数值位不变。</p>
+<p>假设用 4位数值位 + 2位符号位（共6位）表示补码，数值范围为：<br>正数范围：<code>00 0000（0）</code>到 <code>00 1111（+15）</code>。<br>负数范围：<code>11 0000（-16）</code>到 <code>11 1111（-1）</code>。</p>
+<p>正数无溢出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  00 0101  (+5)</span><br><span class="line">+ 00 0011  (+3)</span><br><span class="line">-----------</span><br><span class="line">  00 1000  (+8)  → 符号位为00，无溢出。</span><br></pre></td></tr></table></figure>
 
+<p>上溢</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  00 1111  (+15)</span><br><span class="line">+ 00 0001  (+1)</span><br><span class="line">-----------</span><br><span class="line">  01 0000  (试图表示+16，但超出范围)</span><br></pre></td></tr></table></figure>
+
+<p>下溢</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  11 0000  (-16)</span><br><span class="line">+ 11 1111  (-1)</span><br><span class="line">-----------</span><br><span class="line">  10 1111  (试图表示-17，但超出范围)</span><br></pre></td></tr></table></figure>
+
+<p>负数无溢出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  11 1011  (-5)</span><br><span class="line">+ 11 1101  (-3)</span><br><span class="line">-----------</span><br><span class="line">  11 1000  (-8)  → 符号位为11，无溢出。</span><br></pre></td></tr></table></figure>
+
+<h3 id="高级语言中的强制类型转换"><a href="#高级语言中的强制类型转换" class="headerlink" title="高级语言中的强制类型转换"></a>高级语言中的强制类型转换</h3><p>强制类型转换不改变数字的机器码，只改变解释方式。其中数字的存储方式<strong>均为补码</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">unsigned</span> <span class="type">short</span> x = <span class="number">65535</span>;</span><br><span class="line"><span class="type">short</span> y = (<span class="type">short</span>) x;</span><br><span class="line"></span><br><span class="line">**长整型向短整型转换直接截取低位**</span><br><span class="line"></span><br><span class="line">**短整型转换：**</span><br><span class="line"><span class="number">1.</span> 无符号数：零扩充</span><br><span class="line"><span class="number">2.</span> 有符号数：符号扩充</span><br><span class="line"></span><br><span class="line">``` cpp</span><br><span class="line"><span class="type">unsigned</span> <span class="type">short</span> x = <span class="number">65535</span>;</span><br><span class="line"><span class="type">short</span> y = (<span class="type">short</span>) x;</span><br><span class="line"><span class="type">unsigned</span> <span class="type">long</span> xL = (<span class="type">unsigned</span> <span class="type">long</span>) x;</span><br><span class="line"><span class="type">long</span> yL = (<span class="type">long</span>) y;</span><br><span class="line"></span><br><span class="line"><span class="comment">// x = 65535</span></span><br><span class="line"><span class="comment">// x = 1111 1111 1111 1111</span></span><br><span class="line"><span class="comment">// xL = 0000 0000 0000 0000 1111 1111 1111 1111</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// y = - 1</span></span><br><span class="line"><span class="comment">// y = 1111 1111 1111 1111</span></span><br><span class="line"><span class="comment">// yL = 1111 1111 1111 1111 1111 1111 1111 1111</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
         
       </div>
 
@@ -353,22 +369,27 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2025/05/28/%E6%97%A5%E5%BF%97/"
+      title="日志"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        日志
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2025/05/26/%E6%97%A5%E5%BF%97/"
-      title="日志"
+      href="/2025/05/26/DataStruct-Note/"
+      title="DataStruct Note"
      >
 
     <p class="title-text">
       
-        日志
+        DataStruct Note
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
