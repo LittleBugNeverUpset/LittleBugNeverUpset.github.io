@@ -27,12 +27,12 @@
 <meta property="og:site_name" content="LittleBug&#39;s Home">
 <meta property="og:description" content="数据结构题单 该博客基于本人在备考研究生时学习408数据结构过程中刷过的相关题目,感兴趣的同学也可以进行尝试。  链表删除节点设计链表  能否独立完成自己写还是会出现各种各样的bug，有待提高  反转链表  头插法  递归做法  两数相加  暴力运算 + 尾插法ps：其实和标准题解的时间复杂度基本一致都是O(m + n)但实际的执行时间只超过50  交换节点  正常解法  值得注意的地方是第一次交">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/image/Review/DataStruct/LinkNode/">
+<meta property="og:image" content="http://example.com/image/Review/DataStruct/LinkNode/%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8.png">
 <meta property="article:published_time" content="2025-05-25T11:31:27.000Z">
-<meta property="article:modified_time" content="2025-05-26T06:41:46.535Z">
+<meta property="article:modified_time" content="2025-05-27T04:35:43.139Z">
 <meta property="article:author" content="LittleBug">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/image/Review/DataStruct/LinkNode/">
+<meta name="twitter:image" content="http://example.com/image/Review/DataStruct/LinkNode/%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8.png">
   
     <link rel="alternate" href="/atom.xml" title="LittleBug's Home" type="application/atom+xml">
   
@@ -177,13 +177,13 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
+            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                读书笔记
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
-                读书笔记
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
                 <div class="category-count">1</div>
             </a>
         </div>
@@ -210,7 +210,7 @@
       
         <a class="archive-link" href="/archives/2025/05 ">
           May 2025 
-          <div class="archive-count">4 </div>
+          <div class="archive-count">5 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/10 ">
@@ -259,15 +259,21 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/05/26/DataStruct-Note/" title="DataStruct Note" >
+          <a class="recent-link" href="/2025/05/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%89%AB%E7%9B%B2/" title="计算机组成原理扫盲" >
             <div class="recent-link-text">
-              DataStruct Note
+              计算机组成原理扫盲
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/05/25/%E6%97%A5%E5%BF%97/" title="日志" >
+          <a class="recent-link" href="/2025/05/26/%E6%97%A5%E5%BF%97/" title="日志" >
             <div class="recent-link-text">
               日志
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/26/DataStruct-Note/" title="DataStruct Note" >
+            <div class="recent-link-text">
+              DataStruct Note
             </div>
           </a>
         
@@ -280,12 +286,6 @@
           <a class="recent-link" href="/2025/05/25/Writing/" title="Writing" >
             <div class="recent-link-text">
               Writing
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2024/10/14/Redis/" title="Redis" >
-            <div class="recent-link-text">
-              Redis
             </div>
           </a>
         
@@ -366,7 +366,7 @@
 <li><input checked="" disabled="" type="checkbox"> 先求两链表长度，指向长链表的指针先向前移动两链表<code>长度差</code>单位，然后两指针同时向前，当两指针第一次相同时就找到了链表相交的点<br><strong>ps:408统考2012年真题</strong></li>
 </ul>
 <h4 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii">环形链表</a></h4><ul>
-<li><input checked="" disabled="" type="checkbox"> 使用快慢指针判断链表中是否有环，有环的情况下从相遇的位置开始，再建立一个新的指针从链表头开始同慢指针一起以<code>1</code>的速度前进，两者第一次相遇的位置就是环的入口<br><img src="/image/Review/DataStruct/LinkNode/" alt="环形链表"><br>ps:</li>
+<li><input checked="" disabled="" type="checkbox"> 使用快慢指针判断链表中是否有环，有环的情况下从相遇的位置开始，再建立一个新的指针从链表头开始同慢指针一起以<code>1</code>的速度前进，两者第一次相遇的位置就是环的入口<br><img src="/../image/Review/DataStruct/LinkNode/%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8.png" alt="环形链表"><br>ps:</li>
 </ul>
 <ol>
 <li>不需要建立统一头节点，快慢指针直接从链表的第一个元素开始</li>
@@ -390,13 +390,13 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2025/05/25/%E6%97%A5%E5%BF%97/"
-      title="日志"
+      href="/2025/05/26/DataStruct-Note/"
+      title="DataStruct Note"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        日志
+        DataStruct Note
         
     </p>
   </a>

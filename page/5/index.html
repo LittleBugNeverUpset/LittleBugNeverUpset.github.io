@@ -171,13 +171,13 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
+            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                读书笔记
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
-                读书笔记
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
                 <div class="category-count">1</div>
             </a>
         </div>
@@ -204,7 +204,7 @@
       
         <a class="archive-link" href="/archives/2025/05 ">
           May 2025 
-          <div class="archive-count">4 </div>
+          <div class="archive-count">5 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/10 ">
@@ -253,15 +253,21 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/05/26/DataStruct-Note/" title="DataStruct Note" >
+          <a class="recent-link" href="/2025/05/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%89%AB%E7%9B%B2/" title="计算机组成原理扫盲" >
             <div class="recent-link-text">
-              DataStruct Note
+              计算机组成原理扫盲
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/05/25/%E6%97%A5%E5%BF%97/" title="日志" >
+          <a class="recent-link" href="/2025/05/26/%E6%97%A5%E5%BF%97/" title="日志" >
             <div class="recent-link-text">
               日志
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/26/DataStruct-Note/" title="DataStruct Note" >
+            <div class="recent-link-text">
+              DataStruct Note
             </div>
           </a>
         
@@ -277,12 +283,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2024/10/14/Redis/" title="Redis" >
-            <div class="recent-link-text">
-              Redis
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -293,6 +293,90 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-day2-LeetCode209" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/12/17/day2-LeetCode209/">day2 LeetCode209</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-12-16T19:15:53.000Z" itemprop="datePublished">2023-12-17</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            825 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/" rel="tag">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DoublePointers/" rel="tag">DoublePointers</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              长度最小的子数组题目链接
+题目描述给定一个含有 n 个正整数的数组和一个正整数 target 。
+找出该数组中满足其总和大于等于 target 的长度最小的 连续子数组 [numsl, numsl+1, …, numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+示例1:
+123输入：target = 7, nums = [2,3,1,2,4,3]输出：2解释：子数组 [4,3] 是该条件下的长度最小的子数组。
+
+示例2:
+12输入：target = 4, nums = [1,4,4]输出：1
+
+示例3:
+12输入：target = 11, nums = [1,1,1,1,1,1,1,1]输出：0
+
+解题思路暴力破解时间复杂度$N&#x3D;O(n^2)$先用第一个for循环来遍历每一个元素让其作为子数组的第一个元素，嵌套for循环来遍历”第一个”元素后面的其他元素，外循环每次重新赋值一个sum用于计算这一个子数组的元素和，当元素和&gt;=target时返回数组长度即right-left+1，再与我们要输出的最小数组长度ans进行对比将较小的...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/12/17/day2-LeetCode209/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 
