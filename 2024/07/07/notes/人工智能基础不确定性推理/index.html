@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>人工智能基础不确定性推理 | LittleBug&#39;s Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="阶级斗争，一些阶级胜利了，一些阶级消灭了。这就是历史，这就是几千年的文明史。拿这个观点解释历史的就叫做历史的唯物主义，站在这个观点的反面的是历史的唯心主义。          《丢掉幻想，准备斗争》（一九四九年八月十四日），《毛泽东选集》第四卷第一四九一页     不确定性推理概率方法全概率公式：P(B)&#x3D;∑i&#x3D;1nP(Ai×p(B|Ai)) 贝叶斯公式：设有事件A1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人工智能基础不确定性推理">
+<meta property="og:url" content="http://example.com/2024/07/07/notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E7%A1%80%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/index.html">
+<meta property="og:site_name" content="LittleBug&#39;s Home">
+<meta property="og:description" content="阶级斗争，一些阶级胜利了，一些阶级消灭了。这就是历史，这就是几千年的文明史。拿这个观点解释历史的就叫做历史的唯物主义，站在这个观点的反面的是历史的唯心主义。          《丢掉幻想，准备斗争》（一九四九年八月十四日），《毛泽东选集》第四卷第一四九一页     不确定性推理概率方法全概率公式：P(B)&#x3D;∑i&#x3D;1nP(Ai×p(B|Ai)) 贝叶斯公式：设有事件A1">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/Bayes%E4%BE%8B%E9%A2%98.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/Bayes1%E7%AD%94%E6%A1%88.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/Bayes%E4%BE%8B%E9%A2%982.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/Bayes2%E7%AD%94%E6%A1%88.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E4%B8%BB%E8%A7%82Bayes1%E7%AD%94%E6%A1%88.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E6%B1%82CF.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E6%B1%82%E7%BB%BC%E5%90%88%E5%8F%AF%E4%BF%A1%E5%BA%A6.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%8F%AF%E4%BF%A1%E5%BA%A6%E6%96%B9%E6%B3%95%E4%BE%8B%E9%A2%98.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%8F%AF%E4%BF%A1%E5%BA%A6%E6%96%B9%E6%B3%95%E7%AD%94%E6%A1%881.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%8F%AF%E4%BF%A1%E5%BA%A6%E6%96%B9%E6%B3%952.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%8F%AF%E4%BF%A1%E5%BA%A6%E6%96%B9%E6%B3%95%E7%AD%94%E6%A1%883.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E6%B1%82%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0%E4%BE%8B%E9%A2%98.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E6%B1%82%E6%98%AF%E7%84%B6%E5%87%BD%E6%95%B0%E7%AD%94%E6%A1%88.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E7%B1%BB%E6%A6%82%E7%8E%87%E5%87%BD%E6%95%B0%E4%BE%8B%E9%A2%98.png">
+<meta property="og:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E7%B1%BB%E6%A6%82%E7%8E%87%E5%87%BD%E6%95%B0%E7%AD%94%E6%A1%88.png">
+<meta property="article:published_time" content="2024-07-07T03:58:25.000Z">
+<meta property="article:modified_time" content="2025-06-11T04:42:43.721Z">
+<meta property="article:author" content="LittleBug">
+<meta property="article:tag" content="Fundamentals of AI">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/Bayes%E4%BE%8B%E9%A2%98.png">
+  
+    <link rel="alternate" href="/atom.xml" title="LittleBug's Home" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/image/%E5%A4%B4%E5%83%8F.png">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/image/background.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>LittleBug's Home </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/image/%E5%A4%B4%E5%83%8F2.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">LittleBug </div>
+      <div class="dot"></div>
+      <div class="subtitle">A junior maioring in in software </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://steamcommunity.com/profiles/76561199168226982/" title="Steam"><i class="fa-brands fa-steam"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/LittleBugNeverUpset" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
+                笔记
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
+                算法
+                <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                读书笔记
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
+                考研
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E5%A4%8D%E4%B9%A0/">
+                复习
+                <div class="category-count">12</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                技术笔记
+                <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/408/" rel="tag">408</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/BinaryTree/" rel="tag">BinaryTree</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Computer-Organization/" rel="tag">Computer Organization</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Data-Struct/" rel="tag">Data Struct</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamentals-of-AI/" rel="tag">Fundamentals of AI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/OperatingSystem/" rel="tag">OperatingSystem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Queue/" rel="tag">Queue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ToolLearning/" rel="tag">ToolLearning</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/db/" rel="tag">db</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%A4%8D%E7%9B%98/" rel="tag">复盘</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%AF%9B%E9%80%89/" rel="tag">毛选</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" rel="tag">社会科学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%A7%84%E5%88%92/" rel="tag">规划</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2025/06 ">
+          June 2025 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2025/05 ">
+          May 2025 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/10 ">
+          October 2024 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/09 ">
+          September 2024 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/07 ">
+          July 2024 
+          <div class="archive-count">13 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/06 ">
+          June 2024 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2024/03 ">
+          March 2024 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/12 ">
+          December 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/06 ">
+          June 2023 
+          <div class="archive-count">1 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2025/06/11/logs/%E6%97%A5%E5%BF%97/" title="日志" >
+            <div class="recent-link-text">
+              日志
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/10/algorithm/Binary-tree-inorder-traversal/" title="Binary-tree-inorder-traversal" >
+            <div class="recent-link-text">
+              Binary-tree-inorder-traversal
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/10/algorithm/Monotonic-queue/" title="Monotonic queue" >
+            <div class="recent-link-text">
+              Monotonic queue
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/10/logs/healthy/" title="healthy" >
+            <div class="recent-link-text">
+              healthy
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/27/408/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E6%89%AB%E7%9B%B2/" title="计算机组成原理扫盲" >
+            <div class="recent-link-text">
+              计算机组成原理扫盲
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-notes/人工智能基础不确定性推理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        人工智能基础不确定性推理
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-07-07T03:58:25.000Z" itemprop="datePublished">2024-07-07</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E5%A4%8D%E4%B9%A0/">复习</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            3.2k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Fundamentals-of-AI/" rel="tag">Fundamentals of AI</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="TitleText" >
+    <p >阶级斗争，一些阶级胜利了，一些阶级消灭了。这就是历史，这就是几千年的文明史。拿这个观点解释历史的就叫做历史的唯物主义，站在这个观点的反面的是历史的唯心主义。</p>
+    <br/>
+    <p>《丢掉幻想，准备斗争》（一九四九年八月十四日），《毛泽东选集》第四卷第一四九一页</p>
+
+</div>
+
+
+<h1 id="不确定性推理"><a href="#不确定性推理" class="headerlink" title="不确定性推理"></a>不确定性推理</h1><h3 id="概率方法"><a href="#概率方法" class="headerlink" title="概率方法"></a>概率方法</h3><h4 id="全概率公式："><a href="#全概率公式：" class="headerlink" title="全概率公式："></a>全概率公式：</h4><p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><munderover><mo data-mjx-texclass="OP">∑</mo><mrow><mi>i</mi><mo>&#x3D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></munderover><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>i</mi></msub></mrow><mo>×</mo><mi>p</mi><mo stretchy="false">(</mo><mi>B</mi><mrow><mo stretchy="false">|</mo></mrow><msub><mi>A</mi><mi>i</mi></msub><mo stretchy="false">))</mo></math></p>
+<h4 id="贝叶斯公式："><a href="#贝叶斯公式：" class="headerlink" title="贝叶斯公式："></a>贝叶斯公式：</h4><p>设有事件<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>A</mi><mn>1</mn></msub><mo>,</mo><msub><mi>A</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>A</mi><mi>n</mi></msub></math></p>
+<ul>
+<li>任意两个事件互不相容，即当<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>i</mi><mo>≠</mo><mi>j</mi></math>时。<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>A</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>A</mi><mi>j</mi></msub><mo>&#x3D;</mo><mi>ϕ</mi></math></li>
+<li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>&gt;</mo><mn>0</mn><mo stretchy="false">(</mo><mi>i</mi><mo>&#x3D;</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>i</mi><mo stretchy="false">)</mo></math></li>
+<li>样本空间为D且<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>D</mi><mo>&#x3D;</mo><msubsup><mo>∪</mo><mrow><mi>i</mi><mo>&#x3D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msubsup><msub><mi>A</mi><mi>i</mi></msub></math></li>
+</ul>
+<p>对任意事件B成立，则后验概率（事件B在事件<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>A</mi><mi>i</mi></msub></math> 发生的条件下）为：</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>i</mi></msub><mrow><mo stretchy="false">|</mo></mrow><mi>B</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mfrac><mrow><msub><mi>A</mi><mi>i</mi></msub><mo>×</mo><mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mrow><mo stretchy="false">|</mo></mrow><msub><mi>A</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow></mfrac><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mi>i</mi><mo>&#x3D;</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>n</mi></math></p>
+<p>如果将全概率公式带入贝叶斯公式<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>i</mi></msub><mrow><mo stretchy="false">|</mo></mrow><mi>B</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mfrac><mrow><msub><mi>A</mi><mi>i</mi></msub><mo>×</mo><mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mrow><mo stretchy="false">|</mo></mrow><msub><mi>A</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mrow><munderover><mo data-mjx-texclass="OP">∑</mo><mrow><mi>j</mi><mo>&#x3D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></munderover><mi>P</mi><mo stretchy="false">(</mo><msub><mi>A</mi><mi>j</mi></msub><mo stretchy="false">)</mo><mo>×</mo><mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mrow><mo stretchy="false">|</mo></mrow><msub><mi>A</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow></mfrac><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mi>i</mi><mo>&#x3D;</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>n</mi></math></p>
+<h3 id="经典概率方法"><a href="#经典概率方法" class="headerlink" title="经典概率方法"></a>经典概率方法</h3><p>假设有如下产生规则</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>I</mi><mi>F</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi>E</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi>T</mi><mi>h</mi><mi>e</mi><mi>n</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><msub><mi>H</mi><mi>i</mi></msub><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mo stretchy="false">(</mo><mi>i</mi><mo>&#x3D;</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>n</mi><mo stretchy="false">)</mo></math><br>其中E为前提条件，<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>H</mi><mi>i</mi></msub></math>为结论，具有随即性。那么条件概率P（<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>H</mi><mi>i</mi></msub></math>|E）就表示E发生时<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>H<mi><mi>i</mi></msub></math>的概率，可以用作证据E出现的条件下结论<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>H</mi><mi>i</mi></msub></math><br>的不确定性程度。</p>
+<p>对于复合条件：</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>E</mi><mo>&#x3D;</mo><msub><mi>E</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>E</mi><mn>2</mn></msub><mo>∧</mo><msub><mi>E</mi><mn>3</mn></msub><mo>∧</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>∧</mo><msub><mi>E</mi><mi>n</mi></msub></math></p>
+<p>E也可用作条件概率P的证据结论H的不确定性。</p>
+<ul>
+<li>这是一种很简单的方法，只能确定简单不确定性。而且它只考虑证据<strong>真</strong>和<strong>假</strong>这两种极端情况，因而其使用受限。</li>
+</ul>
+<h3 id="贝叶斯方法："><a href="#贝叶斯方法：" class="headerlink" title="贝叶斯方法："></a>贝叶斯方法：</h3><h4 id="单个证据的情况"><a href="#单个证据的情况" class="headerlink" title="单个证据的情况"></a>单个证据的情况</h4><p>对于生产式规则：</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>I</mi><mi>F</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi>E</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi>T</mi><mi>h</mi><mi>e</mi><mi>n</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><msub><mi>H</mi><mi>i</mi></msub></math></p>
+<p>用条件概率P(Hi|E)作为证据E出现时Hi的确定性程度根据贝叶斯公式得</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mi>i</mi></msub><mrow><mo stretchy="false">|</mo></mrow><mi>E</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mi>i</mi></msub><mo stretchy="false">)</mo><mo>×</mo><mi>P</mi><mo stretchy="false">(</mo><mi>E</mi><mrow><mo stretchy="false">|</mo></mrow><msub><mi>H</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mrow><munderover><mo data-mjx-texclass="OP">∑</mo><mrow><mi>j</mi><mo>&#x3D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></munderover><mo>×</mo><mi>P</mi><mo stretchy="false">(</mo><mi>E</mi><mrow><mo stretchy="false">|</mo></mrow><msub><mi>H</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow></mfrac><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mi>i</mi><mo>&#x3D;</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>n</mi></math></p>
+<h4 id="多个证据的情况"><a href="#多个证据的情况" class="headerlink" title="多个证据的情况"></a>多个证据的情况</h4><p>多个证据<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>E</mi><mn>1</mn></msub><mo>,</mo><msub><mi>E</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>E</mi><mi>m</mi></msub><mo>和多个结论</mo><msub><mi>H</mi><mn>1</mn></msub><mo>,</mo><msub><mi>H</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>H</mi><mi>n</mi></msub></math>并且每个证据都一等程度支持结论的情况<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mi>i</mi></msub><mrow><mo stretchy="false">|</mo></mrow><msub><mi>E</mi><mn>1</mn></msub><mo>,</mo><msub><mi>E</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>E</mi><mi>m</mi></msub><mo stretchy="false">)</mo><mo>&#x3D;</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>H</mi><mi>i</mi></msub><mo stretchy="false">)</mo><munderover><mo data-mjx-texclass="OP">∏</mo><mrow><mi>t</mi><mo>&#x3D;</mo><mn>1</mn></mrow><mrow><mi>m</mi></mrow></munderover><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>E</mi><mi>t</mi><mrow><mo stretchy="false">|</mo></mrow><mi>H</mi><mi>i</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><munderover><mo data-mjx-texclass="OP">∑</mo><mrow><mi>j</mi><mo>&#x3D;</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></munderover><mi>H</mi><mo stretchy="false">(</mo><mi>j</mi><mo stretchy="false">)</mo><munderover><mo data-mjx-texclass="OP">∏</mo><mrow><mi>t</mi><mo>&#x3D;</mo><mn>1</mn></mrow><mrow><mi>m</mi></mrow></munderover><mrow><mi>P</mi><mo stretchy="false">(</mo><msub><mi>E</mi><mi>s</mi></msub><mrow><mo stretchy="false">|</mo></mrow><msub><mi>H</mi><mi>j</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mfrac></math></p>
+<hr>
+<h4 id="例题1：假设H1-H2-H3分别是三个结论，E是支持这些结论的正与，已知："><a href="#例题1：假设H1-H2-H3分别是三个结论，E是支持这些结论的正与，已知：" class="headerlink" title="例题1：假设H1,H2,H3分别是三个结论，E是支持这些结论的正与，已知："></a>例题1：假设H1,H2,H3分别是三个结论，E是支持这些结论的正与，已知：</h4><p><img src="/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/Bayes%E4%BE%8B%E9%A2%98.png"></p>
+<img src="/image/Review/AI/不确定性推理/Bayes1答案.png" alt="" class="ans">
+
+<h4 id="例题2：已知："><a href="#例题2：已知：" class="headerlink" title="例题2：已知："></a>例题2：已知：</h4><p><img src="/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/Bayes%E4%BE%8B%E9%A2%982.png"></p>
+<img src="/image/Review/AI/不确定性推理/Bayes2答案.png" alt="" class="ans">
+
+<hr>
+<h2 id="主观贝叶斯"><a href="#主观贝叶斯" class="headerlink" title="主观贝叶斯"></a>主观贝叶斯</h2><h3 id="规则不确定性"><a href="#规则不确定性" class="headerlink" title="规则不确定性"></a>规则不确定性</h3><p>在主观贝叶斯方法中，规则的不确定性知识可以表示为：</p>
+<p> <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" color="red"><mi>I</mi><mi>F</mi><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mi>E</mi><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mi>T</mi><mi>H</mi><mi>E</mi><mi>N</mi><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mo stretchy="false">(</mo><mi>L</mi><mi>S</mi><mo>,</mo><mi>L</mi><mi>N</mi><mo stretchy="false">)</mo><mstyle scriptlevel="0"><mspace width="2em"></mspace></mstyle><mi>H</mi></math></p>
+<p>其中(LS,LN)用来表示只是的强度。LS（充分性度量）和LN（必要性度量）</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mi>N</mi><mo>&#x3D;</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>E</mi><mrow><mo stretchy="false">|</mo></mrow><mi>H</mi><mo stretchy="false">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>E</mi><mrow><mo stretchy="false">|</mo></mrow><mi mathvariant="normal">¬</mi><mi>H</mi><mo stretchy="false">)</mo></mrow></mfrac><mo>&#x3D;</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mi>P</mi><mo stretchy="false">(</mo><mi>E</mi><mrow><mo stretchy="false">|</mo></mrow><mi>H</mi><mo stretchy="false">)</mo></mrow><mrow><mn>1</mn><mo>−</mo><mi>P</mi><mo stretchy="false">(</mo><mi>E</mi><mrow><mo stretchy="false">|</mo></mrow><mi mathvariant="normal">¬</mi><mi>H</mi><mo stretchy="false">)</mo></mrow></mfrac></math><br><br/><br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mi>S</mi><mo>&#x3D;</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>E</mi><mrow><mo stretchy="false">|</mo></mrow><mi>H</mi><mo stretchy="false">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>E</mi><mrow><mo stretchy="false">|</mo></mrow><mi mathvariant="normal">¬</mi><mi>H</mi><mo stretchy="false">)</mo></mrow></mfrac></math></p>
+<p><strong>这两个参数一般由专家凭经验给出…</strong></p>
+<p>引入一下几率函数：</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>O</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow><mrow><mn>1</mn><mo>−</mo><mi>P</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow></mfrac><mo>&#x3D;</mo><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>X</mi><mo stretchy="false">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>X</mi><mo stretchy="false">)</mo></mrow></mfrac></math></p>
+<p>修改的贝叶斯公式：<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>O</mi><mo stretchy="false">(</mo><mi>H</mi><mrow><mo stretchy="false">|</mo></mrow><mi>E</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mi>L</mi><mi>S</mi><mo>×</mo><mi>O</mi><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>O</mi><mo stretchy="false">(</mo><mi>H</mi><mrow><mo stretchy="false">|</mo></mrow><mi mathvariant="normal">¬</mi><mi>E</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mi>L</mi><mi>N</mi><mo>×</mo><mi>O</mi><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo></math></p>
+<p>从上述公式可以看出，当E为真时，可以通过LS将H的先验概率O(H)更新为其后验概率<strong>O(H|E)</strong><br>当E为假时：可以通过LN将N的先验概率更新为其后验概率。</p>
+<hr>
+<p>例：设有规则<br>IF  E THEN   (200,0.1)  H<br>已知证据E必然发生且P(H)&#x3D;0.03，求H的后验概率。</p>
+<img src="/image/Review/AI/不确定性推理/主观Bayes1答案.png" alt="" class="ans">
+
+<hr>
+<h2 id="可信度方法"><a href="#可信度方法" class="headerlink" title="可信度方法"></a>可信度方法</h2><p>设有如下规则：<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>I</mi><mi>F</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><msub><mi>E</mi><mn>1</mn></msub><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi>T</mi><mi>h</mi><mi>e</mi><mi>n</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi>H</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mo stretchy="false">(</mo><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>H</mi><mo>,</mo><msub><mi>E</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo stretchy="false">)</mo></math></p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>I</mi><mi>F</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><msub><mi>E</mi><mn>2</mn></msub><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi>T</mi><mi>h</mi><mi>e</mi><mi>n</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mi>H</mi><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mo stretchy="false">(</mo><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>H</mi><mo>,</mo><msub><mi>E</mi><mn>2</mn></msub><mo stretchy="false">)</mo><mo stretchy="false">)</mo></math></p>
+<h4 id="则H的综合可信度分为一下两步计算："><a href="#则H的综合可信度分为一下两步计算：" class="headerlink" title="则H的综合可信度分为一下两步计算："></a>则H的综合可信度分为一下两步计算：</h4><ul>
+<li>分别对每条规则求出其CF(H)<br><img src="/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E6%B1%82CF.png"></li>
+<li>用如下公式求E1与E2对H的综合可信度<br><img src="/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E6%B1%82%E7%BB%BC%E5%90%88%E5%8F%AF%E4%BF%A1%E5%BA%A6.png"></li>
+</ul>
+<p>后来基于MYCIN基础上形成的EMYCIN中对上式做出如下改动：</p>
+<p><strong>若CF1(H)和CF2(H)异号</strong>则:</p>
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>C</mi><mi>F</mi><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mfrac><mrow><mi>C</mi><msub><mi>F</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo><mo>+</mo><mi>C</mi><msub><mi>F</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo></mrow><mrow><mn>1</mn><mo>−</mo><mi>m</mi><mi>i</mi><mi>n</mi><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">{</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>C</mi><msub><mi>F</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo><mo data-mjx-texclass="CLOSE">|</mo></mrow><mo>,</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>C</mi><msub><mi>F</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>H</mi><mo stretchy="false">)</mo><mo data-mjx-texclass="CLOSE">|</mo></mrow><mo data-mjx-texclass="CLOSE">}</mo></mrow></mrow></mfrac></math></p>
+<hr>
+<h4 id="可信度方法例题："><a href="#可信度方法例题：" class="headerlink" title="可信度方法例题："></a>可信度方法例题：</h4><p><img src="/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%8F%AF%E4%BF%A1%E5%BA%A6%E6%96%B9%E6%B3%95%E4%BE%8B%E9%A2%98.png"><br><img src="/image/Review/AI/不确定性推理/可信度方法答案1.png" alt="" class="ans"><br><img src="/image/Review/AI/不确定性推理/可信度方法2.png" alt="" class="ans"><br><img src="/image/Review/AI/不确定性推理/可信度方法答案3.png" alt="" class="ans"></p>
+<hr>
+<h2 id="证据理论"><a href="#证据理论" class="headerlink" title="证据理论"></a>证据理论</h2><h3 id="证据理论中四个重要函数"><a href="#证据理论中四个重要函数" class="headerlink" title="证据理论中四个重要函数"></a>证据理论中四个重要函数</h3><ul>
+<li>概率分配函数</li>
+<li>信任函数</li>
+<li>似然函数</li>
+<li>类概率函数</li>
+</ul>
+<h3 id="概率分配函数"><a href="#概率分配函数" class="headerlink" title="概率分配函数"></a>概率分配函数</h3><p>定义：<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mo>设函数</mo><mi>m</mi><mo>:</mo><msup><mn>2</mn><mi mathvariant="normal">Ω</mi></msup><mo stretchy="false">→</mo><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo><mo>,</mo><mo>且满足：</mo><mspace linebreak="newline"></mspace><mi>m</mi><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mn>0</mn><mspace linebreak="newline"></mspace><munder><mo data-mjx-texclass="OP">∑</mo><mrow><mi>A</mi><mo>⊆</mo><mi mathvariant="normal">Ω</mi></mrow></munder><mi>m</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mn>1</mn></math><br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>m</mi><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mn>0</mn><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><munder><mo data-mjx-texclass="OP">∑</mo><mrow><mi>A</mi><mo>⊆</mo><mi mathvariant="normal">Ω</mi></mrow></munder><mi>m</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mn>1</mn></math></p>
+<p>则称m是<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msup><mn>2</mn><mi mathvariant="normal">Ω</mi></msup></math>的分概率配函数，m(A)成为A的基本概率<br><strong>语义：</strong>m(A)标识根据当前的环境对假设集A的信任程度。</p>
+<h3 id="信任函数"><a href="#信任函数" class="headerlink" title="信任函数"></a>信任函数</h3><p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>B</mi><mi>e</mi><mi>l</mi><mo>:</mo><msup><mn>2</mn><mi mathvariant="normal">Ω</mi></msup><mo stretchy="false">→</mo><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></math></p>
+<p>对任意<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>A</mi><mo>⊆</mo><mi mathvariant="normal">Ω</mi></math>有：<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>B</mi><mi>e</mi><mi>l</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><munder><mo data-mjx-texclass="OP">∑</mo><mrow><mi>B</mi><mo>⊆</mo><mi>A</mi></mrow></munder><mi>m</mi><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></math></p>
+<p>Bel(A)标识当前环境下对假设集A的信任程度。</p>
+<h3 id="似然函数"><a href="#似然函数" class="headerlink" title="似然函数"></a>似然函数</h3><p>似然函数：<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mi>l</mi><mo>:</mo><msup><mn>2</mn><mi mathvariant="normal">Ω</mi></msup><mo stretchy="false">→</mo><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">]</mo></math><br>对任意的A有：<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>A</mi><mo>⊆</mo><mi mathvariant="normal">Ω</mi></math>有:<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>P</mi><mi>l</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mn>1</mn><mo>−</mo><mi>B</mi><mi>e</mi><mi>l</mi><mo stretchy="false">(</mo><mi mathvariant="normal">¬</mi><mi>A</mi><mo stretchy="false">)</mo></math></p>
+<p>似然函数又称上限函数，不可驳斥函数，反映对A非假的信任程度。</p>
+<p><img src="/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E6%B1%82%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0%E4%BE%8B%E9%A2%98.png"></p>
+<img src="/image/Review/AI/不确定性推理/求是然函数答案.png" alt="" class="ans">
+
+
+<h3 id="类概率函数"><a href="#类概率函数" class="headerlink" title="类概率函数"></a>类概率函数</h3><p>利用信任函数和四反函数可以定义A的类概率函数，并把它作为A的不确定性度量。<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>f</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><mi>B</mi><mi>e</mi><mi>l</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>+</mo><mfrac><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>A</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi mathvariant="normal">Ω</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow></mfrac><mo>×</mo><mo stretchy="false">(</mo><mi>P</mi><mi>l</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>−</mo><mi>B</mi><mi>e</mi><mi>l</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></math><br>其中|X|代表集合中元素的个数。<br>类概率函数也可以用来度量证据A的不确定性。</p>
+<p><img src="/image/Review/AI/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E7%B1%BB%E6%A6%82%E7%8E%87%E5%87%BD%E6%95%B0%E4%BE%8B%E9%A2%98.png"></p>
+<img src="/image/Review/AI/不确定性推理/类概率函数答案.png" alt="" class="ans">
+
+
+
+
+
+
+
+<style>
+    .ans{
+    filter: blur(20px);
+    }
+    .ans:hover{
+        filter: blur(0px);
+    }
+    .TitleText{
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size : 20px;
+        background-color: #0093E9;
+        background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        border-radius: 15px;
+        padding: 5px;
+    }
+    .TitleText:hover{
+        background-color: #e90004;
+        background-image: linear-gradient(51deg, #e90004 0%, #f287ae 100%);
+        animation: myfirst 2s;
+        -webkit-animation:myfirst 2s; 
+        /* Safari and Chrome */
+    }
+    @keyframes myfirst{
+        0% {background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);}
+        25% {background-color: #00e9c6;
+            background-image: linear-gradient(160deg, #00e9c6 0%, #80D0C7 100%);
+            }
+        50% {background-color: #e3e900;
+            background-image: linear-gradient(160deg, #e3e900 0%, #80D0C7 100%);
+            }
+        100% {background-color: #e90004;
+            background-image: linear-gradient(51deg, #e90004 0%, #f287ae 100%);}
+    }
+    @-webkit-keyframes myfirst {
+        0% {background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        }
+        25% {background-color: #00e9c6;
+                background-image: linear-gradient(160deg, #00e9c6 0%, #80D0C7 100%);
+        }
+        50% {background-color: #e3e900;
+            background-image: linear-gradient(160deg, #e3e900 0%, #80D0C7 100%);
+        }
+        100% {background-color: #e90004;
+            background-image: linear-gradient(51deg, #e90004 0%, #f287ae 100%);
+        }
+    }
+
+</style>
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2024/07/07/notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E7%A1%80%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"
+      title="人工智能基础机器学习"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        人工智能基础机器学习
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2024/07/06/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%BF%90%E8%BE%93%E5%B1%82/"
+      title="计算机网络运输层"
+     >
+
+    <p class="title-text">
+      
+        计算机网络运输层
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+  <script src="https://cdn.staticfile.org/twikoo/1.6.26/twikoo.all.min.js"></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="tcomment"></div>
+  </div>
+  <script>
+      twikoo.init({
+          envId: '',
+          el: '#tcomment',
+          region: '',
+          path: 'location.pathname',
+          lang: '',
+      })
+  </script>
+  
+
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2025 LittleBug<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
