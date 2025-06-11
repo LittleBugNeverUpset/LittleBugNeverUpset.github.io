@@ -171,14 +171,14 @@
                 <div class="category-count">12</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
-                技术笔记
-                <div class="category-count">3</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
                 日志
                 <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+                技术笔记
+                <div class="category-count">3</div>
             </a>
         </div>
     </div>
@@ -410,7 +410,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            401 words 
+            1.5k words 
           </div>
         </div>
         
@@ -421,7 +421,10 @@
         
           <div class="truncate-text">
             
-              二叉树中序遍历(迭代)12345678910111213141516171819202122class Solution &#123;public:    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;        vector&lt;int&gt; result;        stack&lt;TreeNode*&gt; st;        TreeNode * cur = root;        while(!st.empty() || cur != nullptr) &#123;            while(cur != nullptr) &#123;                st.push(cur);                cur = cur-&gt;left;            &#125;            cur = st.top();            st.pop();            result.push_back(cur-&gt;val);  ...
+              二叉树中序遍历(迭代)如果使用cur-&gt;left == nullptr &amp;&amp; cur-&gt;right == nullptr 去判定到达叶子节点会出现当前操作的节点并没有入栈，不会讲这个节点弹出，后面再次向左搜索还会访问它形成死循环
+这种做法cur != nullptr,当访问完左子树回来访问更上层的节点时cur不会被while语句赋值，就会跳过向下搜索的过程直接向右子树搜索。
+神奇！！！
+123456789101112131415161718192021222324class Solution &#123;public:    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;        vector&lt;int&gt; result;        stack&lt;TreeNode*&gt; st;        //cur 表示当前操作的元素，它在操作完成之后才会入栈        TreeNode * cur = root;        while(!st.empty() |...
             
           </div>
         
@@ -805,7 +808,7 @@ UPDATES:
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.3k words 
+            1.6k words 
           </div>
         </div>
         
