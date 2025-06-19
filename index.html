@@ -146,24 +146,14 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
-                算法
-                <div class="category-count">3</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
-                读书笔记
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E5%A4%8D%E4%B9%A0/">
-                复习
-                <div class="category-count">12</div>
+            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
+                算法
+                <div class="category-count">3</div>
             </a>
         
             <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
@@ -171,9 +161,19 @@
                 <div class="category-count">2</div>
             </a>
         
+            <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                读书笔记
+                <div class="category-count">1</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
                 日志
                 <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E5%A4%8D%E4%B9%A0/">
+                复习
+                <div class="category-count">12</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
@@ -264,9 +264,9 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/06/10/algorithm/Binary-tree-inorder-traversal/" title="Binary-tree-inorder-traversal" >
+          <a class="recent-link" href="/2025/06/10/algorithm/Binary-tree/" title="Binary-tree" >
             <div class="recent-link-text">
-              Binary-tree-inorder-traversal
+              Binary-tree
             </div>
           </a>
         
@@ -331,7 +331,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            5.3k words 
+            5.5k words 
           </div>
         </div>
         
@@ -380,7 +380,7 @@
    
 
 
-<article id="post-algorithm/Binary-tree-inorder-traversal" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-algorithm/Binary-tree" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
     <div class="article-main">
@@ -391,7 +391,7 @@
   
     
       <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/06/10/algorithm/Binary-tree-inorder-traversal/">Binary-tree-inorder-traversal</a>
+        <a class="p-name article-title" href="/2025/06/10/algorithm/Binary-tree/">Binary-tree</a>
       </h1>
     
   
@@ -410,7 +410,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.5k words 
+            3.7k words 
           </div>
         </div>
         
@@ -421,10 +421,12 @@
         
           <div class="truncate-text">
             
-              二叉树中序遍历(迭代)如果使用cur-&gt;left == nullptr &amp;&amp; cur-&gt;right == nullptr 去判定到达叶子节点会出现当前操作的节点并没有入栈，不会讲这个节点弹出，后面再次向左搜索还会访问它形成死循环
+              二叉树相关题解合集目录二叉树中序遍历(迭代)位运算结合折半查找计算完全二叉树的节点个数已知中序后序构造二叉树avl树平衡二叉树
+二叉树中序遍历(迭代)回到目录
+如果使用cur-&gt;left == nullptr &amp;&amp; cur-&gt;right == nullptr 去判定到达叶子节点会出现当前操作的节点并没有入栈，不会讲这个节点弹出，后面再次向左搜索还会访问它形成死循环
 这种做法cur != nullptr,当访问完左子树回来访问更上层的节点时cur不会被while语句赋值，就会跳过向下搜索的过程直接向右子树搜索。
 神奇！！！
-123456789101112131415161718192021222324class Solution &#123;public:    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;        vector&lt;int&gt; result;        stack&lt;TreeNode*&gt; st;        //cur 表示当前操作的元素，它在操作完成之后才会入栈        TreeNode * cur = root;        while(!st.empty() |...
+123456789101112131415161718192021222324class Solution &#123;public:    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;        vector&lt;int&gt; result;        stack&lt;TreeNode*&gt; st;        //cur 表示当前操作的元素，...
             
           </div>
         
@@ -436,7 +438,7 @@
      
     <a class="right-panel  non-pic  "
       
-      href="/2025/06/10/algorithm/Binary-tree-inorder-traversal/" 
+      href="/2025/06/10/algorithm/Binary-tree/" 
     >
        
       <i class="fa-solid fa-angle-right non-pic"></i>
@@ -808,7 +810,7 @@ UPDATES:
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.8k words 
+            2.1k words 
           </div>
         </div>
         
