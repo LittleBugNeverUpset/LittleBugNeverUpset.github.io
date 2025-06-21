@@ -156,13 +156,13 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
-                算法
+            <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
+                考研
                 <div class="category-count">3</div>
             </a>
         
-            <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
-                考研
+            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
+                算法
                 <div class="category-count">3</div>
             </a>
         
@@ -331,7 +331,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            6.2k words 
+            6.6k words 
           </div>
         </div>
         
@@ -521,7 +521,7 @@ html {
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            3.7k words 
+            5.9k words 
           </div>
         </div>
         
@@ -532,12 +532,10 @@ html {
         
           <div class="truncate-text">
             
-              二叉树相关题解合集目录二叉树中序遍历(迭代)位运算结合折半查找计算完全二叉树的节点个数已知中序后序构造二叉树avl树平衡二叉树
-二叉树中序遍历(迭代)回到目录
-如果使用cur-&gt;left == nullptr &amp;&amp; cur-&gt;right == nullptr 去判定到达叶子节点会出现当前操作的节点并没有入栈，不会讲这个节点弹出，后面再次向左搜索还会访问它形成死循环
-这种做法cur != nullptr,当访问完左子树回来访问更上层的节点时cur不会被while语句赋值，就会跳过向下搜索的过程直接向右子树搜索。
-神奇！！！
-123456789101112131415161718192021222324class Solution &#123;public:    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;        vector&lt;int&gt; result;        stack&lt;TreeNode*&gt; st;        //cur 表示当前操作的元素，...
+              二叉树相关题解合集目录二叉树中序遍历(迭代)位运算结合折半查找计算完全二叉树的节点个数已知中序后序构造二叉树二叉搜索树中的众数查找最近公共父节点avl树平衡二叉树
+前言二叉树的单个节点结构如下，
+123456789//Definition for a binary tree node.   struct TreeNode &#123;       int val;       TreeNode *left;       TreeNode *right;       TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;   &#125;;
+二叉树的算法设计以二叉树的遍历为核心，其中遍历方式可以分为迭代和递归两大类型。而遍历的顺序以前序、中序、后序、层序最为重要。在算法设计中首要考虑需要实现的功能使用哪一种遍历方式最为合适、如：寻找公共祖先时因为需要先找到两个子节点，然后两个子节点自下而上寻找父节点、所以后序序列左右中更为合适。在二叉搜索树中节点的左子树中的所有值都小于节点的值，而节点的值一定小于右子树中的所有值...
             
           </div>
         
@@ -921,7 +919,7 @@ UPDATES:
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.2k words 
+            2.4k words 
           </div>
         </div>
         

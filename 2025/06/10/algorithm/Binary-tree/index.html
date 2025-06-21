@@ -20,16 +20,17 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="二叉树相关题解合集目录二叉树中序遍历(迭代)位运算结合折半查找计算完全二叉树的节点个数已知中序后序构造二叉树avl树平衡二叉树 二叉树中序遍历(迭代)回到目录 如果使用cur-&gt;left &#x3D;&#x3D; nullptr &amp;&amp; cur-&gt;right &#x3D;&#x3D; nullptr 去判定到达叶子节点会出现当前操作的节点并没有入栈，不会讲这个节点弹出，后面再次向左搜索还会访问它形成死循环 这种">
+  <meta name="description" content="二叉树相关题解合集目录二叉树中序遍历(迭代)位运算结合折半查找计算完全二叉树的节点个数已知中序后序构造二叉树二叉搜索树中的众数查找最近公共父节点avl树平衡二叉树 前言二叉树的单个节点结构如下， 123456789&#x2F;&#x2F;Definition for a binary tree node.   struct TreeNode &#123;       int val;       TreeNode *">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Binary-tree">
 <meta property="og:url" content="http://example.com/2025/06/10/algorithm/Binary-tree/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
-<meta property="og:description" content="二叉树相关题解合集目录二叉树中序遍历(迭代)位运算结合折半查找计算完全二叉树的节点个数已知中序后序构造二叉树avl树平衡二叉树 二叉树中序遍历(迭代)回到目录 如果使用cur-&gt;left &#x3D;&#x3D; nullptr &amp;&amp; cur-&gt;right &#x3D;&#x3D; nullptr 去判定到达叶子节点会出现当前操作的节点并没有入栈，不会讲这个节点弹出，后面再次向左搜索还会访问它形成死循环 这种">
+<meta property="og:description" content="二叉树相关题解合集目录二叉树中序遍历(迭代)位运算结合折半查找计算完全二叉树的节点个数已知中序后序构造二叉树二叉搜索树中的众数查找最近公共父节点avl树平衡二叉树 前言二叉树的单个节点结构如下， 123456789&#x2F;&#x2F;Definition for a binary tree node.   struct TreeNode &#123;       int val;       TreeNode *">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/image/Review/DataStruct/BinaryTree/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.png">
+<meta property="og:image" content="http://example.com/image/Review/DataStruct/BinaryTree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.png">
 <meta property="article:published_time" content="2025-06-10T14:40:18.000Z">
-<meta property="article:modified_time" content="2025-06-19T06:40:32.757Z">
+<meta property="article:modified_time" content="2025-06-21T08:51:22.978Z">
 <meta property="article:author" content="LittleBug">
 <meta property="article:tag" content="Data Struct">
 <meta property="article:tag" content="BinaryTree">
@@ -164,13 +165,13 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
-                算法
+            <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
+                考研
                 <div class="category-count">3</div>
             </a>
         
-            <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
-                考研
+            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
+                算法
                 <div class="category-count">3</div>
             </a>
         
@@ -340,7 +341,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            3.7k words 
+            5.9k words 
           </div>
         </div>
         
@@ -349,9 +350,18 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="二叉树相关题解合集"><a href="#二叉树相关题解合集" class="headerlink" title="二叉树相关题解合集"></a>二叉树相关题解合集</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86">二叉树中序遍历(迭代)</a><br><a href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%BB%93%E5%90%88%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%E8%AE%A1%E7%AE%97%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0">位运算结合折半查找计算完全二叉树的节点个数</a><br><a href="#%E5%B7%B2%E7%9F%A5%E4%B8%AD%E5%BA%8F%E5%90%8E%E5%BA%8F%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91">已知中序后序构造二叉树</a><br><a href="#avl%E6%A0%91%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91">avl树平衡二叉树</a></p>
+          <h1 id="二叉树相关题解合集"><a href="#二叉树相关题解合集" class="headerlink" title="二叉树相关题解合集"></a>二叉树相关题解合集</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86">二叉树中序遍历(迭代)</a><br><a href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%BB%93%E5%90%88%E6%8A%98%E5%8D%8A%E6%9F%A5%E6%89%BE%E8%AE%A1%E7%AE%97%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%8A%82%E7%82%B9%E4%B8%AA%E6%95%B0">位运算结合折半查找计算完全二叉树的节点个数</a><br><a href="#%E5%B7%B2%E7%9F%A5%E4%B8%AD%E5%BA%8F%E5%90%8E%E5%BA%8F%E6%9E%84%E9%80%A0%E4%BA%8C%E5%8F%89%E6%A0%91">已知中序后序构造二叉树</a><br><a href="#%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E4%BC%97%E6%95%B0">二叉搜索树中的众数</a><br><a href="#%E6%9F%A5%E6%89%BE%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%88%B6%E8%8A%82%E7%82%B9">查找最近公共父节点</a><br><a href="#avl%E6%A0%91%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91">avl树平衡二叉树</a></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>二叉树的单个节点结构如下，</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//Definition for a binary tree node.</span></span><br><span class="line">   <span class="keyword">struct</span> <span class="title class_">TreeNode</span> &#123;</span><br><span class="line">       <span class="type">int</span> val;</span><br><span class="line">       TreeNode *left;</span><br><span class="line">       TreeNode *right;</span><br><span class="line">       <span class="built_in">TreeNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">left</span>(<span class="literal">NULL</span>), <span class="built_in">right</span>(<span class="literal">NULL</span>) &#123;&#125;</span><br><span class="line">   &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>二叉树的算法设计以二叉树的遍历为核心，其中遍历方式可以分为<code>迭代</code>和<code>递归</code>两大类型。而遍历的顺序以<code>前序</code>、<code>中序</code>、<code>后序</code>、<code>层序</code>最为重要。<br>在算法设计中首要考虑需要实现的功能使用哪一种遍历方式最为合适、如：寻找公共祖先时因为需要先找到两个子节点，然后两个子节点自下而上寻找父节点、所以后序序列<code>左右中</code>更为合适。在二叉搜索树中节点的左子树中的所有值都小于节点的值，而节点的值一定小于右子树中的所有值，所以利用二叉搜索树的性质，中序序列<code>左中右</code>遍历得到的结果就是一个递增序列。</p>
+<p>递归遍历的算法设计中需要做好三步：</p>
+<ol>
+<li>确定递归函数的返回值是什么，是节点、值亦或者是布尔类型？</li>
+<li>确定递归停止的条件。</li>
+<li>详细设计单层递归中需要处理什么事情。</li>
+</ol>
 <h3 id="二叉树中序遍历-迭代"><a href="#二叉树中序遍历-迭代" class="headerlink" title="二叉树中序遍历(迭代)"></a>二叉树中序遍历(迭代)</h3><p><a href="#%E7%9B%AE%E5%BD%95">回到目录</a></p>
-<p>如果使用<code>cur-&gt;left == nullptr &amp;&amp; cur-&gt;right == nullptr</code> 去判定到达叶子节点会出现<strong>当前操作的节点并没有入栈</strong>，不会讲这个节点弹出，后面<strong>再次向左搜索还会访问它形成死循环</strong></p>
+<p>如果使用<code>cur-&gt;left == nullptr &amp;&amp; cur-&gt;right == nullptr</code> 去判定到达叶子节点会出现<strong>当前操作的节点并没有入栈</strong>，不会讲这个节点弹出，后面<strong>再次向左搜索还会访问它形成死循环</strong>。</p>
 <p>这种做法<code>cur != nullptr</code>,当访问完左子树回来访问更上层的节点时cur不会被<code>while</code>语句赋值，就会跳过向下搜索的过程直接向右子树搜索。</p>
 <p><strong>神奇！！！</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">        stack&lt;TreeNode*&gt; st;</span><br><span class="line">        <span class="comment">//cur 表示当前操作的元素，它在操作完成之后才会入栈</span></span><br><span class="line">        TreeNode * cur = root;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(!st.<span class="built_in">empty</span>() || cur != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span>(cur != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">                st.<span class="built_in">push</span>(cur);</span><br><span class="line">                cur = cur-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//cur 指向已经入栈的叶子节点</span></span><br><span class="line">            cur = st.<span class="built_in">top</span>();</span><br><span class="line">            st.<span class="built_in">pop</span>();</span><br><span class="line">            result.<span class="built_in">push_back</span>(cur-&gt;val);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 转向右子树</span></span><br><span class="line">            cur = cur-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -394,6 +404,43 @@
 </ol>
 <p>由此我们可以使用递归的方法去构造各个节点。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">TreeNode *  <span class="title">traversal</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; inorder, vector&lt;<span class="type">int</span>&gt;&amp; postorder)</span></span>&#123;</span><br><span class="line">    <span class="comment">//传入空数组说明该子树为空子树</span></span><br><span class="line">        <span class="keyword">if</span>(postorder.<span class="built_in">size</span>() == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">        TreeNode * root = <span class="keyword">new</span> <span class="built_in">TreeNode</span>(postorder[postorder.<span class="built_in">size</span>() - <span class="number">1</span>]);</span><br><span class="line">        <span class="comment">//传入的中序、后后序序列只有1个元素则说明该子树仅有其本身，即它为叶子节点。</span></span><br><span class="line">        <span class="keyword">if</span> (postorder.<span class="built_in">size</span>() == <span class="number">1</span>) <span class="keyword">return</span> root;</span><br><span class="line">        <span class="type">int</span> midIndex = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//找到中序序列中的根节点下标。</span></span><br><span class="line">        <span class="keyword">for</span>(midIndex; midIndex &lt; inorder.<span class="built_in">size</span>(); midIndex ++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (inorder[midIndex] == postorder[postorder.<span class="built_in">size</span>() - <span class="number">1</span>]) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//切分左右子树的中序和后序序列。</span></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">leftInOrderVec</span><span class="params">(inorder.begin(),inorder.begin() + midIndex)</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">rightInOrderVec</span><span class="params">(inorder.begin() + midIndex + <span class="number">1</span>,inorder.end())</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">leftPostOrderVec</span><span class="params">(postorder.begin(),postorder.begin() + leftInOrderVec.size())</span></span>;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">rightPostOrderVec</span><span class="params">(postorder.begin() + leftInOrderVec.size(), postorder.end() - <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="comment">//递归构造子树</span></span><br><span class="line">        root-&gt;left = <span class="built_in">traversal</span>(leftInOrderVec,leftPostOrderVec);</span><br><span class="line">        root-&gt;right = <span class="built_in">traversal</span>(rightInOrderVec,rightPostOrderVec);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二叉搜索树中的众数"><a href="#二叉搜索树中的众数" class="headerlink" title="二叉搜索树中的众数"></a>二叉搜索树中的众数</h3><p><a href="#%E7%9B%AE%E5%BD%95">回到目录</a></p>
+<p>二叉搜索树是一个有序树,定义如下：</p>
+<ol>
+<li>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</li>
+<li>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
+<li>它的左、右子树也分别为二叉排序树</li>
+</ol>
+<p><img src="/../../image/Review/DataStruct/BinaryTree/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.png" alt="二叉搜索树"></p>
+<p>二叉搜索树按照中序遍历得到的结果就是一个从大到小的排序，最简单的思路就是将这个有序序列存放在数组中然后遍历两边数组得到众数的集合。</p>
+<p>第二种思路略微复杂，但相当高效。在中序遍历树的同时判断该该节点对应的值是否是众数。</p>
+<p>递归遍历二叉树的时候我们可以创建全局变量来记录遍历过程中的中间变量，如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> count = <span class="number">0</span>;              <span class="comment">// 该节点对应的值存在多少个</span></span><br><span class="line">    <span class="type">int</span> maxCount = <span class="number">0</span>;           <span class="comment">// 最多的值的个数</span></span><br><span class="line">    TreeNode* pre = <span class="literal">nullptr</span>;    <span class="comment">// 前一个遍历到的节点，用于判断相邻节点的值是否相等。</span></span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; ans;            <span class="comment">// 保存结果</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>要做的事情大致分为三个部分</p>
+<ol>
+<li>中序遍历</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">searchBST</span><span class="params">(TreeNode* cur)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span>(cur == <span class="literal">nullptr</span>) <span class="keyword">return</span>;</span><br><span class="line">       <span class="built_in">searchBST</span>(cur-&gt;left);</span><br><span class="line">       <span class="comment">// 处理统计节点的逻辑</span></span><br><span class="line">       <span class="comment">//1. 保存pre用以记录过程</span></span><br><span class="line">       <span class="comment">//2.  判断节点是否为众数，并更新`ans`</span></span><br><span class="line">       <span class="built_in">searchBST</span>(cur-&gt;right);</span><br><span class="line">       <span class="keyword">return</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>保存pre用以记录过程</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//处理第一个节点</span></span><br><span class="line"><span class="keyword">if</span>(pre == <span class="literal">nullptr</span>) count = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(cur-&gt;val == pre-&gt;val) count++;</span><br><span class="line"><span class="keyword">else</span> count = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//节点向前走</span></span><br><span class="line">pre = cur;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>判断节点是否为众数，并更新<code>ans</code></li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(count == maxCount ) ans.<span class="built_in">push_back</span>(cur-&gt;val);</span><br><span class="line"><span class="keyword">if</span>(count &gt; maxCount) &#123;</span><br><span class="line">    maxCount = count;</span><br><span class="line">    ans.<span class="built_in">clear</span>();</span><br><span class="line">    ans.<span class="built_in">push_back</span>(cur-&gt;val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="查找最近公共父节点"><a href="#查找最近公共父节点" class="headerlink" title="查找最近公共父节点"></a>查找最近公共父节点</h3><p><a href="#%E7%9B%AE%E5%BD%95">回到目录</a></p>
+<p>查找父节点很容易就能相当自下向上找，符合这一顺序的遍历方式为后序遍历。我们首先要做的事情是找到目标节点，然后向上传递，找到两个节点的公共祖先节点。</p>
+<p>需要递归函数返回值，来告诉我们是否找到节点q或者p，那么返回值为bool类型就可以了。<br>但我们还要返回最近公共节点，可以利⽤上题⽬中返回值是TreeNode * ，那么如果遇到p或者q，就把q或者p返<br>回，返回值不为空，就说明找到了q或者p。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">TreeNode* <span class="title">seacrhNode</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="literal">NULL</span> || root == p || root == q) <span class="keyword">return</span> root;</span><br><span class="line">    TreeNode * left = <span class="built_in">seacrhNode</span>(root-&gt;left,  p,  q);</span><br><span class="line">    TreeNode * right = <span class="built_in">seacrhNode</span>(root-&gt;right, p, q);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再向上传递信息的过程中，应当如何来保存信息呢？</p>
+<p>当遍历到一个非目标节点时，该节点的左右子树遍历得到的情况要么是得到空指针，要么就是找到了p，q节点。<br>如果这个节点接收到的左右子树都不为空，则说明肯定是一个p，一个q。找到了两个目标节点，正好它是这两个子树的公共祖先节点。此时就不再需要传递p，或q要告诉祖先节点找到了目标节点。<strong>这个节点本身就是我们要找的点。</strong>因此将返回值改为该节点本身即<code>return root;</code><br>如果只有p,q中的一个就继续将p,q向上传递说明其找到了其中的一个节点或者该节点就是公共节点，直接将非空的节点向上传递。<br>而左右子树的返回值都不存在则说明这个节点并不是p或q的任意一个节点的祖先</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(left != <span class="literal">NULL</span> &amp;&amp; right != <span class="literal">NULL</span>) <span class="keyword">return</span> root;</span><br><span class="line"><span class="keyword">if</span>(left == <span class="literal">NULL</span> &amp;&amp; right != <span class="literal">NULL</span>) <span class="keyword">return</span> right;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(left != <span class="literal">NULL</span> &amp;&amp; right == <span class="literal">NULL</span>) <span class="keyword">return</span> left;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 
 <h3 id="AVL树-平衡二叉树"><a href="#AVL树-平衡二叉树" class="headerlink" title="AVL树(平衡二叉树)"></a><strong>AVL树</strong>(平衡二叉树)</h3><p><a href="#%E7%9B%AE%E5%BD%95">回到目录</a></p>
 <p>平衡二叉树是<strong>一颗空树</strong>，或者具有以下性质的二叉排序树：它的<strong>左子树和左子树的高度之差(平衡因子)的绝对值不超过1</strong>，且它的<strong>左子树和右子树都是一颗平衡二叉树</strong>。</p>
