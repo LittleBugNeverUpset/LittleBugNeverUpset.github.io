@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="最是琐事磨人耐性   搜索策略引言 盲目搜索宽度优先搜索（BFS）OPEN表中简单的排序方式：扩展但花钱节点后生成的子结点总是置于OPEN表的后端，即OPEN表作队列，先进县出，使搜索优先横向发展。宽度优先算法可以表示为如下步骤：  把初始节点放入OPEN表。 若OPEN表为空则问题无解，失败并退出。 把OPEN表的第一个节点去除放入CLOSE表中并按照顺序冠以编号n。 考察节点n不可扩展则转">
+  <meta name="description" content="最是琐事磨人耐性   搜索策略 引言  ## 盲目搜索 宽度优先搜索（BFS） OPEN表中简单的排序方式：扩展但花钱节点后生成的子结点总是置于OPEN表的后端，即OPEN表作队列，先进县出，使搜索优先横向发展。 宽度优先算法可以表示为如下步骤： 1. 把初始节点放入OPEN表。 2. 若OPEN表为空则问题无解，失败并退出。 3. 把OPEN表的第一个节点去除放入CL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人工智能基础搜索策略">
 <meta property="og:url" content="http://example.com/2024/07/04/notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E7%A1%80%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
-<meta property="og:description" content="最是琐事磨人耐性   搜索策略引言 盲目搜索宽度优先搜索（BFS）OPEN表中简单的排序方式：扩展但花钱节点后生成的子结点总是置于OPEN表的后端，即OPEN表作队列，先进县出，使搜索优先横向发展。宽度优先算法可以表示为如下步骤：  把初始节点放入OPEN表。 若OPEN表为空则问题无解，失败并退出。 把OPEN表的第一个节点去除放入CLOSE表中并按照顺序冠以编号n。 考察节点n不可扩展则转">
+<meta property="og:description" content="最是琐事磨人耐性   搜索策略 引言  ## 盲目搜索 宽度优先搜索（BFS） OPEN表中简单的排序方式：扩展但花钱节点后生成的子结点总是置于OPEN表的后端，即OPEN表作队列，先进县出，使搜索优先横向发展。 宽度优先算法可以表示为如下步骤： 1. 把初始节点放入OPEN表。 2. 若OPEN表为空则问题无解，失败并退出。 3. 把OPEN表的第一个节点去除放入CL">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%BC%95%E8%A8%80.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E7%A4%BA%E4%BE%8B.png">
@@ -33,12 +33,6 @@
 <meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E8%AF%84%E4%BC%B0%E5%87%BD%E6%95%B0.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/A*%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B1.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B2.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B3.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B4.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B5.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B6.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B7.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%8D%9A%E5%BC%88%E6%A6%82%E5%BF%B5.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%8D%9A%E5%BC%88%E6%A0%91%E6%9E%81%E5%A4%A7%E6%9E%81%E5%B0%8F%E8%BF%87%E7%A8%8B.png">
 <meta property="article:published_time" content="2024-07-04T12:36:57.000Z">
@@ -166,6 +160,11 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/Hexo/">
+                Hexo
+                <div class="category-count">2</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
                 <div class="category-count">1</div>
@@ -181,14 +180,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
                 考研
                 <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
+                <div class="category-count">1</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
@@ -221,6 +220,11 @@
     <div class="widget">
       <h3 class="widget-title">Archives</h3>
       
+      
+        <a class="archive-link" href="/archives/2025/07 ">
+          July 2025 
+          <div class="archive-count">4 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2025/06 ">
           June 2025 
@@ -278,33 +282,33 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/06/29/algorithm/Graph/" title="Graph" >
+          <a class="recent-link" href="/2025/07/03/hexo-Latex-render/" title="Hexo LaTeX数学公式渲染" >
             <div class="recent-link-text">
-              Graph
+              Hexo LaTeX数学公式渲染
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/06/28/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="" >
+          <a class="recent-link" href="/2025/07/03/Latex-Test/" title="Latex Test" >
+            <div class="recent-link-text">
+              Latex Test
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E8%AE%BA/" title="唯物辩证论" >
+            <div class="recent-link-text">
+              唯物辩证论
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="唯物辩证法" >
+            <div class="recent-link-text">
+              唯物辩证法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/30/notes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A/" title="" >
             <div class="recent-link-text">
               (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/20/logs/%E6%97%A5%E5%BF%97/" title="日志" >
-            <div class="recent-link-text">
-              日志
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/19/Politics/Philosophy/Fundamental-Principles-of-Marxism/" title="Fundamental Principles of Marxism" >
-            <div class="recent-link-text">
-              Fundamental Principles of Marxism
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/10/algorithm/Binary-tree/" title="Binary-tree" >
-            <div class="recent-link-text">
-              Binary-tree
             </div>
           </a>
         
@@ -352,7 +356,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            828 words 
+            839 words 
           </div>
         </div>
         
@@ -361,32 +365,38 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <hr>
-<p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          <hr />
+<p style="font-family:&#39;Segoe UI&#39;, Tahoma, Geneva, Verdana, sans-serif;
 font-size : 20px;
 background-color: #0093E9;
-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);" 
-> 最是琐事磨人耐性</p>
-
-<hr>
-<h1 id="搜索策略"><a href="#搜索策略" class="headerlink" title="搜索策略"></a>搜索策略</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%BC%95%E8%A8%80.png"></p>
-<h2 id="盲目搜索"><a href="#盲目搜索" class="headerlink" title="盲目搜索"></a>盲目搜索</h2><h3 id="宽度优先搜索（BFS）"><a href="#宽度优先搜索（BFS）" class="headerlink" title="宽度优先搜索（BFS）"></a>宽度优先搜索（BFS）</h3><p>OPEN表中简单的排序方式：扩展但花钱节点后生成的子结点总是置于OPEN表的后端，即OPEN表作队列，先进县出，使搜索优先横向发展。<br>宽度优先算法可以表示为如下步骤：</p>
-<ol>
-<li>把初始节点放入OPEN表。</li>
-<li>若OPEN表为空则问题无解，失败并退出。</li>
-<li>把OPEN表的第一个节点去除放入CLOSE表中并按照顺序冠以编号n。</li>
-<li>考察节点n不可扩展则转到第2步。</li>
-<li>否则扩展节点n将其子结点防盗OPEN表的<strong>尾部</strong>，并为每一个子节点都配置指向夫节点的指针，然后转第2步。</li>
-</ol>
-<p><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%BD%E5%BA%A6%E4%BC%98%E5%85%88%E7%A4%BA%E4%BE%8B.png"></p>
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
+最是琐事磨人耐性
+</p>
+<hr />
+<h1 id="搜索策略">搜索策略</h1>
+<h2 id="引言">引言</h2>
+<p><img src="/image/Review/AI/搜索策略/引言.png" /> ## 盲目搜索</p>
+<h3 id="宽度优先搜索bfs">宽度优先搜索（BFS）</h3>
+<p>OPEN表中简单的排序方式：扩展但花钱节点后生成的子结点总是置于OPEN表的后端，即OPEN表作队列，先进县出，使搜索优先横向发展。
+宽度优先算法可以表示为如下步骤： 1. 把初始节点放入OPEN表。 2.
+若OPEN表为空则问题无解，失败并退出。 3.
+把OPEN表的第一个节点去除放入CLOSE表中并按照顺序冠以编号n。 4.
+考察节点n不可扩展则转到第2步。 5.
+否则扩展节点n将其子结点防盗OPEN表的<strong>尾部</strong>，并为每一个子节点都配置指向夫节点的指针，然后转第2步。</p>
+<p><img src="/image/Review/AI/搜索策略/宽度优先示例.png" /></p>
 <table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr>
 <th>OPEN表</th>
 <th>CLOSE表</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>[A]</td>
 <td>[]</td>
 </tr>
@@ -407,43 +417,53 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <td>[D,C,B,A]</td>
 </tr>
 <tr>
-<td>[D,E,F,H,I,J, <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>G</mi><mn>1</mn></msub></math> ,K]</td>
+<td>[D,E,F,H,I,J,
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>G</mi><mn>1</mn></msub></math>
+,K]</td>
 <td>[E,D,C,B.A]</td>
 </tr>
 <tr>
 <td>[H,I,<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>G</mi><mn>1</mn></msub></math>,K,L,M]</td>
 <td>[F,E,D,C,B,A]</td>
 </tr>
-<tr>
-<td>…</td>
-<td></td>
-</tr>
-<tr>
-<td>直到<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>G</mi><mn>2</mn></msub></math>出现在OPEN表的最后</td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="深度优先搜索（DFS）"><a href="#深度优先搜索（DFS）" class="headerlink" title="深度优先搜索（DFS）"></a>深度优先搜索（DFS）</h3><p>OPEN表中的排序方式：深度有限扩展当前节点后生成的子结点总是置于OPEN表的前端，即OPEN表作为栈，后进先出，使用搜索优先纵深方向发展。</p>
-<hr>
-<p>二叉树的宽度优先深度优先用队列和栈做我都能手措[🌹][狗头][🌹]<br><code>TODO</code></p>
-<hr>
-<h2 id="启发式搜索"><a href="#启发式搜索" class="headerlink" title="启发式搜索"></a>启发式搜索</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%90%AF%E5%8F%91%E5%BC%8F%E6%90%9C%E7%B4%A2%E5%AE%9A%E4%B9%89.png"></p>
-<h3 id="评估函数"><a href="#评估函数" class="headerlink" title="评估函数"></a>评估函数</h3><p><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E8%AF%84%E4%BC%B0%E5%87%BD%E6%95%B0.png"></p>
-<h3 id="实现启发式搜索的关键因素和A-算法"><a href="#实现启发式搜索的关键因素和A-算法" class="headerlink" title="实现启发式搜索的关键因素和A*算法"></a>实现启发式搜索的关键因素和A*算法</h3><p><strong>启发式搜索的关键因素：</strong></p>
-<ul>
-<li>搜索算法的可采纳性<br>在存在初始状态到目标节点解答路径的情况下，若一个算法总能找到最短（代价最小）的解答路径，则称该状态空间中的搜索算法具有可采纳性，也叫最优性。<br>宽度优先算法也是可采纳的，只是效率不高。</li>
-<li>启发式函数h(n)的强弱及其影响强度。<br>定义<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msup><mi>f</mi><mo>∗</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>&#x3D;</mo><msup><mi>g</mi><mo>∗</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mi>h</mi><mo>∗</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math><br>评价函数的比较</li>
-</ul>
-<h4 id="A-算法实例"><a href="#A-算法实例" class="headerlink" title="A*算法实例"></a>A*算法实例</h4><p><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/A*%E7%AE%97%E6%B3%95%E5%AE%9E%E4%BE%8B.png"></p>
-<p>完整实例：<br><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B1.png"><br><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B2.png"><br><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B3.png"><br><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B4.png"><br><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B5.png"><br><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B6.png"><br><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%AE%9E%E4%BE%8B7.png"></p>
-<h2 id="博弈"><a href="#博弈" class="headerlink" title="博弈"></a>博弈</h2><p><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%8D%9A%E5%BC%88%E6%A6%82%E5%BF%B5.png"></p>
-<h3 id="博弈树"><a href="#博弈树" class="headerlink" title="博弈树"></a>博弈树</h3><p><strong>博弈树</strong>就是把双人博弈过程用图的形式表现出来，这样就可以得到一个AND-OR树，这种AND-OR树被称为博弈树，博弈树中该MAX走的节点叫做MAX节点，该MIN走的节点叫MIN节点。</p>
-<p>两种基本的求解搜索方法</p>
-<ul>
-<li>极大绩效过程</li>
-<li>a-b过程</li>
-</ul>
-<p><img src="/image/Review/AI/%E6%90%9C%E7%B4%A2%E7%AD%96%E7%95%A5/%E5%8D%9A%E5%BC%88%E6%A0%91%E6%9E%81%E5%A4%A7%E6%9E%81%E5%B0%8F%E8%BF%87%E7%A8%8B.png"></p>
+</tbody>
+</table>
+<p>…
+直到<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msub><mi>G</mi><mn>2</mn></msub></math>出现在OPEN表的最后</p>
+<h3 id="深度优先搜索dfs">深度优先搜索（DFS）</h3>
+<p>OPEN表中的排序方式：深度有限扩展当前节点后生成的子结点总是置于OPEN表的前端，即OPEN表作为栈，后进先出，使用搜索优先纵深方向发展。</p>
+<hr />
+<p>二叉树的宽度优先深度优先用队列和栈做我都能手措[🌹][狗头][🌹]
+<code>TODO</code></p>
+<hr />
+<h2 id="启发式搜索">启发式搜索</h2>
+<h3 id="基本概念">基本概念</h3>
+<p><img src="/image/Review/AI/搜索策略/启发式搜索定义.png" /></p>
+<h3 id="评估函数">评估函数</h3>
+<p><img src="/image/Review/AI/搜索策略/评估函数.png" /></p>
+<h3
+id="实现启发式搜索的关键因素和a算法">实现启发式搜索的关键因素和A*算法</h3>
+<p><strong>启发式搜索的关键因素：</strong> - 搜索算法的可采纳性
+在存在初始状态到目标节点解答路径的情况下，若一个算法总能找到最短（代价最小）的解答路径，则称该状态空间中的搜索算法具有可采纳性，也叫最优性。
+宽度优先算法也是可采纳的，只是效率不高。 -
+启发式函数h(n)的强弱及其影响强度。
+定义<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><msup><mi>f</mi><mo>∗</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>g</mi><mo>∗</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><msup><mi>h</mi><mo>∗</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math>
+评价函数的比较</p>
+<h4 id="a算法实例">A*算法实例</h4>
+<p><img src="/image/Review/AI/搜索策略/A*算法实例.png" /></p>
+<p>完整实例： <img src="/image/Review/AI/搜索策略/实例1.png" /> <img
+src="/image/Review/AI/搜索策略/实例2.png" /> <img
+src="/image/Review/AI/搜索策略/实例3.png" /> <img
+src="/image/Review/AI/搜索策略/实例4.png" /> <img
+src="/image/Review/AI/搜索策略/实例5.png" /> <img
+src="/image/Review/AI/搜索策略/实例6.png" /> <img
+src="/image/Review/AI/搜索策略/实例7.png" /></p>
+<h2 id="博弈">博弈</h2>
+<p><img src="/image/Review/AI/搜索策略/博弈概念.png" /></p>
+<h3 id="博弈树">博弈树</h3>
+<p><strong>博弈树</strong>就是把双人博弈过程用图的形式表现出来，这样就可以得到一个AND-OR树，这种AND-OR树被称为博弈树，博弈树中该MAX走的节点叫做MAX节点，该MIN走的节点叫MIN节点。</p>
+<p>两种基本的求解搜索方法 - 极大绩效过程 - a-b过程</p>
+<p><img src="/image/Review/AI/搜索策略/博弈树极大极小过程.png" /></p>
 
         
       </div>

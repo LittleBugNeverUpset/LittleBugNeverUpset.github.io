@@ -20,25 +20,19 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="单调队列 “如果一个选手比你小还比你强，你就可以退役了。”——单调队列的原理  单调队列是一种主要用于解决滑动窗口类问题的数据结构，即，在长度为n的序列中，求每个长度k的区间的区间最值。它的时间复杂度是O(n)。  单调队列的基本思想是，维护一个双向队列（deque），遍历序列，仅当一个元素可能成为某个区间最值时才保留它。 形象地打个比方，上面的序列可以看成学校里各个年级XCPC选手，数字越大代表">
+  <meta name="description" content="单调队列  “如果一个选手比你小还比你强，你就可以退役了。”——单调队列的原理  单调队列是一种主要用于解决滑动窗口类问题的数据结构，即，在长度为n的序列中，求每个长度k的区间的区间最值。它的时间复杂度是O(n)。  单调队列的基本思想是，维护一个双向队列（deque），遍历序列，仅当一个元素可能成为某个区间最值时才保留它。 形象地打个比方，上面的序列可以看成学校里各个年级XCPC选">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Monotonic queue">
 <meta property="og:url" content="http://example.com/2025/06/10/algorithm/Monotonic-queue/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
-<meta property="og:description" content="单调队列 “如果一个选手比你小还比你强，你就可以退役了。”——单调队列的原理  单调队列是一种主要用于解决滑动窗口类问题的数据结构，即，在长度为n的序列中，求每个长度k的区间的区间最值。它的时间复杂度是O(n)。  单调队列的基本思想是，维护一个双向队列（deque），遍历序列，仅当一个元素可能成为某个区间最值时才保留它。 形象地打个比方，上面的序列可以看成学校里各个年级XCPC选手，数字越大代表">
+<meta property="og:description" content="单调队列  “如果一个选手比你小还比你强，你就可以退役了。”——单调队列的原理  单调队列是一种主要用于解决滑动窗口类问题的数据结构，即，在长度为n的序列中，求每个长度k的区间的区间最值。它的时间复杂度是O(n)。  单调队列的基本思想是，维护一个双向队列（deque），遍历序列，仅当一个元素可能成为某个区间最值时才保留它。 形象地打个比方，上面的序列可以看成学校里各个年级XCPC选">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%971.png">
-<meta property="og:image" content="http://example.com/image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%972.png">
-<meta property="og:image" content="http://example.com/image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%973.png">
-<meta property="og:image" content="http://example.com/image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%974.png">
-<meta property="og:image" content="http://example.com/image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%975.png">
 <meta property="article:published_time" content="2025-06-10T09:37:43.000Z">
 <meta property="article:modified_time" content="2025-06-11T04:42:43.668Z">
 <meta property="article:author" content="LittleBug">
 <meta property="article:tag" content="Data Struct">
 <meta property="article:tag" content="Queue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%971.png">
   
     <link rel="alternate" href="/atom.xml" title="LittleBug's Home" type="application/atom+xml">
   
@@ -158,6 +152,11 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/Hexo/">
+                Hexo
+                <div class="category-count">2</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
                 <div class="category-count">1</div>
@@ -173,14 +172,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
                 考研
                 <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
+                <div class="category-count">1</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
@@ -213,6 +212,11 @@
     <div class="widget">
       <h3 class="widget-title">Archives</h3>
       
+      
+        <a class="archive-link" href="/archives/2025/07 ">
+          July 2025 
+          <div class="archive-count">4 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2025/06 ">
           June 2025 
@@ -270,33 +274,33 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/06/29/algorithm/Graph/" title="Graph" >
+          <a class="recent-link" href="/2025/07/03/hexo-Latex-render/" title="Hexo LaTeX数学公式渲染" >
             <div class="recent-link-text">
-              Graph
+              Hexo LaTeX数学公式渲染
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/06/28/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="" >
+          <a class="recent-link" href="/2025/07/03/Latex-Test/" title="Latex Test" >
+            <div class="recent-link-text">
+              Latex Test
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E8%AE%BA/" title="唯物辩证论" >
+            <div class="recent-link-text">
+              唯物辩证论
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="唯物辩证法" >
+            <div class="recent-link-text">
+              唯物辩证法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/30/notes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A/" title="" >
             <div class="recent-link-text">
               (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/20/logs/%E6%97%A5%E5%BF%97/" title="日志" >
-            <div class="recent-link-text">
-              日志
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/19/Politics/Philosophy/Fundamental-Principles-of-Marxism/" title="Fundamental Principles of Marxism" >
-            <div class="recent-link-text">
-              Fundamental Principles of Marxism
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/10/algorithm/Binary-tree/" title="Binary-tree" >
-            <div class="recent-link-text">
-              Binary-tree
             </div>
           </a>
         
@@ -353,23 +357,32 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h3 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h3><blockquote>
+          <h3 id="单调队列">单调队列</h3>
+<blockquote>
 <p>“如果一个选手比你小还比你强，你就可以退役了。”——单调队列的原理</p>
 </blockquote>
 <p>单调队列是一种主要用于解决滑动窗口类问题的数据结构，即，在长度为<code>n</code>的序列中，求每个长度<code>k</code>的区间的区间最值。它的时间复杂度是<code>O(n)</code>。</p>
-<p><img src="/../image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%971.png"></p>
+<p><img
+src="../image/Review/DataStruct/Queue&amp;Stack/单调队列1.png" /></p>
 <p>单调队列的基本思想是，维护一个双向队列（deque），遍历序列，仅当一个元素可能成为某个区间最值时才保留它。</p>
 <p>形象地打个比方，上面的序列可以看成学校里各个年级XCPC选手，数字越大代表能力越强。每个选手只能在大学四年间参赛，毕业了就没有机会了。那么，每一年的王牌选手都在哪个年级呢？</p>
 <p>一开始的时候，大三大四的学长都比较菜，大二的最强，而大一的等大二的毕业后还有机会上位，所以队列里有两个数。</p>
-<p><img src="/../image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%972.png"></p>
+<p><img
+src="../image/Review/DataStruct/Queue&amp;Stack/单调队列2.png" /></p>
 <p>一年过去了，原本大一的成为大二，却发现新进校的新生非常强，自己再也没有机会成为最大值了，所以弹出队列。</p>
-<p><img src="/../image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%973.png"></p>
+<p><img
+src="../image/Review/DataStruct/Queue&amp;Stack/单调队列3.png" /></p>
 <p>又过了一年，新入校的新生尽管能力只有1，但理论上只要后面的人比他还菜，还是可能成为区间最大值的，所以入队。</p>
-<p><img src="/../image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%974.png"></p>
+<p><img
+src="../image/Review/DataStruct/Queue&amp;Stack/单调队列4.png" /></p>
 <p>终于，原本的王牌毕业了，后面的人以为熬出头了，谁知道这时一个巨佬级别的新生进入了集训队，这下其他所有人都没机会了。</p>
-<p><img src="/../image/Review/DataStruct/Queue&Stack/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%975.png"></p>
+<p><img
+src="../image/Review/DataStruct/Queue&amp;Stack/单调队列5.png" /></p>
 <p>总之，观察就会发现，我们维护的这个队列总是单调递减的。如果维护区间最小值，那么维护的队列就是单调递增的。这就是为什么叫单调队列。</p>
-<h4 id="例题-滑动窗口最大值"><a href="#例题-滑动窗口最大值" class="headerlink" title="例题 滑动窗口最大值"></a>例题 <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sliding-window-maximum/">滑动窗口最大值</a></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">MyQueue</span>&#123;</span><br><span class="line">        <span class="keyword">public</span>:</span><br><span class="line">            deque&lt;<span class="type">int</span>&gt; qu;</span><br><span class="line">            <span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(!qu.<span class="built_in">empty</span>() &amp;&amp; value == qu.<span class="built_in">front</span>())&#123;</span><br><span class="line">                    qu.<span class="built_in">pop_front</span>();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> value)</span></span>&#123;</span><br><span class="line">                <span class="keyword">while</span>(!qu.<span class="built_in">empty</span>() &amp;&amp; qu.<span class="built_in">back</span>() &lt; value) qu.<span class="built_in">pop_back</span>();</span><br><span class="line">                qu.<span class="built_in">push_back</span>(value);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="type">int</span> <span class="title">front</span><span class="params">()</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span> qu.<span class="built_in">front</span>();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">maxSlidingWindow</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        MyQueue que;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">            que.<span class="built_in">push</span>(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        result.<span class="built_in">push_back</span>(que.<span class="built_in">front</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = k; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            que.<span class="built_in">pop</span>(nums[i - k]); <span class="comment">// 滑动窗⼝移除最前⾯元素</span></span><br><span class="line">            que.<span class="built_in">push</span>(nums[i]); <span class="comment">// 滑动窗⼝前加⼊最后⾯的元素</span></span><br><span class="line">            result.<span class="built_in">push_back</span>(que.<span class="built_in">front</span>()); <span class="comment">// 记录对应的最⼤值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="例题-滑动窗口最大值">例题 <a
+target="_blank" rel="noopener" href="https://leetcode.cn/problems/sliding-window-maximum/">滑动窗口最大值</a></h4>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">MyQueue</span>&#123;</span><br><span class="line">        <span class="keyword">public</span>:</span><br><span class="line">            deque&lt;<span class="type">int</span>&gt; qu;</span><br><span class="line">            <span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">(<span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(!qu.<span class="built_in">empty</span>() &amp;&amp; value == qu.<span class="built_in">front</span>())&#123;</span><br><span class="line">                    qu.<span class="built_in">pop_front</span>();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> value)</span></span>&#123;</span><br><span class="line">                <span class="keyword">while</span>(!qu.<span class="built_in">empty</span>() &amp;&amp; qu.<span class="built_in">back</span>() &lt; value) qu.<span class="built_in">pop_back</span>();</span><br><span class="line">                qu.<span class="built_in">push_back</span>(value);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="function"><span class="type">int</span> <span class="title">front</span><span class="params">()</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span> qu.<span class="built_in">front</span>();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">maxSlidingWindow</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        MyQueue que;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; result;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">            que.<span class="built_in">push</span>(nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        result.<span class="built_in">push_back</span>(que.<span class="built_in">front</span>());</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = k; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            que.<span class="built_in">pop</span>(nums[i - k]); <span class="comment">// 滑动窗⼝移除最前⾯元素</span></span><br><span class="line">            que.<span class="built_in">push</span>(nums[i]); <span class="comment">// 滑动窗⼝前加⼊最后⾯的元素</span></span><br><span class="line">            result.<span class="built_in">push_back</span>(que.<span class="built_in">front</span>()); <span class="comment">// 记录对应的最⼤值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
         
       </div>
 

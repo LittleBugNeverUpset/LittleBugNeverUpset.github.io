@@ -20,19 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="确定性推理推理的基本概念推理的逻辑基础谓词公式的永真性和可满足性 自然演绎推理归结演绎推理子句型子句与子句集 原子谓词公式及其否定都称为文字 任何文字的析取都称为子句 不含任何文字的子句称为空子句（空子句永假且不可满足） 子句或空子句构成的集合称为字句集  子句集化简 消除连接词” →“和 “↔“ 减少否定符号的辖域: 对变元标准化:在一个量词的辖域内，把谓词公式中收到该量词约束的边缘全部用另外的">
+  <meta name="description" content="确定性推理 推理的基本概念 推理的逻辑基础 谓词公式的永真性和可满足性    ## 自然演绎推理 归结演绎推理 子句型 子句与子句集  原子谓词公式及其否定都称为文字 任何文字的析取都称为子句  不含任何文字的子句称为空子句（空子句永假且不可满足） 子句或空子句构成的集合称为字句集  子句集化简  消除连接词” →“和”↔︎”  减少否定符号的辖域:  对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人工智能基础确定性推理">
 <meta property="og:url" content="http://example.com/2024/07/04/notes/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%9F%BA%E7%A1%80%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
-<meta property="og:description" content="确定性推理推理的基本概念推理的逻辑基础谓词公式的永真性和可满足性 自然演绎推理归结演绎推理子句型子句与子句集 原子谓词公式及其否定都称为文字 任何文字的析取都称为子句 不含任何文字的子句称为空子句（空子句永假且不可满足） 子句或空子句构成的集合称为字句集  子句集化简 消除连接词” →“和 “↔“ 减少否定符号的辖域: 对变元标准化:在一个量词的辖域内，把谓词公式中收到该量词约束的边缘全部用另外的">
+<meta property="og:description" content="确定性推理 推理的基本概念 推理的逻辑基础 谓词公式的永真性和可满足性    ## 自然演绎推理 归结演绎推理 子句型 子句与子句集  原子谓词公式及其否定都称为文字 任何文字的析取都称为子句  不含任何文字的子句称为空子句（空子句永假且不可满足） 子句或空子句构成的集合称为字句集  子句集化简  消除连接词” →“和”↔︎”  减少否定符号的辖域:  对">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E8%B0%93%E8%AF%8D%E6%BC%94%E7%AE%97%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E8%B0%93%E8%AF%8D%E6%BC%94%E7%AE%97%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F2.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E8%B0%93%E8%AF%8D%E6%BC%94%E7%AE%97%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F3.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%801.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%802.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%803.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%804.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%805.png">
@@ -40,7 +36,6 @@
 <meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%808.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%809.png">
 <meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%8C%96%E7%AE%80%E8%B0%93%E8%AF%8D%E5%85%AC%E5%BC%8F.png">
-<meta property="og:image" content="http://example.com/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E9%B2%81%E5%AE%BE%E9%80%8A%E5%BD%92%E7%BB%93%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3.png">
 <meta property="article:published_time" content="2024-07-04T11:17:26.000Z">
 <meta property="article:modified_time" content="2025-06-11T04:42:43.738Z">
 <meta property="article:author" content="LittleBug">
@@ -166,6 +161,11 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/Hexo/">
+                Hexo
+                <div class="category-count">2</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
                 <div class="category-count">1</div>
@@ -181,14 +181,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
                 考研
                 <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
+                <div class="category-count">1</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
@@ -221,6 +221,11 @@
     <div class="widget">
       <h3 class="widget-title">Archives</h3>
       
+      
+        <a class="archive-link" href="/archives/2025/07 ">
+          July 2025 
+          <div class="archive-count">4 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2025/06 ">
           June 2025 
@@ -278,33 +283,33 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/06/29/algorithm/Graph/" title="Graph" >
+          <a class="recent-link" href="/2025/07/03/hexo-Latex-render/" title="Hexo LaTeX数学公式渲染" >
             <div class="recent-link-text">
-              Graph
+              Hexo LaTeX数学公式渲染
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/06/28/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="" >
+          <a class="recent-link" href="/2025/07/03/Latex-Test/" title="Latex Test" >
+            <div class="recent-link-text">
+              Latex Test
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E8%AE%BA/" title="唯物辩证论" >
+            <div class="recent-link-text">
+              唯物辩证论
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="唯物辩证法" >
+            <div class="recent-link-text">
+              唯物辩证法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/30/notes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A/" title="" >
             <div class="recent-link-text">
               (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/20/logs/%E6%97%A5%E5%BF%97/" title="日志" >
-            <div class="recent-link-text">
-              日志
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/19/Politics/Philosophy/Fundamental-Principles-of-Marxism/" title="Fundamental Principles of Marxism" >
-            <div class="recent-link-text">
-              Fundamental Principles of Marxism
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/10/algorithm/Binary-tree/" title="Binary-tree" >
-            <div class="recent-link-text">
-              Binary-tree
             </div>
           </a>
         
@@ -352,7 +357,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            634 words 
+            637 words 
           </div>
         </div>
         
@@ -361,30 +366,55 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="确定性推理"><a href="#确定性推理" class="headerlink" title="确定性推理"></a>确定性推理</h1><h2 id="推理的基本概念"><a href="#推理的基本概念" class="headerlink" title="推理的基本概念"></a>推理的基本概念</h2><h2 id="推理的逻辑基础"><a href="#推理的逻辑基础" class="headerlink" title="推理的逻辑基础"></a>推理的逻辑基础</h2><h3 id="谓词公式的永真性和可满足性"><a href="#谓词公式的永真性和可满足性" class="headerlink" title="谓词公式的永真性和可满足性"></a>谓词公式的永真性和可满足性</h3><p><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E8%B0%93%E8%AF%8D%E6%BC%94%E7%AE%97%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F.png"><br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E8%B0%93%E8%AF%8D%E6%BC%94%E7%AE%97%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F2.png"><br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E8%B0%93%E8%AF%8D%E6%BC%94%E7%AE%97%E5%9F%BA%E6%9C%AC%E7%AD%89%E4%BB%B7%E5%BC%8F3.png"></p>
-<h2 id="自然演绎推理"><a href="#自然演绎推理" class="headerlink" title="自然演绎推理"></a>自然演绎推理</h2><h2 id="归结演绎推理"><a href="#归结演绎推理" class="headerlink" title="归结演绎推理"></a>归结演绎推理</h2><h3 id="子句型"><a href="#子句型" class="headerlink" title="子句型"></a>子句型</h3><h4 id="子句与子句集"><a href="#子句与子句集" class="headerlink" title="子句与子句集"></a>子句与子句集</h4><ul>
+          <h1 id="确定性推理">确定性推理</h1>
+<h2 id="推理的基本概念">推理的基本概念</h2>
+<h2 id="推理的逻辑基础">推理的逻辑基础</h2>
+<h3 id="谓词公式的永真性和可满足性">谓词公式的永真性和可满足性</h3>
+<p><img src="/image/Review/AI/确定性推理/谓词演算基本等价式.png" /> <img
+src="/image/Review/AI/确定性推理/谓词演算基本等价式2.png" /> <img
+src="/image/Review/AI/确定性推理/谓词演算基本等价式3.png" /> ##
+自然演绎推理</p>
+<h2 id="归结演绎推理">归结演绎推理</h2>
+<h3 id="子句型">子句型</h3>
+<h4 id="子句与子句集">子句与子句集</h4>
+<ul>
 <li>原子谓词公式及其否定都称为文字</li>
-<li>任何文字的析取都称为<strong>子句</strong><br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5.png"></li>
+<li>任何文字的析取都称为<strong>子句</strong> <img
+src="/image/Review/AI/确定性推理/子句.png" /></li>
 <li>不含任何文字的子句称为<strong>空子句</strong>（空子句永假且不可满足）</li>
 <li>子句或空子句构成的集合称为字句集</li>
 </ul>
-<h4 id="子句集化简"><a href="#子句集化简" class="headerlink" title="子句集化简"></a>子句集化简</h4><ol>
-<li>消除连接词” <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mo stretchy="false">→</mo></math>“和 “<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mo stretchy="false">↔</mo></math>“<br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%801.png"></li>
-<li>减少否定符号的辖域:<br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%802.png"></li>
-<li>对变元标准化:在一个量词的辖域内，把谓词公式中收到该量词约束的边缘全部用另外的一个没有出现过的任意变元代替，使用不同量词约束的变元有不同的名字。<br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%803.png"></li>
-<li>化为前束范式：基于第三步已经对变元标准化，直接将所有的量词都移动到公式的左边，<strong>移动时不能改变其相对顺序</strong><br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%804.png"></li>
-<li>消去存在量词：<ul>
+<h4 id="子句集化简">子句集化简</h4>
+<ol type="1">
+<li>消除连接词”
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mo stretchy="false">→</mo></math>“和”<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mo stretchy="false">↔︎</mo></math>”
+<img src="/image/Review/AI/确定性推理/子句集化简1.png" /></li>
+<li>减少否定符号的辖域: <img
+src="/image/Review/AI/确定性推理/子句集化简2.png" /></li>
+<li>对变元标准化:在一个量词的辖域内，把谓词公式中收到该量词约束的边缘全部用另外的一个没有出现过的任意变元代替，使用不同量词约束的变元有不同的名字。
+<img src="/image/Review/AI/确定性推理/子句集化简3.png" /></li>
+<li>化为前束范式：基于第三步已经对变元标准化，直接将所有的量词都移动到公式的左边，<strong>移动时不能改变其相对顺序</strong>
+<img src="/image/Review/AI/确定性推理/子句集化简4.png" /></li>
+<li>消去存在量词：
+<ul>
 <li>若<strong>存在量词</strong>不出现在全称量词的辖域内（即它的左边没有全称量词）只需要一个新的个体常量替代它即可。</li>
-<li>若存在量词位于一个或多个全称量词辖域内，则需要用<code>Skolem</code>函数<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></math>替换受该量词约束的变元然后再消除该存在量词。<br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%805.png"></li>
-</ul>
-</li>
-<li>化为<code>SKolen</code>标准型<br><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mo stretchy="false">(</mo><mi mathvariant="normal">∀</mi><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo stretchy="false">(</mo><mi mathvariant="normal">∀</mi><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mi>M</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></math><br>其中<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>M</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></math>是<code>Skolem</code>标准母式，<strong>它由子句的合取构成</strong><br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%806.png"></li>
+<li>若存在量词位于一个或多个全称量词辖域内，则需要用<code>Skolem</code>函数<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>f</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></math>替换受该量词约束的变元然后再消除该存在量词。
+<img src="/image/Review/AI/确定性推理/子句集化简5.png" /></li>
+</ul></li>
+<li>化为<code>SKolen</code>标准型
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mo stretchy="false">(</mo><mi mathvariant="normal">∀</mi><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo stretchy="false">(</mo><mi mathvariant="normal">∀</mi><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mi>M</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></math>
+其中<math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mi>M</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><msub><mi>x</mi><mi>n</mi></msub><mo stretchy="false">)</mo></math>是<code>Skolem</code>标准母式，<strong>它由子句的合取构成</strong>
+<img src="/image/Review/AI/确定性推理/子句集化简6.png" /></li>
 <li>省掉全称量词：由于母式中的全部边缘均受到全称量词的约束，并且全称量词的次序无关紧要，因此可以省掉全称量词</li>
-<li>根据合取词提取拆分公式：在母式中消去所有的合取词，把母式用字句集的形式表示出来。其中字句集上的每一个元素都是一个子句。<br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%808.png"></li>
-<li>更换变量名称：对子句集中的某些变量重新命名，使<strong>任意两个子句中不出现相同的变量名</strong><br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%AD%90%E5%8F%A5%E9%9B%86%E5%8C%96%E7%AE%809.png"></li>
+<li>根据合取词提取拆分公式：在母式中消去所有的合取词，把母式用字句集的形式表示出来。其中字句集上的每一个元素都是一个子句。
+<img src="/image/Review/AI/确定性推理/子句集化简8.png" /></li>
+<li>更换变量名称：对子句集中的某些变量重新命名，使<strong>任意两个子句中不出现相同的变量名</strong>
+<img src="/image/Review/AI/确定性推理/子句集化简9.png" /></li>
 </ol>
-<p><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E5%8C%96%E7%AE%80%E8%B0%93%E8%AF%8D%E5%85%AC%E5%BC%8F.png"></p>
-<h4 id="鲁宾逊归结原理"><a href="#鲁宾逊归结原理" class="headerlink" title="鲁宾逊归结原理"></a>鲁宾逊归结原理</h4><p><strong>基本思想：</strong><br><img src="/image/Review/AI/%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%8E%A8%E7%90%86/%E9%B2%81%E5%AE%BE%E9%80%8A%E5%BD%92%E7%BB%93%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3.png"></p>
+<p><img src="/image/Review/AI/确定性推理/化简谓词公式.png" /></p>
+<h4 id="鲁宾逊归结原理">鲁宾逊归结原理</h4>
+<p><strong>基本思想：</strong> <img
+src="/image/Review/AI/确定性推理/鲁宾逊归结原理基本思想.png" /></p>
 
         
       </div>

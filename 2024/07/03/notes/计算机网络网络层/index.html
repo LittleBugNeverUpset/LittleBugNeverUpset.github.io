@@ -20,48 +20,33 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="网络层网络层的一些重要概念网络层提供的两种服务网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）  网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？ IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。   可靠交付应由网络还是端系统负责？ 端系统（运输层）    两种观点： 让网络负责可靠交付 模仿电信网络使用面向连接通">
+  <meta name="description" content="网络层 网络层的一些重要概念 网络层提供的两种服务 网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）  网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？  IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。  可靠交付应由网络还是端系统负责？  端系统（运输层）   两种观点：  让网络负责可靠交付">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络网络层">
 <meta property="og:url" content="http://example.com/2024/07/03/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BD%91%E7%BB%9C%E5%B1%82/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
-<meta property="og:description" content="网络层网络层的一些重要概念网络层提供的两种服务网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）  网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？ IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。   可靠交付应由网络还是端系统负责？ 端系统（运输层）    两种观点： 让网络负责可靠交付 模仿电信网络使用面向连接通">
+<meta property="og:description" content="网络层 网络层的一些重要概念 网络层提供的两种服务 网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）  网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？  IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。  可靠交付应由网络还是端系统负责？  端系统（运输层）   两种观点：  让网络负责可靠交付">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%99%9A%E7%94%B5%E8%B7%AF.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%9C%8D%E5%8A%A1.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%85%B6%E9%85%8D%E5%A5%97%E5%8D%8F%E8%AE%AE.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E7%BD%91%E7%BB%9C.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%88%86%E7%BB%84%E5%9C%A8%E4%BA%92%E8%BF%9E%E7%BD%91%E4%B8%AD%E4%BC%A0%E9%80%81.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E7%82%B9%E5%88%86%E5%8D%81%E8%BF%9B%E5%88%B6%E8%AE%B0%E6%B3%95.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%A1%AC%E4%BB%B6%E5%9C%B0%E5%9D%80.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%8A%BD%E8%B1%A1%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%8A%BD%E8%B1%A1.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/ARP%E5%8D%8F%E8%AE%AE%E4%BD%9C%E7%94%A8.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E4%BD%BF%E7%94%A8ARP%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%83%85%E5%86%B5.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E7%89%87%E5%81%8F%E7%A7%BB%E4%BE%8B%E9%A2%98.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E5%B1%82%E6%A0%B9%E6%8D%AE%E5%8D%8F%E8%AE%AE%E7%B1%BB%E5%9E%8B%E5%B0%86%E6%95%B0%E6%8D%AE%E6%8F%90%E4%BA%A4%E7%BB%99%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E9%A6%96%E9%83%A8%E6%A3%80%E9%AA%8C%E5%92%8C%E8%AE%A1%E7%AE%97.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%AF%E7%94%B1%E8%BD%AC%E5%8F%91%E8%B7%AF%E7%94%B1%E8%A1%A8.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%88%86%E7%BB%84%E8%BD%AC%E5%8F%91%E7%AE%97%E6%B3%95.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%88%92%E5%88%86%E5%AD%90%E7%BD%91%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%E5%92%8CIP%E5%9C%B0%E5%9D%80%E5%90%84%E5%AD%97%E6%AE%B5.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%AD%90%E7%BD%91%E5%8F%B7%E6%B1%82%E6%B3%95.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E9%BB%98%E8%AE%A4%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%B1%82%E5%AD%90%E7%BD%91%E7%BB%9C%E5%8F%B7.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%8E%A9%E7%A0%81%E6%96%B9%E6%A1%88.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E6%83%85%E5%86%B5%E4%B8%8B%E7%9A%84%E5%88%86%E7%BB%84%E8%BD%AC%E5%8F%91%E7%AE%97%E6%B3%95.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%97%A0%E5%88%86%E7%B1%BB%E4%B8%A4%E7%BA%A7%E7%BC%96%E7%A0%81.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BA%BF%E7%B4%A2%E6%9F%A5%E6%89%BE.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/ICMP%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/ICMP%E5%B7%AE%E9%94%99%E6%8A%A5%E6%96%87%E7%9A%84%E5%86%85%E5%AE%B9.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E4%B8%8D%E5%86%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E7%90%86%E6%83%B3%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9FAS.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E7%AE%97%E6%B3%95.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E7%AE%97%E6%B3%952.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/RIP2%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/RIP%E5%8D%8F%E8%AE%AE%E4%BE%8B%E9%A2%98.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/RIP%E5%8D%8F%E8%AE%AE%E4%BE%8B%E9%A2%982.png">
@@ -71,7 +56,6 @@
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%BF%9E%E9%80%9A%E5%9B%BE.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%93%E6%9E%84.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BE%93%E5%85%A5%E7%AB%AF.png">
-<meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BE%93%E5%87%BA%E7%AB%AF.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F.png">
 <meta property="article:published_time" content="2024-07-03T04:22:36.000Z">
 <meta property="article:modified_time" content="2025-06-11T04:42:43.751Z">
@@ -198,6 +182,11 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/Hexo/">
+                Hexo
+                <div class="category-count">2</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
                 <div class="category-count">1</div>
@@ -213,14 +202,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
                 考研
                 <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
+                <div class="category-count">1</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
@@ -253,6 +242,11 @@
     <div class="widget">
       <h3 class="widget-title">Archives</h3>
       
+      
+        <a class="archive-link" href="/archives/2025/07 ">
+          July 2025 
+          <div class="archive-count">4 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2025/06 ">
           June 2025 
@@ -310,33 +304,33 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/06/29/algorithm/Graph/" title="Graph" >
+          <a class="recent-link" href="/2025/07/03/hexo-Latex-render/" title="Hexo LaTeX数学公式渲染" >
             <div class="recent-link-text">
-              Graph
+              Hexo LaTeX数学公式渲染
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/06/28/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="" >
+          <a class="recent-link" href="/2025/07/03/Latex-Test/" title="Latex Test" >
+            <div class="recent-link-text">
+              Latex Test
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E8%AE%BA/" title="唯物辩证论" >
+            <div class="recent-link-text">
+              唯物辩证论
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="唯物辩证法" >
+            <div class="recent-link-text">
+              唯物辩证法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/30/notes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A/" title="" >
             <div class="recent-link-text">
               (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/20/logs/%E6%97%A5%E5%BF%97/" title="日志" >
-            <div class="recent-link-text">
-              日志
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/19/Politics/Philosophy/Fundamental-Principles-of-Marxism/" title="Fundamental Principles of Marxism" >
-            <div class="recent-link-text">
-              Fundamental Principles of Marxism
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/10/algorithm/Binary-tree/" title="Binary-tree" >
-            <div class="recent-link-text">
-              Binary-tree
             </div>
           </a>
         
@@ -384,7 +378,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            9.3k words 
+            9.4k words 
           </div>
         </div>
         
@@ -415,37 +409,47 @@
  *                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *                              神兽保佑               我不挂科
  -->
-
-
-
-<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><h2 id="网络层的一些重要概念"><a href="#网络层的一些重要概念" class="headerlink" title="网络层的一些重要概念"></a>网络层的一些重要概念</h2><h3 id="网络层提供的两种服务"><a href="#网络层提供的两种服务" class="headerlink" title="网络层提供的两种服务"></a>网络层提供的两种服务</h3><p><strong>网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）</strong></p>
+<h1 id="网络层">网络层</h1>
+<h2 id="网络层的一些重要概念">网络层的一些重要概念</h2>
+<h3 id="网络层提供的两种服务">网络层提供的两种服务</h3>
+<p><strong>网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）</strong></p>
 <ul>
-<li><strong>网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？</strong><ul>
+<li><strong>网络层应该向运输层提供“面向连接”/“无链接”的服务？</strong>
+<ul>
 <li>IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。</li>
-</ul>
-</li>
-<li><strong>可靠交付应由网络还是端系统负责？</strong><ul>
+</ul></li>
+<li><strong>可靠交付应由网络还是端系统负责？</strong>
+<ul>
 <li>端系统（运输层）</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="两种观点："><a href="#两种观点：" class="headerlink" title="两种观点："></a>两种观点：</h4><ul>
-<li><strong>让网络负责可靠交付</strong><ul>
+<h4 id="两种观点">两种观点：</h4>
+<ul>
+<li><strong>让网络负责可靠交付</strong>
+<ul>
 <li>模仿电信网络使用面向连接通信方式</li>
 <li>先建立<strong>虚电路</strong>保证双方通信所需的一切网络资源。</li>
-<li>再使用可靠传输的网络协议便可保证无差错、按序到达、不丢书、不重复。<br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%99%9A%E7%94%B5%E8%B7%AF.png" alt="虚电路"><br>虚电路只是一条逻辑连接，分组都沿着这条逻辑连接按照存储转发方式传送，并不是物理连接。电路交换是先建立了一条真正的连接。</li>
-</ul>
-</li>
-<li><strong>网络提供数据报服务</strong><ul>
+<li>再使用可靠传输的网络协议便可保证无差错、按序到达、不丢书、不重复。
+<img src="/image/Review/Network/网络层/虚电路.png" alt="虚电路" />
+虚电路只是一条逻辑连接，分组都沿着这条逻辑连接按照存储转发方式传送，并不是物理连接。电路交换是先建立了一条真正的连接。</li>
+</ul></li>
+<li><strong>网络提供数据报服务</strong>
+<ul>
 <li>网络层只向上提供<strong>简单灵活、无链接、尽最大努力交付</strong>的<strong>数据报服务</strong></li>
 <li>网络在发送分组时不建立先烈，每一个分组单独转发，与前后的分组无关。</li>
 <li>网络层不提供服务质量的承诺，会出错和超时。</li>
 <li><strong>尽最大努力交付</strong>：不提供可靠交付，使得其处理灵活、成本低廉，实现起来更为简单。由端系统的运输层提供可靠交付（<strong>差错处理、流量控制</strong>）。</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p><strong>数据报的发送可能会*沿着不懂得路径进行传送。</strong><br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%9C%8D%E5%8A%A1.png" alt="数据报服务"></p>
+<p>**数据报的发送可能会*沿着不懂得路径进行传送。** <img
+src="/image/Review/Network/网络层/数据报服务.png"
+alt="数据报服务" /></p>
 <table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <thead>
 <tr>
 <th>对比方面</th>
@@ -453,7 +457,8 @@
 <th>数据报服务</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>思路</td>
 <td>可靠通信由网络来保证</td>
 <td>可靠通信由主机来保证</td>
@@ -488,32 +493,46 @@
 <td>可以由网络控制，也可以由主机负责</td>
 <td>由主机（运输层）负责</td>
 </tr>
-</tbody></table>
-<h2 id="网际协议IP"><a href="#网际协议IP" class="headerlink" title="网际协议IP"></a>网际协议IP</h2><p>网际协议IP是TCP&#x2F;IP体系中最主要的协议，其还有三个配套协议</p>
-<ul>
-<li><strong>地址解析协议ARP</strong></li>
-<li><strong>网际控制报文协议</strong></li>
-<li><strong>网际组管理协议IGMP</strong><br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E5%8D%8F%E8%AE%AE%E5%8F%8A%E5%85%B6%E9%85%8D%E5%A5%97%E5%8D%8F%E8%AE%AE.png" alt="IP协议及其配套协议"></li>
-</ul>
-<h4 id="虚拟互联网"><a href="#虚拟互联网" class="headerlink" title="虚拟互联网"></a>虚拟互联网</h4><p><strong>如何将异构的网络互相连接起来？</strong><br>使用一些中间设备进行互连：</p>
-<ul>
-<li>物理层：转发器</li>
-<li>数据链路层：网桥&#x2F;桥接器&#x2F;交换机</li>
-<li>网络层：路由器</li>
-<li>网络层及以上：网关</li>
-</ul>
-<p><strong>IP网：使用IP协议的虚拟互联网</strong><br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E7%BD%91%E7%BB%9C.png" alt="IP网络"></p>
-<p>虚拟互连网的意义：</p>
-<ul>
-<li>逻辑互连的网络，使用IP协议让结构异性的网络从用户层面开起来好像处于一个统一的网络。</li>
-<li>在全球覆盖的IP网上层使用TCP协议就是现在的互联网<br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%88%86%E7%BB%84%E5%9C%A8%E4%BA%92%E8%BF%9E%E7%BD%91%E4%B8%AD%E4%BC%A0%E9%80%81.png" alt="分组互连网中传送"></li>
-</ul>
+</tbody>
+</table>
+<h2 id="网际协议ip">网际协议IP</h2>
+<p>网际协议IP是TCP/IP体系中最主要的协议，其还有三个配套协议 -
+<strong>地址解析协议ARP</strong> - <strong>网际控制报文协议</strong> -
+<strong>网际组管理协议IGMP</strong> <img
+src="/image/Review/Network/网络层/IP协议及其配套协议.png"
+alt="IP协议及其配套协议" /></p>
+<h4 id="虚拟互联网">虚拟互联网</h4>
+<p><strong>如何将异构的网络互相连接起来？</strong>
+使用一些中间设备进行互连： - 物理层：转发器 -
+数据链路层：网桥/桥接器/交换机 - 网络层：路由器 - 网络层及以上：网关</p>
+<p><strong>IP网：使用IP协议的虚拟互联网</strong> <img
+src="/image/Review/Network/网络层/IP网络.png" alt="IP网络" /></p>
+<p>虚拟互连网的意义： -
+逻辑互连的网络，使用IP协议让结构异性的网络从用户层面开起来好像处于一个统一的网络。
+- 在全球覆盖的IP网上层使用TCP协议就是现在的互联网 <img
+src="/image/Review/Network/网络层/分组在互连网中传送.png"
+alt="分组互连网中传送" /></p>
 <p>如果只从网络层考虑，那么IP数据报就可以看作是在网络层中传送。</p>
-<h4 id="IP地址的编址方式"><a href="#IP地址的编址方式" class="headerlink" title="IP地址的编址方式"></a>IP地址的编址方式</h4><p>IP地址是给在全世界范围内每一个连接在互联网上的主机的分配的一个唯一的<strong>32位标识符</strong></p>
+<h4 id="ip地址的编址方式">IP地址的编址方式</h4>
+<p>IP地址是给在全世界范围内每一个连接在互联网上的主机的分配的一个唯一的<strong>32位标识符</strong></p>
 <ul>
-<li>分类的IP地址：最基本编址方式<br>每一类地址都由两个固定长度的字段组成：<strong>网络号</strong>和<strong>主机号</strong><br>一个IP地址在整个互联网范围内必须是唯一的。<br>点分十进制记法：八位一组，采用10进制表示，每组之间用<code>:</code>隔开<br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E7%82%B9%E5%88%86%E5%8D%81%E8%BF%9B%E5%88%B6%E8%AE%B0%E6%B3%95.png" alt="点分十进制"><br>IP地址分成5大类<br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E5%9C%B0%E5%9D%80%E5%88%86%E7%B1%BB.png" alt="IP地址分类"></li>
+<li>分类的IP地址：最基本编址方式
+每一类地址都由两个固定长度的字段组成：<strong>网络号</strong>和<strong>主机号</strong>
+一个IP地址在整个互联网范围内必须是唯一的。
+点分十进制记法：八位一组，采用10进制表示，每组之间用<code>:</code>隔开
+<img src="/image/Review/Network/网络层/点分十进制记法.png"
+alt="点分十进制" /> IP地址分成5大类 <img
+src="/image/Review/Network/网络层/IP地址分类.png"
+alt="IP地址分类" /></li>
 </ul>
 <table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
 <thead>
 <tr>
 <th>网络类别</th>
@@ -523,7 +542,8 @@
 <th>每个网络中最大主机数</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>A</td>
 <td>126（2^7-2）</td>
 <td>x</td>
@@ -544,7 +564,8 @@
 <td>223.255.255</td>
 <td>254</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>一般不使用的IP地址</strong></p>
 <table>
 <thead>
@@ -556,7 +577,8 @@
 <th>代表含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0</td>
 <td>0</td>
 <td>可以</td>
@@ -591,30 +613,40 @@
 <td>可以</td>
 <td>用作本地软件环回测试</td>
 </tr>
-</tbody></table>
-<ol>
+</tbody>
+</table>
+<ol type="1">
 <li><strong>IP地址是一种分等级的地址结构</strong>，网络号由IP地址管理机构分配，主机号由得到网络号的单位自行分配。</li>
 <li><strong>一个路由器至少有两个IP地址</strong>，<strong>实际上IP地址是标志一个主机、路由或者一条链路的接口。</strong>一个主机如果同时连接两个网络那么它就需要具有两个IP地址，其网络号必须不同，这种主机被称为<strong>多归属主机</strong></li>
 <li>用转发器和网桥连接起来的若干局域网仍然为一个网络，因此它们具有相同的网络号</li>
 <li>所有分配到网络号的net-id网各，无论是范围很小的局域网，还是可能覆盖很大地理范围的广域网都是<strong>平等</strong>的。</li>
 </ol>
-<p>IP地址和硬件地址：</p>
-<ul>
-<li>IP地址和硬件地址是不同的地址</li>
-<li>硬件地址是物理层和数据链路层使用的地址</li>
-<li>IP地址是网络层和以上各层使用的地址，是一种<strong>逻辑地址</strong>（IP地址用软件实现）</li>
-</ul>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E5%9C%B0%E5%9D%80%E4%B8%8E%E7%A1%AC%E4%BB%B6%E5%9C%B0%E5%9D%80.png" alt="IP地址和硬件地址"></p>
-<hr>
-<p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+<p>IP地址和硬件地址： - IP地址和硬件地址是不同的地址 -
+硬件地址是物理层和数据链路层使用的地址 -
+IP地址是网络层和以上各层使用的地址，是一种<strong>逻辑地址</strong>（IP地址用软件实现）</p>
+<figure>
+<img src="/image/Review/Network/网络层/IP地址与硬件地址.png"
+alt="IP地址和硬件地址" />
+<figcaption aria-hidden="true">IP地址和硬件地址</figcaption>
+</figure>
+<hr />
+<p style="font-family:&#39;Segoe UI&#39;, Tahoma, Geneva, Verdana, sans-serif;
 font-size : 20px;
 background-color: #0093E9;
-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);" 
-> 别人在意的 VS 我在意的</p>
-
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%8A%BD%E8%B1%A1%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91.png"><br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%8A%BD%E8%B1%A1.png"></p>
-<hr>
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
+别人在意的 VS 我在意的
+</p>
+<p><img src="/image/Review/Network/网络层/抽象的互联网.png" /> <img
+src="/image/Review/Network/网络层/抽象.png" /></p>
+<hr />
 <table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
 <thead>
 <tr>
 <th>路径</th>
@@ -624,7 +656,8 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <th>数据链路层目的MAC地址</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>H1-&gt;R1</td>
 <td>IP1</td>
 <td>IP2</td>
@@ -645,57 +678,60 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <td>HA6</td>
 <td>HA2</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
 <li>子网划分：对对最基本编制方式的改进</li>
 <li>构成超网：无分类编址方式，1993年提出后很快得到了推广。</li>
 </ul>
-<h4 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议ARP</h4><p>ARP地址的作用：一直一个机器的主机或者路由器的IP地址，查询其相应的硬件地址。</p>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/ARP%E5%8D%8F%E8%AE%AE%E4%BD%9C%E7%94%A8.png"></p>
+<h4 id="地址解析协议arp">地址解析协议ARP</h4>
+<p>ARP地址的作用：一直一个机器的主机或者路由器的IP地址，查询其相应的硬件地址。</p>
+<p><img src="/image/Review/Network/网络层/ARP协议作用.png" /></p>
 <ul>
-<li><p>每一个主机都有一个<strong>ARP高速缓存</strong>，里面所有的局域网上的各主机和路由器IP地址到硬件地址的<strong>映射表</strong>。</p>
-</li>
+<li><p>每一个主机都有一个<strong>ARP高速缓存</strong>，里面所有的局域网上的各主机和路由器IP地址到硬件地址的<strong>映射表</strong>。</p></li>
 <li><p>主机向本局域网上的某个终端发送IP数据报前，就现在ARP高速缓存中查看有无主机B的IP地址。</p>
 <ul>
 <li>如果有查到对应物理地址在将其MAC地址写入MAC帧</li>
 <li>若没有，ARP进程在本局域网上广播发送一个ARP请求分组。接收ARP相应分组后将得到IP地址到硬件地址的映射写入ARP高速缓存。</li>
+</ul></li>
+<li><p>ARP请求分组：包含发送方硬件地址/发送方IP地址/目标方硬件地址/目标方IP地址。</p></li>
+<li><p><strong>本地</strong>广播ARP请求</p></li>
+<li><p>ARP响应分组：包含发送方硬件地址/发送方IP地址/目标方硬件地址/目标方IP地址。</p></li>
+<li><p>ARP分组封装在物理网络的帧中发送。</p></li>
 </ul>
-</li>
-<li><p>ARP请求分组：包含发送方硬件地址&#x2F;发送方IP地址&#x2F;目标方硬件地址&#x2F;目标方IP地址。</p>
-</li>
-<li><p><strong>本地</strong>广播ARP请求</p>
-</li>
-<li><p>ARP响应分组：包含发送方硬件地址&#x2F;发送方IP地址&#x2F;目标方硬件地址&#x2F;目标方IP地址。</p>
-</li>
-<li><p>ARP分组封装在物理网络的帧中发送。</p>
-</li>
-</ul>
-<p>ARP高速缓存的作用</p>
+<p>ARP高速缓存的作用 -
+存放最近获得的IP地址到MAC地址的绑定，以减少ARP广播的数量。 -
+为减少网络通信量，A发送请求时就会将自己的地址映射写入ARP请求分组。 -
+B接收到A的ARP请求分组就会将A的映射写入本机的ARP高速缓存。</p>
+<p>ARP协议中应当注意到的问题： -
+ARP解决的是同一个局域网上的主机或路由器的IP地址和硬件地址的映射问题。</p>
 <ul>
-<li>存放最近获得的IP地址到MAC地址的绑定，以减少ARP广播的数量。</li>
-<li>为减少网络通信量，A发送请求时就会将自己的地址映射写入ARP请求分组。</li>
-<li>B接收到A的ARP请求分组就会将A的映射写入本机的ARP高速缓存。</li>
+<li>·如果要找的主机和源主机不再同一个局域网上，那么<strong>要通过ARP找到一个位于本局域网上的某个路由器的硬件地址</strong>剩下的工作由</li>
+<li>从IP地址到硬件地址的解析是自动进行的，</li>
 </ul>
-<p>ARP协议中应当注意到的问题：</p>
-<ul>
-<li><p>ARP解决的是同一个局域网上的主机或路由器的IP地址和硬件地址的映射问题。</p>
-</li>
-<li><p>·如果要找的主机和源主机不再同一个局域网上，那么<strong>要通过ARP找到一个位于本局域网上的某个路由器的硬件地址</strong>剩下的工作由</p>
-</li>
-<li><p>从IP地址到硬件地址的解析是自动进行的，</p>
-</li>
-</ul>
-<p>使用ARP的四种情况：<br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E4%BD%BF%E7%94%A8ARP%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%83%85%E5%86%B5.png" alt="ARP"></p>
-<ul>
-<li>发送方是主机，要将IP数据报发送到本网络上的另一个主机，此时需要ARP找到目的主机的硬件地址。</li>
-<li>发送方是主机，要将IP数据报发送到另一个网络上的主机，需要ARP找到本网络的路由器硬件地址。剩下的工作由路由器完成。</li>
-<li>发送方是路由器，要将IP数据报发送到本网络上的一个主机，用ARP找到目的主机的硬件地址。</li>
-<li>发送方是路由器，要把IP数据报发送到另一个网络上的主机。用ARP找到另一个网络上的路由器硬件地址，剩下的交给另一个路由器完成。</li>
-</ul>
+<p>使用ARP的四种情况： <img
+src="/image/Review/Network/网络层/使用ARP的四种情况.png" alt="ARP" /> -
+发送方是主机，要将IP数据报发送到本网络上的另一个主机，此时需要ARP找到目的主机的硬件地址。
+-
+发送方是主机，要将IP数据报发送到另一个网络上的主机，需要ARP找到本网络的路由器硬件地址。剩下的工作由路由器完成。
+-
+发送方是路由器，要将IP数据报发送到本网络上的一个主机，用ARP找到目的主机的硬件地址。
+-
+发送方是路由器，要把IP数据报发送到另一个网络上的主机。用ARP找到另一个网络上的路由器硬件地址，剩下的交给另一个路由器完成。</p>
 <p><strong>由于互联网上存在各种硬件地址，所以IP地址将这个副在的问题解决，由于ARP调用过程由计算机软件自动完成，对用户来说是透明的，所以他们年之间的通信就好像在同一个网络内一样简单。</strong></p>
-<h4 id="IP数据报格式："><a href="#IP数据报格式：" class="headerlink" title="IP数据报格式："></a>IP数据报格式：</h4><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F.png" alt="IP数据报格式"></p>
+<h4 id="ip数据报格式">IP数据报格式：</h4>
+<figure>
+<img src="/image/Review/Network/网络层/IP数据报格式.png"
+alt="IP数据报格式" />
+<figcaption aria-hidden="true">IP数据报格式</figcaption>
+</figure>
 <p>首部前一部分固定长度，20字节，所有IP数据报必须具有。</p>
 <table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <thead>
 <tr>
 <th>名称</th>
@@ -703,10 +739,11 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <th>含义</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>版本</td>
 <td>：</td>
-<td>占四位，指IP协议版本（IPV4&#x2F;IPV6）</td>
+<td>占四位，指IP协议版本（IPV4/IPV6）</td>
 </tr>
 <tr>
 <td>首部长度</td>
@@ -731,7 +768,9 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <tr>
 <td>标志</td>
 <td>：</td>
-<td>占三位，目前只有前两位有意义，最低为 <code>MF=0</code>表示为最后一个分片，<code>MF = 1</code>表示后面“还有分片”；中间一位DF 只有当<code>DF = 0</code>时才允许数据报分片</td>
+<td>占三位，目前只有前两位有意义，最低为
+<code>MF=0</code>表示为最后一个分片，<code>MF = 1</code>表示后面“还有分片”；中间一位DF
+只有当<code>DF = 0</code>时才允许数据报分片</td>
 </tr>
 <tr>
 <td>片偏移</td>
@@ -763,12 +802,17 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <td>：</td>
 <td>首部可变部分是一个选项字段，用于支持<strong>排错、测量、安全等措施</strong>内容丰富长度从1个字节到40个字节不等，但很少使用</td>
 </tr>
-</tbody></table>
-<hr>
-<h4 id="IP数据报分片例题"><a href="#IP数据报分片例题" class="headerlink" title="IP数据报分片例题"></a>IP数据报分片例题</h4><p>例1：数据报的总长度位3820字节，数据部分2800字节，需要分片为不超过1420字节</p>
+</tbody>
+</table>
+<hr />
+<h4 id="ip数据报分片例题">IP数据报分片例题</h4>
+<p>例1：数据报的总长度位3820字节，数据部分2800字节，需要分片为不超过1420字节</p>
 <p>分析：因为首部固定长20字节，因此每个数据报数据部分长度为1400,于是3800长度的数据报可分为三部分：1400、1400、1000字节。</p>
 <p><strong>原始数据的数据报首部被复制为各数据报首部，但必须修改有关字段（标志和片偏移）的值</strong></p>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E7%89%87%E5%81%8F%E7%A7%BB%E4%BE%8B%E9%A2%98.png" alt="片偏移"></p>
+<figure>
+<img src="/image/Review/Network/网络层/片偏移例题.png" alt="片偏移" />
+<figcaption aria-hidden="true">片偏移</figcaption>
+</figure>
 <table>
 <thead>
 <tr>
@@ -780,7 +824,8 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <th>片偏移</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>原始数据报</td>
 <td>3820</td>
 <td>12345</td>
@@ -812,161 +857,185 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <td>0</td>
 <td>350</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>例2：如果达到分组的片偏移为100,分组中首部长度字段位5,总长度字段为100,请为数据部分第一个字节的编号是多少。最后一个字节的编号是多少？</p>
 <p>分析：首先，片偏移是相对于<strong>原始数据报数据部分</strong>的位置，其单位为<strong>8个字节</strong>。该分组的片偏移量为100,故其数据部分相对于原始数据报的数据部分编号为<code>8 * 100</code>，给数据报的数据部分第一个字节的编号为800,该数据报总长度为100,首部字段值为<code>5</code>首部字段的单位为4个字节，故首部长度为<code>20</code>字节，数据部分80字节则最后一个字节的编码为879。</p>
-<hr>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/IP%E5%B1%82%E6%A0%B9%E6%8D%AE%E5%8D%8F%E8%AE%AE%E7%B1%BB%E5%9E%8B%E5%B0%86%E6%95%B0%E6%8D%AE%E6%8F%90%E4%BA%A4%E7%BB%99%E6%8C%87%E5%AE%9A%E8%BF%9B%E7%A8%8B.png"></p>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E9%A6%96%E9%83%A8%E6%A3%80%E9%AA%8C%E5%92%8C%E8%AE%A1%E7%AE%97.png"></p>
-<h2 id="IP层转发分组的过程"><a href="#IP层转发分组的过程" class="headerlink" title="IP层转发分组的过程"></a>IP层转发分组的过程</h2><p>假设：有四个A类网络通过三个路由器连接在一起。每一个网络上都有成千上万个主机。若以主机号制作路由表每个路由表就会超过四万条若按照主机所在的网络地址制作路由表那没每个路由器中的路由表只有四条。</p>
+<hr />
+<p><img
+src="/image/Review/Network/网络层/IP层根据协议类型将数据提交给指定进程.png" /></p>
+<p><img src="/image/Review/Network/网络层/首部检验和计算.png" /></p>
+<h2 id="ip层转发分组的过程">IP层转发分组的过程</h2>
+<p>假设：有四个A类网络通过三个路由器连接在一起。每一个网络上都有成千上万个主机。若以主机号制作路由表每个路由表就会超过四万条若按照主机所在的网络地址制作路由表那没每个路由器中的路由表只有四条。</p>
 <p><strong>在路由表中，没条路由最重要的时目的网络地址和下一跳地址）</strong></p>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%AF%E7%94%B1%E8%BD%AC%E5%8F%91%E8%B7%AF%E7%94%B1%E8%A1%A8.png" alt="路由转发路由表"></p>
-<h3 id="查找路由表"><a href="#查找路由表" class="headerlink" title="查找路由表"></a>查找路由表</h3><ul>
+<figure>
+<img src="/image/Review/Network/网络层/路由转发路由表.png"
+alt="路由转发路由表" />
+<figcaption aria-hidden="true">路由转发路由表</figcaption>
+</figure>
+<h3 id="查找路由表">查找路由表</h3>
+<ul>
 <li>根据目的网络地址就可以确定下一跳路由器，IP数据报一定可以找到目的主机的所在的网络上的路由器（可能通过多次间接交付），只有到达最后一个路由器时才会试图直接交付。</li>
 </ul>
-<h3 id="特定主机路由"><a href="#特定主机路由" class="headerlink" title="特定主机路由"></a>特定主机路由</h3><ul>
+<h3 id="特定主机路由">特定主机路由</h3>
+<ul>
 <li>虽然互联网所有分组转发都是基于目的主机所在的网络，但在大多数情况下都允许**为指定的目的主机指明一个路由。</li>
 </ul>
-<h3 id="默认路由"><a href="#默认路由" class="headerlink" title="默认路由"></a>默认路由</h3><ul>
+<h3 id="默认路由">默认路由</h3>
+<ul>
 <li>路由器可以采用默认路由减少路由表所占用的空间和搜索理由表所用的时间。</li>
 <li>在一个网络自后很少的对外连接时是很有用的。</li>
 </ul>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1.png" alt="默认路由"></p>
-<h3 id="易错点"><a href="#易错点" class="headerlink" title="易错点"></a>易错点</h3><ul>
+<figure>
+<img src="/image/Review/Network/网络层/默认路由.png" alt="默认路由" />
+<figcaption aria-hidden="true">默认路由</figcaption>
+</figure>
+<h3 id="易错点">易错点</h3>
+<ul>
 <li>IP数据报首部没有指明下一跳路由器的IP地址</li>
 <li>路由器收到下一跳的数据报将下一跳的IP地址送交给下层的网络接口软件</li>
 <li>网络接口软件<strong>使用ARP</strong>将硬件地址放在链路层的MAC帧首部，然后根据这个硬件地址找到下一跳路由器。</li>
 </ul>
-<h3 id="路由器分组转发算法"><a href="#路由器分组转发算法" class="headerlink" title="路由器分组转发算法"></a>路由器分组转发算法</h3><p><strong>分组转发算法步骤：</strong><br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%88%86%E7%BB%84%E8%BD%AC%E5%8F%91%E7%AE%97%E6%B3%95.png" alt="分组转发算法步骤"></p>
-<h4 id="关于路由表"><a href="#关于路由表" class="headerlink" title="关于路由表"></a>关于路由表</h4><ul>
+<h3 id="路由器分组转发算法">路由器分组转发算法</h3>
+<p><strong>分组转发算法步骤：</strong> <img
+src="/image/Review/Network/网络层/分组转发算法.png"
+alt="分组转发算法步骤" /></p>
+<h4 id="关于路由表">关于路由表</h4>
+<ul>
 <li>路由表没有给出分组指明到某个网络的完整路径</li>
 <li>路由表指出<strong>到某个网络应该先到某个路由器（下一跳路由器）</strong></li>
 <li>在到达吓一跳路由器后继续查找其路由表再得知下一步应该到哪一个路由器，直到到达最后一个路由器。</li>
 </ul>
-<h3 id="划分子网和构造超网"><a href="#划分子网和构造超网" class="headerlink" title="划分子网和构造超网"></a>划分子网和构造超网</h3><h4 id="划分子网"><a href="#划分子网" class="headerlink" title="划分子网"></a>划分子网</h4><h5 id="从两级IP地址到三级IP地址"><a href="#从两级IP地址到三级IP地址" class="headerlink" title="从两级IP地址到三级IP地址"></a>从两级IP地址到三级IP地址</h5><p>在ARPANET早期IP地址的设置不够合理：</p>
+<h3 id="划分子网和构造超网">划分子网和构造超网</h3>
+<h4 id="划分子网">划分子网</h4>
+<h5 id="从两级ip地址到三级ip地址">从两级IP地址到三级IP地址</h5>
+<p>在ARPANET早期IP地址的设置不够合理： - IP地址空间利用率太低 -
+给每一个物理网络地址分配网络号使得路由表过大使得网络性能变坏 -
+两级IP地址不够灵活</p>
+<p>三级IP地址诞生（划分子网） -
+1985年在IP地址中又增加一个<strong>子网号字段</strong>，使得两级IP地址变为三级IP地址
+- 如今划分子网已成为互联网的正式标准协议</p>
+<p>划分子网的基本思路 -
+划分子网纯属一个<strong>单位内部的事情</strong>。单位对外表现为没有划分子网的网络
+-
+从主机借用若干个位于子网好<strong>subnet-id</strong>而主机号<strong>host-id</strong>也就相应减少若干个位。
+-
+凡是从其他网络发送给本单位某个主机IP数据包，仍然是根据IP数据报的目的网络号net-id，先找到连接在本单位网络上的路由器
+- 然后此路由器在收到IP数据报后，再按照<strong>目的网络号</strong>
+net-id和子网号subnet-id找到目的子网。 -
+最后将IP数据报直接交付给目的主机。</p>
+<p><img src="/image/Review/Network/网络层/划分子网基本思路.png" /></p>
+<p>三级结构的优点 - 减少IP地址的浪费 - 使得网络的组织更加灵活 -
+更加便于维护和管理 - 对外仍然表现为是一个网络</p>
+<h5 id="子网掩码">子网掩码</h5>
 <ul>
-<li>IP地址空间利用率太低</li>
-<li>给每一个物理网络地址分配网络号使得路由表过大使得网络性能变坏</li>
-<li>两级IP地址不够灵活</li>
-</ul>
-<p>三级IP地址诞生（划分子网）</p>
-<ul>
-<li>1985年在IP地址中又增加一个<strong>子网号字段</strong>，使得两级IP地址变为三级IP地址</li>
-<li>如今划分子网已成为互联网的正式标准协议</li>
-</ul>
-<p>划分子网的基本思路</p>
-<ul>
-<li>划分子网纯属一个<strong>单位内部的事情</strong>。单位对外表现为没有划分子网的网络</li>
-<li>从主机借用若干个位于子网好<strong>subnet-id</strong>而主机号<strong>host-id</strong>也就相应减少若干个位。</li>
-<li>凡是从其他网络发送给本单位某个主机IP数据包，仍然是根据IP数据报的目的网络号net-id，先找到连接在本单位网络上的路由器</li>
-<li>然后此路由器在收到IP数据报后，再按照<strong>目的网络号</strong> net-id和子网号subnet-id找到目的子网。</li>
-<li>最后将IP数据报直接交付给目的主机。</li>
-</ul>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%88%92%E5%88%86%E5%AD%90%E7%BD%91%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.png"></p>
-<p>三级结构的优点</p>
-<ul>
-<li>减少IP地址的浪费</li>
-<li>使得网络的组织更加灵活</li>
-<li>更加便于维护和管理</li>
-<li>对外仍然表现为是一个网络</li>
-</ul>
-<h5 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h5><ul>
 <li>从一个IP数据包首部无法判断源主机或目的主机所连接的网络是否进行了子网划分</li>
 <li>使用子网掩码可以找出IP地址中的子网部分</li>
 </ul>
-<p>规则：</p>
+<p>规则： - 子网掩码长度 = 32位 - <strong>某位 =
+0</strong>：ip地址中对应的位位主机号 - <strong>某位 =
+1</strong>：IP地址中对应的位位网络号和子网号</p>
+<p><img
+src="/image/Review/Network/网络层/子网掩码和IP地址各字段.png" /></p>
+<p>求子网号的方法： <img
+src="/image/Review/Network/网络层/子网号求法.png" /></p>
+<p>默认子网掩码： <img
+src="/image/Review/Network/网络层/默认子网掩码.png" /></p>
+<p>子网掩码是一个重要属性 - 子网掩码是一个网络或一个子网的重要属性 -
+路由器在和相邻的路由器交换信息时必须把自己所在网络的子网掩码告诉相邻路由器
+- 路由表中的每个项目除了网络地址以外还要给出该网络的子网掩码 -
+若一个路由器连接在两个子网上就又有两个网络地址和两个子网掩码。</p>
+<hr />
+<h4
+id="例一直ip地址是141.14.72.24子网掩码是-255.255.192.0试求其网络地址">例：一直IP地址是<code>141.14.72.24</code>，子网掩码是
+<code>255.255.192.0</code>试求其网络地址</h4>
+<p><img src="/image/Review/Network/网络层/求子网络号.png" alt="" class="ans"></p>
+<h4
+id="例某单位分配了一个b类地址计划将内部网络划分为35个子网将来可能增加16个子网每个子网的主机数目接近800台则可行的掩码方案是">例：某单位分配了一个B类地址，计划将内部网络划分为35个子网，将来可能增加16个子网，每个子网的主机数目接近800台，则可行的掩码方案是：</h4>
+<h2
+id="section"><img src="/image/Review/Network/网络层/掩码方案.png" alt="" class="ans"></h2>
+<h5 id="使用子网时分组的转发">使用子网时分组的转发</h5>
 <ul>
-<li>子网掩码长度 &#x3D; 32位</li>
-<li><strong>某位 &#x3D; 0</strong>：ip地址中对应的位位主机号</li>
-<li><strong>某位 &#x3D; 1</strong>：IP地址中对应的位位网络号和子网号</li>
-</ul>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%E5%92%8CIP%E5%9C%B0%E5%9D%80%E5%90%84%E5%AD%97%E6%AE%B5.png"></p>
-<p>求子网号的方法：<br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%AD%90%E7%BD%91%E5%8F%B7%E6%B1%82%E6%B3%95.png"></p>
-<p>默认子网掩码：<br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E9%BB%98%E8%AE%A4%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81.png"></p>
-<p>子网掩码是一个重要属性</p>
-<ul>
-<li>子网掩码是一个网络或一个子网的重要属性</li>
-<li>路由器在和相邻的路由器交换信息时必须把自己所在网络的子网掩码告诉相邻路由器</li>
-<li>路由表中的每个项目除了网络地址以外还要给出该网络的子网掩码</li>
-<li>若一个路由器连接在两个子网上就又有两个网络地址和两个子网掩码。</li>
-</ul>
-<hr>
-<h4 id="例：一直IP地址是141-14-72-24，子网掩码是-255-255-192-0试求其网络地址"><a href="#例：一直IP地址是141-14-72-24，子网掩码是-255-255-192-0试求其网络地址" class="headerlink" title="例：一直IP地址是141.14.72.24，子网掩码是 255.255.192.0试求其网络地址"></a>例：一直IP地址是<code>141.14.72.24</code>，子网掩码是 <code>255.255.192.0</code>试求其网络地址</h4><img src="/image/Review/Network/网络层/求子网络号.png" alt="" class="ans">
-
-
-<h4 id="例：某单位分配了一个B类地址，计划将内部网络划分为35个子网，将来可能增加16个子网，每个子网的主机数目接近800台，则可行的掩码方案是："><a href="#例：某单位分配了一个B类地址，计划将内部网络划分为35个子网，将来可能增加16个子网，每个子网的主机数目接近800台，则可行的掩码方案是：" class="headerlink" title="例：某单位分配了一个B类地址，计划将内部网络划分为35个子网，将来可能增加16个子网，每个子网的主机数目接近800台，则可行的掩码方案是："></a>例：某单位分配了一个B类地址，计划将内部网络划分为35个子网，将来可能增加16个子网，每个子网的主机数目接近800台，则可行的掩码方案是：</h4><img src="/image/Review/Network/网络层/掩码方案.png" alt="" class="ans">
-------------------------------------
-
-<h5 id="使用子网时分组的转发"><a href="#使用子网时分组的转发" class="headerlink" title="使用子网时分组的转发"></a>使用子网时分组的转发</h5><ul>
 <li>划分子网情况下，网络地址取决于那个网络所采用的子网掩码，但<strong>数据包的首部并没有提供子网掩码的信息</strong>，故分组转发的算法必须作相应的改动</li>
 </ul>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%E6%83%85%E5%86%B5%E4%B8%8B%E7%9A%84%E5%88%86%E7%BB%84%E8%BD%AC%E5%8F%91%E7%AE%97%E6%B3%95.png"></p>
-<h3 id="无分类编制CIDR"><a href="#无分类编制CIDR" class="headerlink" title="无分类编制CIDR"></a>无分类编制CIDR</h3><h4 id="网络前缀"><a href="#网络前缀" class="headerlink" title="网络前缀"></a>网络前缀</h4><p>1992年互联网面临三个必须解决的问题</p>
+<p><img
+src="/image/Review/Network/网络层/子网划分情况下的分组转发算法.png" /></p>
+<h3 id="无分类编制cidr">无分类编制CIDR</h3>
+<h4 id="网络前缀">网络前缀</h4>
+<p>1992年互联网面临三个必须解决的问题 - B类地址在1992年分配接近一半 -
+互联网主干网上的路由表中的项目数急剧增长。 - 整个IPV4即将消耗殆尽。</p>
+<h4 id="无分类的两级编址">无分类的两级编址</h4>
+<p><img src="/image/Review/Network/网络层/无分类两级编码.png" /></p>
+<h4 id="使用二叉树线索查找路由表">使用二叉树线索查找路由表</h4>
+<p><img src="/image/Review/Network/网络层/二叉树线索查找.png" /></p>
+<h2 id="网际控制报文协议icmp">网际控制报文协议ICMP</h2>
 <ul>
-<li>B类地址在1992年分配接近一半</li>
-<li>互联网主干网上的路由表中的项目数急剧增长。</li>
-<li>整个IPV4即将消耗殆尽。</li>
-</ul>
-<h4 id="无分类的两级编址"><a href="#无分类的两级编址" class="headerlink" title="无分类的两级编址"></a>无分类的两级编址</h4><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%97%A0%E5%88%86%E7%B1%BB%E4%B8%A4%E7%BA%A7%E7%BC%96%E7%A0%81.png"></p>
-<h4 id="使用二叉树线索查找路由表"><a href="#使用二叉树线索查找路由表" class="headerlink" title="使用二叉树线索查找路由表"></a>使用二叉树线索查找路由表</h4><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BA%BF%E7%B4%A2%E6%9F%A5%E6%89%BE.png"></p>
-<h2 id="网际控制报文协议ICMP"><a href="#网际控制报文协议ICMP" class="headerlink" title="网际控制报文协议ICMP"></a>网际控制报文协议ICMP</h2><ul>
 <li>为了更有效地转发IP数据包和提高交付成功的机会，在网际层使用ICMP协议</li>
 <li>ICMP允许主机或路由器报告差错情况和提供有关异常情况的报告</li>
 <li>ICMP不是高层协议，而是IP层协议</li>
 </ul>
-<h4 id="ICMP报文格式"><a href="#ICMP报文格式" class="headerlink" title="ICMP报文格式"></a>ICMP报文格式</h4><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/ICMP%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F.png"></p>
-<h3 id="ICMP-报文的种类"><a href="#ICMP-报文的种类" class="headerlink" title="ICMP 报文的种类"></a>ICMP 报文的种类</h3><h4 id="ICMP差错报告报文："><a href="#ICMP差错报告报文：" class="headerlink" title="ICMP差错报告报文："></a>ICMP差错报告报文：</h4><ol>
+<h4 id="icmp报文格式">ICMP报文格式</h4>
+<p><img src="/image/Review/Network/网络层/ICMP报文格式.png" /></p>
+<h3 id="icmp-报文的种类">ICMP 报文的种类</h3>
+<h4 id="icmp差错报告报文">ICMP差错报告报文：</h4>
+<ol type="1">
 <li>终点不可达</li>
 <li>时间超过</li>
 <li>参数问题</li>
-<li>改变路由（重定向）<br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/ICMP%E5%B7%AE%E9%94%99%E6%8A%A5%E6%96%87%E7%9A%84%E5%86%85%E5%AE%B9.png"></li>
+<li>改变路由（重定向） <img
+src="/image/Review/Network/网络层/ICMP差错报文的内容.png" /></li>
 </ol>
-<p>不应该发送差错报文的集中情况：</p>
+<p>不应该发送差错报文的集中情况： - 对ICMP差错报文不再发送ICMP差错报文 -
+对第一个分片的数据包片的后续所有数据包文都不发送ICMP差错报文。 -
+对具有多播地址的数据报都不发送ICMP差错报文 -
+对特殊地址的数据报不发送ICMP差错报文</p>
+<h4 id="icmp询问报文">ICMP询问报文</h4>
 <ul>
-<li>对ICMP差错报文不再发送ICMP差错报文</li>
-<li>对第一个分片的数据包片的后续所有数据包文都不发送ICMP差错报文。</li>
-<li>对具有多播地址的数据报都不发送ICMP差错报文</li>
-<li>对特殊地址的数据报不发送ICMP差错报文</li>
-</ul>
-<h4 id="ICMP询问报文"><a href="#ICMP询问报文" class="headerlink" title="ICMP询问报文"></a>ICMP询问报文</h4><ul>
 <li>回送请求和回答报文</li>
 <li>时间戳请求和回答报文</li>
 </ul>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E4%B8%8D%E5%86%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87.png"></p>
+<p><img src="/image/Review/Network/网络层/不再使用的请求报文.png" /></p>
 <p>ICMP报文的前四个字节都是统一格式，共三个字段<strong>类型、代码、校验和</strong>，接着四个字节的内容和ICMP的类型有关</p>
-<h4 id="ICMP的应用举例"><a href="#ICMP的应用举例" class="headerlink" title="ICMP的应用举例"></a>ICMP的应用举例</h4><ul>
-<li><p>Ping</p>
+<h4 id="icmp的应用举例">ICMP的应用举例</h4>
+<ul>
+<li>Ping
 <ul>
 <li>用来册是两个主机之间的连同性</li>
 <li>Ping使用了ICMP回送请求与回送回答报文</li>
 <li>Ping是应用层直接使用ICMP的例子，它没有通过运输层的TCP或者UDP</li>
-</ul>
-</li>
-<li><p>Traceroute 的应用举例</p>
+</ul></li>
+<li>Traceroute 的应用举例
 <ul>
 <li>在windows操作系统中这个命令是tracert,它用来跟踪一个分组从原点到终点的路径。</li>
 <li>它利用IP数据报中的TTL数据报中的TTL字段和ICMP<strong>时间超过</strong>差错报告报文实现对从原点到重点的路径跟踪。</li>
+</ul></li>
+<li><h2 id="ipv6">IPV6</h2></li>
 </ul>
-</li>
-<li></li>
-</ul>
-<h2 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h2><h2 id="互联网的路由选择协议"><a href="#互联网的路由选择协议" class="headerlink" title="互联网的路由选择协议"></a>互联网的路由选择协议</h2><h3 id="几个基本概念"><a href="#几个基本概念" class="headerlink" title="几个基本概念"></a>几个基本概念</h3><h4 id="理想的路由算法"><a href="#理想的路由算法" class="headerlink" title="理想的路由算法"></a>理想的路由算法</h4><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E7%90%86%E6%83%B3%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95.png"></p>
-<h4 id="不存在绝对的最佳路由"><a href="#不存在绝对的最佳路由" class="headerlink" title="不存在绝对的最佳路由"></a>不存在绝对的最佳路由</h4><p>所谓的<strong>最佳</strong>只是相对于某一种特定需求下得到的较为合理的选择.</p>
-<h4 id="静态路由选择"><a href="#静态路由选择" class="headerlink" title="静态路由选择"></a>静态路由选择</h4><p>非自适应路由选择,实现简单开销小,但不能及时相应网络状态变化</p>
-<h4 id="动态路由选择"><a href="#动态路由选择" class="headerlink" title="动态路由选择"></a>动态路由选择</h4><p>自适应路由选择,能较好地时应网络状态变化,但实现起来较为复杂,开销更大</p>
-<h3 id="分层次路由选择协议"><a href="#分层次路由选择协议" class="headerlink" title="分层次路由选择协议"></a>分层次路由选择协议</h3><p>互联网采用分层次的路由选择协议原因如下：</p>
+<h2 id="互联网的路由选择协议">互联网的路由选择协议</h2>
+<h3 id="几个基本概念">几个基本概念</h3>
+<h4 id="理想的路由算法">理想的路由算法</h4>
+<p><img src="/image/Review/Network/网络层/理想路由算法.png" /></p>
+<h4 id="不存在绝对的最佳路由">不存在绝对的最佳路由</h4>
+<p>所谓的<strong>最佳</strong>只是相对于某一种特定需求下得到的较为合理的选择.</p>
+<h4 id="静态路由选择">静态路由选择</h4>
+<p>非自适应路由选择,实现简单开销小,但不能及时相应网络状态变化</p>
+<h4 id="动态路由选择">动态路由选择</h4>
+<p>自适应路由选择,能较好地时应网络状态变化,但实现起来较为复杂,开销更大</p>
+<h3 id="分层次路由选择协议">分层次路由选择协议</h3>
+<p>互联网采用分层次的路由选择协议原因如下： -
+互联网规模非常大，如果所有的路由器直到所有的网络应该怎样到达则需要非常大的路由表，处理起来花费时间很长，而且所有路由器之间交换路由信息所需的宽带就能使得网络通信链路饱和
+-
+许多单位不希望本单位的网络细节和其所采用的路由协议被外界知道，但仍希望可以连接到互联网上</p>
+<h4 id="自治系统as">自治系统AS</h4>
+<p>一组路由器使用一种AS内部的路由选择协议和共同的度量以确定该分组在该AS内的路由，同时还是用一种AS之间的路由选择协议用以确定分组在AS之间的路由。
+<strong>一个AS对其他AS表现出的是一个单一和一致的路由选择策略。</strong></p>
+<p><img src="/image/Review/Network/网络层/自治系统AS.png" /></p>
+<h3 id="内部网关协议rip">内部网关协议RIP</h3>
+<p>工作原理： -
+路由信息协议RIP是一种分布是的，基于距离向量的路由选择协议 -
+RIP协议要求网络中每一个路由器都要维护从它自己到其他每一个目的网络的距离记录。</p>
+<h4 id="距离定义">“距离”定义</h4>
 <ul>
-<li>互联网规模非常大，如果所有的路由器直到所有的网络应该怎样到达则需要非常大的路由表，处理起来花费时间很长，而且所有路由器之间交换路由信息所需的宽带就能使得网络通信链路饱和</li>
-<li>许多单位不希望本单位的网络细节和其所采用的路由协议被外界知道，但仍希望可以连接到互联网上</li>
-</ul>
-<h4 id="自治系统AS"><a href="#自治系统AS" class="headerlink" title="自治系统AS"></a>自治系统AS</h4><p>一组路由器使用一种AS内部的路由选择协议和共同的度量以确定该分组在该AS内的路由，同时还是用一种AS之间的路由选择协议用以确定分组在AS之间的路由。<br><strong>一个AS对其他AS表现出的是一个单一和一致的路由选择策略。</strong></p>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9FAS.png"></p>
-<h3 id="内部网关协议RIP"><a href="#内部网关协议RIP" class="headerlink" title="内部网关协议RIP"></a>内部网关协议RIP</h3><p>工作原理：</p>
-<ul>
-<li>路由信息协议RIP是一种分布是的，基于距离向量的路由选择协议</li>
-<li>RIP协议要求网络中每一个路由器都要维护从它自己到其他每一个目的网络的距离记录。</li>
-</ul>
-<h4 id="“距离”定义"><a href="#“距离”定义" class="headerlink" title="“距离”定义"></a>“距离”定义</h4><ul>
 <li>从一个路由器到直接连接的网络的距离定义位”1“</li>
 <li>从一个路由器到非直连网络的距离定义为所经过的路由器数加一</li>
 <li>ROP协议中的”距离“也成为”<strong>跳数</strong>”</li>
@@ -978,51 +1047,40 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <li>交换的信息是当前本路由器所知道的全部信息，即自己的路由表</li>
 <li>按照固定时间间隔交换路由信息</li>
 </ul>
-<h4 id="路由表的建立"><a href="#路由表的建立" class="headerlink" title="路由表的建立"></a>路由表的建立</h4><ul>
+<h4 id="路由表的建立">路由表的建立</h4>
+<ul>
 <li>路由器在刚开始工作时只知道直接连击的网络的距离。它的路由表是空的</li>
 <li>以后每一个路由器也只是和数目非常有限的相邻路由器交换并更新路由信息</li>
 <li>经历若干次更新后，所有路由器最终都会知道到达本自治系统中的任何一个网络的最短距离和吓一跳路由器的地址</li>
 <li>RIP协议的<strong>收敛</strong>过程较快（在自治系统中所有节点都得到正确的路由选择信息的过程</li>
 </ul>
-<h3 id="距离向量算法："><a href="#距离向量算法：" class="headerlink" title="距离向量算法："></a>距离向量算法：</h3><p><strong>路由器收到相邻路由器（其地址为X）的RIP报文</strong></p>
-<ol>
-<li>（发送的路由器）先修改此RIP报文中的所有项目：把下一跳的字段中的地址都改为X（自己），并把所有的“距离”字段值+1</li>
-<li>对修改后的RIP报文中的每个项目，重复以下步骤<ol>
-<li>若项目中的目的网络不再路由表中，则把该项目加到路由表中</li>
-<li>否则<ol>
-<li>下一跳字段给出的路由器地址是相同的，则把收到的项目替换为源路由表表中项目</li>
-<li>否则<ol>
-<li>收到项目中距离小于路由表中的距离，则进行更新</li>
-<li>否则，什么也不做</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>若3分钟还没收到相邻路由器更新的路由表，则把次相邻路由器记为不可达路由器。</li>
-<li>返回</li>
-</ol>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E7%AE%97%E6%B3%95.png"><br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E7%AE%97%E6%B3%952.png"></p>
-<h3 id="RIP2协议的报文格式"><a href="#RIP2协议的报文格式" class="headerlink" title="RIP2协议的报文格式"></a>RIP2协议的报文格式</h3><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/RIP2%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F.png"></p>
-<p>RIP协议特点：</p>
-<ul>
-<li>好消息传的快，坏消息传得慢。</li>
-<li>RIP存在的一个问题：当网络出现故障时要经过较长的时间才能将此消息传到所有路由器。</li>
-</ul>
-<h4 id="RIP协议的优缺点："><a href="#RIP协议的优缺点：" class="headerlink" title="RIP协议的优缺点："></a>RIP协议的优缺点：</h4><p>优点：</p>
-<ul>
-<li>实现简单开销小<br>缺点：</li>
-<li>RIP限制了网络规模，它能使用的最大距离为15</li>
-<li>路由器之间交换的路由信息是路由器中的完整路由，随着网络规模增大，开销也就增加。</li>
-<li>坏消息传播的慢，使得更新过程的<strong>收敛</strong>时间变长。</li>
-</ul>
-<hr>
+<h3 id="距离向量算法">距离向量算法：</h3>
+<p><strong>路由器收到相邻路由器（其地址为X）的RIP报文</strong> 1.
+（发送的路由器）先修改此RIP报文中的所有项目：把下一跳的字段中的地址都改为X（自己），并把所有的“距离”字段值+1
+2. 对修改后的RIP报文中的每个项目，重复以下步骤 1.
+若项目中的目的网络不再路由表中，则把该项目加到路由表中 2. 否则 1.
+下一跳字段给出的路由器地址是相同的，则把收到的项目替换为源路由表表中项目
+2. 否则 1. 收到项目中距离小于路由表中的距离，则进行更新 2.
+否则，什么也不做 3.
+若3分钟还没收到相邻路由器更新的路由表，则把次相邻路由器记为不可达路由器。
+4. 返回</p>
+<p><img src="/image/Review/Network/网络层/距离向量算法.png" /> <img
+src="/image/Review/Network/网络层/距离向量算法2.png" /></p>
+<h3 id="rip2协议的报文格式">RIP2协议的报文格式</h3>
+<p><img src="/image/Review/Network/网络层/RIP2报文格式.png" /></p>
+<p>RIP协议特点： - 好消息传的快，坏消息传得慢。 -
+RIP存在的一个问题：当网络出现故障时要经过较长的时间才能将此消息传到所有路由器。</p>
+<h4 id="rip协议的优缺点">RIP协议的优缺点：</h4>
+<p>优点： - 实现简单开销小 缺点： -
+RIP限制了网络规模，它能使用的最大距离为15 -
+路由器之间交换的路由信息是路由器中的完整路由，随着网络规模增大，开销也就增加。
+- 坏消息传播的慢，使得更新过程的<strong>收敛</strong>时间变长。</p>
+<hr />
 <!-- ### RIP例题：
 
 <img src="/image/Review/Network/网络层/RIP协议例题.png" alt="" class="ans"> -->
-
-<h3 id="RIP例题"><a href="#RIP例题" class="headerlink" title="RIP例题"></a>RIP例题</h3><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/RIP%E5%8D%8F%E8%AE%AE%E4%BE%8B%E9%A2%982.png"></p>
+<h3 id="rip例题">RIP例题</h3>
+<p><img src="/image/Review/Network/网络层/RIP协议例题2.png" /></p>
 <p>先执行距离向量算法第一步</p>
 <table>
 <thead>
@@ -1032,7 +1090,8 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <th>下一跳</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>N1</td>
 <td>3</td>
 <td>C</td>
@@ -1052,14 +1111,12 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <td>8</td>
 <td>C</td>
 </tr>
-</tbody></table>
-<p>执行距离向量算法第二步</p>
-<ul>
-<li>修改后C路由表中的N1距离小于A中的距离，更新路由表</li>
-<li>N2相同，用收到的替换A中的</li>
-<li>A中旧的N3距离小于C中的距离，什么也不做</li>
-<li>A中旧的N4距离小于C中N4的距离，什么也不做</li>
-</ul>
+</tbody>
+</table>
+<p>执行距离向量算法第二步 -
+修改后C路由表中的N1距离小于A中的距离，更新路由表 -
+N2相同，用收到的替换A中的 - A中旧的N3距离小于C中的距离，什么也不做 -
+A中旧的N4距离小于C中N4的距离，什么也不做</p>
 <p>答案如下：</p>
 <table>
 <thead>
@@ -1069,7 +1126,8 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <th>下一跳</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>N1</td>
 <td>3</td>
 <td>C</td>
@@ -1089,44 +1147,53 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <td>5</td>
 <td>G</td>
 </tr>
-</tbody></table>
-<hr>
-<h3 id="内部网关协议OSPF"><a href="#内部网关协议OSPF" class="headerlink" title="内部网关协议OSPF"></a>内部网关协议OSPF</h3><ul>
+</tbody>
+</table>
+<hr />
+<h3 id="内部网关协议ospf">内部网关协议OSPF</h3>
+<ul>
 <li>开放最短有限OSPF是为了克服RIP的缺点在1989年开发出来的。其原理很简单，但实现起来较为复杂</li>
 </ul>
-<h4 id="OSPF基本特点"><a href="#OSPF基本特点" class="headerlink" title="OSPF基本特点"></a>OSPF基本特点</h4><ul>
+<h4 id="ospf基本特点">OSPF基本特点</h4>
+<ul>
 <li><strong>开放</strong>表明OSPF协议不是受某一家厂商控制的，而是公开发表的</li>
 <li><strong>最短路径优先</strong>是因为使用了Dijkstra提出的最短路径算法SPF</li>
 <li>采用分布是的链路状态，OSPF只是一个协议的名字，<strong>并不代表</strong>其他路由选择协议没有使用<strong>最短路径优先</strong></li>
 </ul>
-<h4 id="三个要点"><a href="#三个要点" class="headerlink" title="三个要点"></a>三个要点</h4><ul>
+<h4 id="三个要点">三个要点</h4>
+<ul>
 <li>向本自治系统中的所有路由器发送信息，使用<strong>洪泛法</strong></li>
-<li>发送的信息就是与本路由器相邻的所有路由器的链路状态，但这只是路由器所知道的<strong>部分信息</strong><ul>
+<li>发送的信息就是与本路由器相邻的所有路由器的链路状态，但这只是路由器所知道的<strong>部分信息</strong>
+<ul>
 <li>链路状态就是说名本路由器都和那些路由器相临，以及该链路的<strong>度量</strong></li>
-</ul>
-</li>
+</ul></li>
 <li>只有当链路状态发生变化时路由器采用洪泛法向所有路由器发送此信息。</li>
 </ul>
-<h4 id="OSPF使用洪泛法发送报文"><a href="#OSPF使用洪泛法发送报文" class="headerlink" title="OSPF使用洪泛法发送报文"></a>OSPF使用洪泛法发送报文</h4><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E6%B4%AA%E6%B3%9B%E6%B3%95.png"></p>
-<h4 id="链路状态数据库"><a href="#链路状态数据库" class="headerlink" title="链路状态数据库"></a>链路状态数据库</h4><ul>
+<h4 id="ospf使用洪泛法发送报文">OSPF使用洪泛法发送报文</h4>
+<p><img src="/image/Review/Network/网络层/洪泛法.png" /></p>
+<h4 id="链路状态数据库">链路状态数据库</h4>
+<ul>
 <li>由于各路由器之间频繁地交换链路状态信息，因此所有的路由器最终都能建立一个<strong>链路状态数据库</strong></li>
 <li>全网拓扑结构图，它在拳王范围内是一致的（<strong>链路状态数据库的同步</strong>）。</li>
 <li>OSPF的链路状态数据库能较快地进行更新，使得各个路由器能即是更新其路由表。</li>
 <li>OSPF的更新过程收敛地快是其重要特点。</li>
 </ul>
-<h4 id="OSPF直接使用IP数据报传送"><a href="#OSPF直接使用IP数据报传送" class="headerlink" title="OSPF直接使用IP数据报传送"></a>OSPF直接使用IP数据报传送</h4><ul>
+<h4 id="ospf直接使用ip数据报传送">OSPF直接使用IP数据报传送</h4>
+<ul>
 <li>OSPF不用UDP而是直接用IP数据报传送。</li>
 <li>OSPF构成的IP数据报很短</li>
 <li>好处：减少路由信息的通信量，可以不必将长的数据报分片传送</li>
 </ul>
-<h4 id="其他特点"><a href="#其他特点" class="headerlink" title="其他特点"></a>其他特点</h4><ul>
+<h4 id="其他特点">其他特点</h4>
+<ul>
 <li>OSPF对不同的链路可根据IP分组的不同服务类型TOS而设置成不同的代价，因此，OSPF对于不同类型的业务可计算出不同的路由</li>
 <li>如果到同一个目的网络由多条相同代价爱的路径，那么可以将通信量分配到几个路径，这叫做多路径间的副在平衡。</li>
 <li>所有在OSPF路由器之间交换的分组都具有鉴别的功能。</li>
 <li><strong>支持可变长度的子网划分和无分类的编制CIDO</strong></li>
 <li>每一个链路状态都带上一个32位的序号，序号月大状态就越新。</li>
 </ul>
-<h4 id="OSPF分组"><a href="#OSPF分组" class="headerlink" title="OSPF分组"></a>OSPF分组</h4><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/OSPF%E5%88%86%E7%BB%84.png"></p>
+<h4 id="ospf分组">OSPF分组</h4>
+<p><img src="/image/Review/Network/网络层/OSPF分组.png" /></p>
 <ul>
 <li>类型1：文号（Hello）分组</li>
 <li>类型2：数据库描述分组</li>
@@ -1134,67 +1201,68 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
 <li>类型4：链路状态更新分组</li>
 <li>类型5：链路状态确认分组</li>
 </ul>
-<h3 id="外部网关协议BGP"><a href="#外部网关协议BGP" class="headerlink" title="外部网关协议BGP"></a>外部网关协议BGP</h3><ul>
+<h3 id="外部网关协议bgp">外部网关协议BGP</h3>
+<ul>
 <li>BGP是不同自治系统的路由之间交换路由信息的协议</li>
-<li>互联网的规模急剧增长，使得自治系统之间路由选择非常困难，对于子侄媳通之间路由的选择，要寻找最佳路由很不现实<ul>
+<li>互联网的规模急剧增长，使得自治系统之间路由选择非常困难，对于子侄媳通之间路由的选择，要寻找最佳路由很不现实
+<ul>
 <li>当一条路径通过几个不同的AS。想要对这样的路径计算出有意义的代价是不可能的</li>
 <li>**比较合理的做法是在AS之间交换“可达性”信息</li>
-</ul>
-</li>
+</ul></li>
 <li>自治系统之间的路由选择必须考虑有关策略。</li>
 <li>因此，系统之间的路由选择必须考虑有关策略</li>
 <li>因此边界网关协议BGP只能力求寻找一条能够到达目的网络且<strong>比较好的路由</strong>，并非要寻找一条<strong>最佳路由</strong></li>
 </ul>
-<h4 id="GBP发言人"><a href="#GBP发言人" class="headerlink" title="GBP发言人"></a>GBP发言人</h4><ul>
+<h4 id="gbp发言人">GBP发言人</h4>
+<ul>
 <li>每一个自治系统的管理员都要选择至少一个路由器作为该自治系统的“发言人”</li>
 <li>一般来说，两个GBP发言人都通过一个共享网络连接在一起，而BGP发言人都是通过一个共享的网络连接在一起，而BGP发言人往往就是BGP边界路由器，但<strong>不一定</strong>非要是边界路由器</li>
 </ul>
-<h4 id="BGP路由交换信息"><a href="#BGP路由交换信息" class="headerlink" title="BGP路由交换信息"></a>BGP路由交换信息</h4><p>BGP发言人与其他自治系统中的BGP发言人交换路由信息，就要先建立<strong>TCP连接</strong>然后链接上交换BGP报文建立BGP会话，利用BGP会话交换路由信息。TCP连接能够提供简单可靠的服务，也简化了路由选择协议。使用TCP连接交换的两个BGP发言人彼此称为对方的邻站或对等站。</p>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E5%8F%91%E8%A8%80%E4%BA%BA%E4%B8%8EAS%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="发言人与AS的关系"></p>
-<h4 id="AS的连通图"><a href="#AS的连通图" class="headerlink" title="AS的连通图"></a>AS的连通图</h4><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%BF%9E%E9%80%9A%E5%9B%BE.png"></p>
-<h2 id="路由器的构成"><a href="#路由器的构成" class="headerlink" title="路由器的构成"></a>路由器的构成</h2><ul>
+<h4 id="bgp路由交换信息">BGP路由交换信息</h4>
+<p>BGP发言人与其他自治系统中的BGP发言人交换路由信息，就要先建立<strong>TCP连接</strong>然后链接上交换BGP报文建立BGP会话，利用BGP会话交换路由信息。TCP连接能够提供简单可靠的服务，也简化了路由选择协议。使用TCP连接交换的两个BGP发言人彼此称为对方的邻站或对等站。</p>
+<figure>
+<img src="/image/Review/Network/网络层/发言人与AS的关系.png"
+alt="发言人与AS的关系" />
+<figcaption aria-hidden="true">发言人与AS的关系</figcaption>
+</figure>
+<h4 id="as的连通图">AS的连通图</h4>
+<p><img src="/image/Review/Network/网络层/连通图.png" /></p>
+<h2 id="路由器的构成">路由器的构成</h2>
+<ul>
 <li>具有多个输入和输出端口的专用计算机，作用是转发分组。</li>
 <li>下一跳路由器也按照这种方式处理分组，直到该分组达到终点为止</li>
 <li>路由器的转发分组正式网络层的主要工作</li>
 </ul>
-<h3 id="整个路由器的两大部分"><a href="#整个路由器的两大部分" class="headerlink" title="整个路由器的两大部分"></a>整个路由器的两大部分</h3><p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%93%E6%9E%84.png"></p>
-<h4 id="路由转发部分"><a href="#路由转发部分" class="headerlink" title="路由转发部分"></a>路由转发部分</h4><ul>
+<h3 id="整个路由器的两大部分">整个路由器的两大部分</h3>
+<p><img src="/image/Review/Network/网络层/路由器结构.png" /></p>
+<h4 id="路由转发部分">路由转发部分</h4>
+<ul>
 <li>控制部分，其核心任务是路由选择处理机</li>
 <li>路由选择处理机的人物是根据选定的路由选择协议构造出路由表，同时经常或定期地和相邻路由器交换路由信息而不断地更新和维护路由表</li>
 </ul>
-<p><strong>转发分组由三部分组成</strong></p>
-<ul>
-<li>交换结构：交换组织，其作用是根据转发表对分组进行处理。</li>
-<li>一组输入端口</li>
-<li>一组输出端口</li>
-</ul>
-<p><strong>转发和路由分组的区别</strong></p>
-<ul>
-<li>转发是指路由器根据转发表将用户的IP数据报从和是的端口转发出去。</li>
-<li>“路由选择”怎时按照分布是算法，根据从相邻路由器得到的网络拓扑不安化情况，动态地改变所选择的路由</li>
-<li>路由表是根据路由选择算法的出的</li>
-</ul>
+<p><strong>转发分组由三部分组成</strong> -
+交换结构：交换组织，其作用是根据转发表对分组进行处理。 - 一组输入端口 -
+一组输出端口</p>
+<p><strong>转发和路由分组的区别</strong> -
+转发是指路由器根据转发表将用户的IP数据报从和是的端口转发出去。 -
+“路由选择”怎时按照分布是算法，根据从相邻路由器得到的网络拓扑不安化情况，动态地改变所选择的路由
+- 路由表是根据路由选择算法的出的</p>
 <p><strong>路由器输入端：</strong></p>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BE%93%E5%85%A5%E7%AB%AF.png"></p>
-<p><strong>路由器输出端：</strong><br><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BE%93%E5%87%BA%E7%AB%AF.png"></p>
-<p><strong>分组丢弃</strong></p>
-<ul>
-<li>若路由器处理分组的速度赶不上分组进入队列的速率，则队列存储空间减少到0后再进入的分组由于没有空间存放，只能被丢弃。</li>
-<li>路由器中输入或者戍卒队列产生以粗是造成分组丢失的重要原因。</li>
-</ul>
-<p><strong>交换结构</strong></p>
-<ul>
-<li>路由器的关键构件。</li>
-<li>把分组从一个输入端口转移到另一个合适的输出端口。</li>
-<li>实现交换的三种常用方法：<ul>
-<li>存储器</li>
-<li>总线</li>
-<li>纵横交换结构</li>
-</ul>
-</li>
-</ul>
-<p><img src="/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F.png"></p>
-<h2 id="IP多播"><a href="#IP多播" class="headerlink" title="IP多播"></a>IP多播</h2><h2 id="虚拟专用网VPN和网络地址转换NAT"><a href="#虚拟专用网VPN和网络地址转换NAT" class="headerlink" title="虚拟专用网VPN和网络地址转换NAT"></a>虚拟专用网VPN和网络地址转换NAT</h2><h2 id="多协议标签交换MPLS"><a href="#多协议标签交换MPLS" class="headerlink" title="多协议标签交换MPLS"></a>多协议标签交换MPLS</h2><style>
+<p><img src="/image/Review/Network/网络层/路由器输入端.png" /></p>
+<p><strong>路由器输出端：</strong> <img
+src="/image/Review/Network/网络层/路由器输出端.png" /></p>
+<p><strong>分组丢弃</strong> -
+若路由器处理分组的速度赶不上分组进入队列的速率，则队列存储空间减少到0后再进入的分组由于没有空间存放，只能被丢弃。
+- 路由器中输入或者戍卒队列产生以粗是造成分组丢失的重要原因。</p>
+<p><strong>交换结构</strong> - 路由器的关键构件。 -
+把分组从一个输入端口转移到另一个合适的输出端口。 -
+实现交换的三种常用方法： - 存储器 - 总线 - 纵横交换结构</p>
+<p><img src="/image/Review/Network/网络层/交换方式.png" /></p>
+<h2 id="ip多播">IP多播</h2>
+<h2
+id="虚拟专用网vpn和网络地址转换nat">虚拟专用网VPN和网络地址转换NAT</h2>
+<h2 id="多协议标签交换mpls">多协议标签交换MPLS</h2>
+<style>
     .ans{
     filter: blur(20px);
     }
@@ -1203,6 +1271,7 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);"
     }
 
 </style>
+
         
       </div>
 

@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="我们是主张自力更生的。我们希望有外援，但是我们不能依赖它，我们依靠自己的努力，依靠全体军民的创造力。         《必须学会做经济工作》（一九四五年一月十日），《毛泽东选集》第三卷第一零一五页      运输层运输层协议概述 运输层向上层应用提供通信服务，它属于面向通信部分的最高层，同时也是用户功能中最底层。 当网络的边缘部分中的两个主机使用网络的核心部分功能进行通信时，只有位于网">
+  <meta name="description" content="我们是主张自力更生的。我们希望有外援，但是我们不能依赖它，我们依靠自己的努力，依靠全体军民的创造力。    《必须学会做经济工作》（一九四五年一月十日），《毛泽东选集》第三卷第一零一五页   运输层 运输层协议概述  运输层向上层应用提供通信服务，它属于面向通信部分的最高层，同时也是用户功能中最底层。 当网络的边缘部分中的两个主机使用网络的核心部分功能进行通信时，只有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络运输层">
 <meta property="og:url" content="http://example.com/2024/07/06/notes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%BF%90%E8%BE%93%E5%B1%82/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
-<meta property="og:description" content="我们是主张自力更生的。我们希望有外援，但是我们不能依赖它，我们依靠自己的努力，依靠全体军民的创造力。         《必须学会做经济工作》（一九四五年一月十日），《毛泽东选集》第三卷第一零一五页      运输层运输层协议概述 运输层向上层应用提供通信服务，它属于面向通信部分的最高层，同时也是用户功能中最底层。 当网络的边缘部分中的两个主机使用网络的核心部分功能进行通信时，只有位于网">
+<meta property="og:description" content="我们是主张自力更生的。我们希望有外援，但是我们不能依赖它，我们依靠自己的努力，依靠全体军民的创造力。    《必须学会做经济工作》（一九四五年一月十日），《毛泽东选集》第三卷第一零一五页   运输层 运输层协议概述  运输层向上层应用提供通信服务，它属于面向通信部分的最高层，同时也是用户功能中最底层。 当网络的边缘部分中的两个主机使用网络的核心部分功能进行通信时，只有">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/%E8%BF%90%E8%BE%93%E5%B1%82.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/%E5%88%86%E7%94%A8%E5%92%8C%E5%A4%8D%E7%94%A8.png">
@@ -51,7 +51,119 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body>
   
@@ -161,6 +273,11 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/Hexo/">
+                Hexo
+                <div class="category-count">2</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
                 <div class="category-count">1</div>
@@ -176,14 +293,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
-                <div class="category-count">1</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
                 考研
                 <div class="category-count">3</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
+                <div class="category-count">1</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
@@ -216,6 +333,11 @@
     <div class="widget">
       <h3 class="widget-title">Archives</h3>
       
+      
+        <a class="archive-link" href="/archives/2025/07 ">
+          July 2025 
+          <div class="archive-count">4 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2025/06 ">
           June 2025 
@@ -273,33 +395,33 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/06/29/algorithm/Graph/" title="Graph" >
+          <a class="recent-link" href="/2025/07/03/hexo-Latex-render/" title="Hexo LaTeX数学公式渲染" >
             <div class="recent-link-text">
-              Graph
+              Hexo LaTeX数学公式渲染
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/06/28/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="" >
+          <a class="recent-link" href="/2025/07/03/Latex-Test/" title="Latex Test" >
+            <div class="recent-link-text">
+              Latex Test
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E8%AE%BA/" title="唯物辩证论" >
+            <div class="recent-link-text">
+              唯物辩证论
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/07/03/Politics/Philosophy/%E5%94%AF%E7%89%A9%E8%BE%A9%E8%AF%81%E6%B3%95/" title="唯物辩证法" >
+            <div class="recent-link-text">
+              唯物辩证法
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/30/notes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A/" title="" >
             <div class="recent-link-text">
               (no title)
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/20/logs/%E6%97%A5%E5%BF%97/" title="日志" >
-            <div class="recent-link-text">
-              日志
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/19/Politics/Philosophy/Fundamental-Principles-of-Marxism/" title="Fundamental Principles of Marxism" >
-            <div class="recent-link-text">
-              Fundamental Principles of Marxism
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/06/10/algorithm/Binary-tree/" title="Binary-tree" >
-            <div class="recent-link-text">
-              Binary-tree
             </div>
           </a>
         
@@ -357,65 +479,74 @@
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="TitleText">
-  <p>
-  我们是主张自力更生的。我们希望有外援，但是我们不能依赖它，我们依靠自己的努力，依靠全体军民的创造力。
-  </p>
-  <br/>
-  <p>《必须学会做经济工作》（一九四五年一月十日），《毛泽东选集》第三卷第一零一五页</p>
+<p>
+我们是主张自力更生的。我们希望有外援，但是我们不能依赖它，我们依靠自己的努力，依靠全体军民的创造力。
+</p>
+<br>
+<p>
+《必须学会做经济工作》（一九四五年一月十日），《毛泽东选集》第三卷第一零一五页
+</p>
 </div>
-
-
-
-
-<h1 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h1><h2 id="运输层协议概述"><a href="#运输层协议概述" class="headerlink" title="运输层协议概述"></a>运输层协议概述</h2><ul>
+<h1 id="运输层">运输层</h1>
+<h2 id="运输层协议概述">运输层协议概述</h2>
+<ul>
 <li>运输层向上层应用提供通信服务，它属于面向通信部分的最高层，同时也是用户功能中最底层。</li>
 <li>当网络的边缘部分中的两个主机使用网络的核心部分功能进行通信时，只有位于网络边缘的主机的协议栈才有运输层</li>
 </ul>
 <p><strong>简言之在网络核心的路由器是没有网络层以上的分层的</strong></p>
-<p><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/%E8%BF%90%E8%BE%93%E5%B1%82.png"></p>
+<p><img src="/image/Review/Network/运输层/运输层.png"></p>
 <p>运输层负责两台主机间进程的通信，而网络层只是负责数据能在两个主机之间进行传递</p>
-<h3 id="运输层的作用"><a href="#运输层的作用" class="headerlink" title="运输层的作用"></a>运输层的作用</h3><ul>
+<h3 id="运输层的作用">运输层的作用</h3>
+<ul>
 <li>在一个主机中经常会有多个应用进程同时分别和另一台主机中的多个应用进程进行通信。</li>
-<li>这表明运输层有一个很重要的功能——<strong>复用</strong>和<strong>分用</strong><br><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/%E5%88%86%E7%94%A8%E5%92%8C%E5%A4%8D%E7%94%A8.png"></li>
+<li>这表明运输层有一个很重要的功能——<strong>复用</strong>和<strong>分用</strong>
+<img src="/image/Review/Network/运输层/分用和复用.png"></li>
 <li>运输层协议分两大类：TCP和UDP</li>
 <li>屏蔽作用：运输层向高层屏蔽了底层网络核心的细节使得进程看见的好像只有两个运输层实体在通信。</li>
 </ul>
-<h3 id="两种不同的运输协议"><a href="#两种不同的运输协议" class="headerlink" title="两种不同的运输协议"></a>两种不同的运输协议</h3><ul>
+<h3 id="两种不同的运输协议">两种不同的运输协议</h3>
+<ul>
 <li>运输层采取面向连接诶的TCP协议时，尽管下层不可靠，但是TCP的逻辑通信相当于一条可靠的全双工通信信道。</li>
 <li>当运输层使用UDP进行通信时这种逻辑信道同样是不可靠的。</li>
 </ul>
-<p><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/TCP%E4%B8%8EUDP.png"></p>
-<h3 id="运输层的端口"><a href="#运输层的端口" class="headerlink" title="运输层的端口"></a>运输层的端口</h3><p>为解决很难知道进程的端口号的问题，网络中采取在运输层使用协议端口号，常称为<strong>端口</strong>。</p>
-<p><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/%E7%AB%AF%E5%8F%A3%E5%8F%B7.png"></p>
-<h4 id="软件端口和硬件端口"><a href="#软件端口和硬件端口" class="headerlink" title="软件端口和硬件端口"></a>软件端口和硬件端口</h4><ul>
+<p><img src="/image/Review/Network/运输层/TCP与UDP.png"></p>
+<h3 id="运输层的端口">运输层的端口</h3>
+<p>为解决很难知道进程的端口号的问题，网络中采取在运输层使用协议端口号，常称为<strong>端口</strong>。</p>
+<p><img src="/image/Review/Network/运输层/端口号.png"></p>
+<h4 id="软件端口和硬件端口">软件端口和硬件端口</h4>
+<ul>
 <li>软件端口：在协议栈层间的抽象协议端口</li>
 <li>硬件端口：在路由器或者交换机上的端口</li>
 <li>软件端口是应用层的各种协议进程、运输实体进行层间交互的一种<strong>地址</strong></li>
 </ul>
-<h4 id="两大类端口号："><a href="#两大类端口号：" class="headerlink" title="两大类端口号："></a>两大类端口号：</h4><ol>
+<h4 id="两大类端口号">两大类端口号：</h4>
+<ol type="1">
 <li>服务器使用的端口号</li>
 </ol>
 <ul>
 <li>熟知端口：一般在0～1023</li>
 <li>登记端口号：1023～49151,为没有熟知端口号的应用程序适用。使用这个范围的端口号必须在<strong>IANA</strong>登记</li>
 </ul>
-<ol start="2">
+<ol start="2" type="1">
 <li>客户端使用的端口号</li>
 </ol>
 <ul>
 <li>又称短暂端口号，留给客户进程选择暂时使用</li>
 <li>客户进程动态适用进程端口，通信结束后这个端口号可以供其他客户端程序使用</li>
 </ul>
-<p><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/%E5%B8%B8%E7%94%A8%E7%86%9F%E7%9F%A5%E7%AB%AF%E5%8F%A3.png"></p>
-<h2 id="用户数据报协议UDP"><a href="#用户数据报协议UDP" class="headerlink" title="用户数据报协议UDP"></a>用户数据报协议UDP</h2><h3 id="UDP概述"><a href="#UDP概述" class="headerlink" title="UDP概述"></a>UDP概述</h3><ul>
-<li>UDP指在IP数据报服务上增加很少一点功能：<ul>
+<p><img src="/image/Review/Network/运输层/常用熟知端口.png"></p>
+<h2 id="用户数据报协议udp">用户数据报协议UDP</h2>
+<h3 id="udp概述">UDP概述</h3>
+<ul>
+<li>UDP指在IP数据报服务上增加很少一点功能：
+<ul>
 <li>复用和分用</li>
 <li>差错检测功能</li>
-</ul>
-</li>
+</ul></li>
 <li>UDP不具备可靠交付</li>
 </ul>
-<h4 id="UDP主要特点"><a href="#UDP主要特点" class="headerlink" title="UDP主要特点"></a>UDP主要特点</h4><ul>
+<h4 id="udp主要特点">UDP主要特点</h4>
+<ul>
 <li>无链接减少开销和发送数据前的时延</li>
 <li>尽最大努力交付，不需要复杂的数据链路表</li>
 <li>UDP面向报文，即不合并，也不拆分保留报文边界</li>
@@ -423,15 +554,26 @@
 <li>支持<strong>一对一、一对多、多对多、多对一</strong>的交互通信</li>
 <li>UDP首部长度只有8个字节</li>
 </ul>
-<h4 id="面向报文"><a href="#面向报文" class="headerlink" title="面向报文"></a>面向报文</h4><ul>
+<h4 id="面向报文">面向报文</h4>
+<ul>
 <li>每次交付一个完整的报文。应用进程应该选择和是大小的报文、报文太常或太短都会降低IP层的效率</li>
 </ul>
-<p><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/%E9%9D%A2%E5%90%91%E6%8A%A5%E6%96%87%E7%9A%84UDP.png"></p>
+<p><img src="/image/Review/Network/运输层/面向报文的UDP.png"></p>
 <p><strong>在计算检验和时，临时把伪首部和UDP用户数据报连接在一起，伪首部仅仅为了计算检验和</strong></p>
-<p><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/%E6%A3%80%E9%AA%8C%E5%92%8C%E4%BE%8B%E5%AD%90.png"></p>
-<h4 id="UDP首部格式"><a href="#UDP首部格式" class="headerlink" title="UDP首部格式"></a>UDP首部格式</h4><p><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/UDP%E9%A6%96%E9%83%A8%E6%A0%BC%E5%BC%8F.png"></p>
-<h4 id="UDP基于端口的复用"><a href="#UDP基于端口的复用" class="headerlink" title="UDP基于端口的复用"></a>UDP基于端口的复用</h4><p><img src="/image/Review/Network/%E8%BF%90%E8%BE%93%E5%B1%82/UDP%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8.png"></p>
-<h2 id="传输控制协议TCP概述"><a href="#传输控制协议TCP概述" class="headerlink" title="传输控制协议TCP概述"></a>传输控制协议TCP概述</h2><h3 id="最主要特点"><a href="#最主要特点" class="headerlink" title="最主要特点"></a>最主要特点</h3><h2 id="可靠传输的工作原理"><a href="#可靠传输的工作原理" class="headerlink" title="可靠传输的工作原理"></a>可靠传输的工作原理</h2><h2 id="TCP报文首部格式"><a href="#TCP报文首部格式" class="headerlink" title="TCP报文首部格式"></a>TCP报文首部格式</h2><h2 id="TCP可靠传输的实现"><a href="#TCP可靠传输的实现" class="headerlink" title="TCP可靠传输的实现"></a>TCP可靠传输的实现</h2><h2 id="TCP的流量控制"><a href="#TCP的流量控制" class="headerlink" title="TCP的流量控制"></a>TCP的流量控制</h2><h2 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h2><h2 id="TCP运输连接管理"><a href="#TCP运输连接管理" class="headerlink" title="TCP运输连接管理"></a>TCP运输连接管理</h2><style>
+<p><img src="/image/Review/Network/运输层/检验和例子.png"></p>
+<h4 id="udp首部格式">UDP首部格式</h4>
+<p><img src="/image/Review/Network/运输层/UDP首部格式.png"></p>
+<h4 id="udp基于端口的复用">UDP基于端口的复用</h4>
+<p><img src="/image/Review/Network/运输层/UDP端口复用.png"></p>
+<h2 id="传输控制协议tcp概述">传输控制协议TCP概述</h2>
+<h3 id="最主要特点">最主要特点</h3>
+<h2 id="可靠传输的工作原理">可靠传输的工作原理</h2>
+<h2 id="tcp报文首部格式">TCP报文首部格式</h2>
+<h2 id="tcp可靠传输的实现">TCP可靠传输的实现</h2>
+<h2 id="tcp的流量控制">TCP的流量控制</h2>
+<h2 id="tcp拥塞控制">TCP拥塞控制</h2>
+<h2 id="tcp运输连接管理">TCP运输连接管理</h2>
+<style>
     .ans{
     filter: blur(20px);
     }
@@ -481,6 +623,7 @@
     }
 
 </style>
+
         
       </div>
 
