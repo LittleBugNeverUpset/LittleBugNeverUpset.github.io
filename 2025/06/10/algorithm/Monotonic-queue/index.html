@@ -27,12 +27,18 @@
 <meta property="og:site_name" content="LittleBug&#39;s Home">
 <meta property="og:description" content="单调队列  “如果一个选手比你小还比你强，你就可以退役了。”——单调队列的原理  单调队列是一种主要用于解决滑动窗口类问题的数据结构，即，在长度为n的序列中，求每个长度k的区间的区间最值。它的时间复杂度是O(n)。  单调队列的基本思想是，维护一个双向队列（deque），遍历序列，仅当一个元素可能成为某个区间最值时才保留它。 形象地打个比方，上面的序列可以看成学校里各个年级XCPC选">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2025/06/10/algorithm/Monotonic-queue/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%971.png">
+<meta property="og:image" content="http://example.com/2025/06/10/algorithm/Monotonic-queue/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%972.png">
+<meta property="og:image" content="http://example.com/2025/06/10/algorithm/Monotonic-queue/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%973.png">
+<meta property="og:image" content="http://example.com/2025/06/10/algorithm/Monotonic-queue/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%974.png">
+<meta property="og:image" content="http://example.com/2025/06/10/algorithm/Monotonic-queue/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%975.png">
 <meta property="article:published_time" content="2025-06-10T09:37:43.000Z">
-<meta property="article:modified_time" content="2025-06-11T04:42:43.668Z">
+<meta property="article:modified_time" content="2025-07-04T10:37:58.415Z">
 <meta property="article:author" content="LittleBug">
 <meta property="article:tag" content="Data Struct">
 <meta property="article:tag" content="Queue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/06/10/algorithm/Monotonic-queue/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%971.png">
   
     <link rel="alternate" href="/atom.xml" title="LittleBug's Home" type="application/atom+xml">
   
@@ -152,19 +158,9 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/categories/Hexo/">
-                Hexo
-                <div class="category-count">2</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">
                 笔记
                 <div class="category-count">1</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
-                算法
-                <div class="category-count">4</div>
             </a>
         
             <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
@@ -182,14 +178,24 @@
                 <div class="category-count">1</div>
             </a>
         
+            <a class="category-link" href="/categories/%E5%A4%8D%E4%B9%A0/">
+                复习
+                <div class="category-count">12</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
                 技术笔记
                 <div class="category-count">3</div>
             </a>
         
-            <a class="category-link" href="/categories/%E5%A4%8D%E4%B9%A0/">
-                复习
-                <div class="category-count">12</div>
+            <a class="category-link" href="/categories/Hexo/">
+                Hexo
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
+                算法
+                <div class="category-count">3</div>
             </a>
         </div>
     </div>
@@ -201,7 +207,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/408/" rel="tag">408</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/BinaryTree/" rel="tag">BinaryTree</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Computer-Organization/" rel="tag">Computer Organization</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Data-Struct/" rel="tag">Data Struct</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamental-Principles-of-Marxism/" rel="tag">Fundamental Principles of Marxism</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamentals-of-AI/" rel="tag">Fundamentals of AI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Graph/" rel="tag">Graph</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Math/" rel="tag">Math</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/OperatingSystem/" rel="tag">OperatingSystem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Politics/" rel="tag">Politics</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Queue/" rel="tag">Queue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ToolLearning/" rel="tag">ToolLearning</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/db/" rel="tag">db</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%A4%8D%E7%9B%98/" rel="tag">复盘</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%AF%9B%E9%80%89/" rel="tag">毛选</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" rel="tag">社会科学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%A7%84%E5%88%92/" rel="tag">规划</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/408/" rel="tag">408</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/BinaryTree/" rel="tag">BinaryTree</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Computer-Organization/" rel="tag">Computer Organization</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Data-Struct/" rel="tag">Data Struct</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamental-Principles-of-Marxism/" rel="tag">Fundamental Principles of Marxism</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamentals-of-AI/" rel="tag">Fundamentals of AI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Graph/" rel="tag">Graph</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/OperatingSystem/" rel="tag">OperatingSystem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Politics/" rel="tag">Politics</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Queue/" rel="tag">Queue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ToolLearning/" rel="tag">ToolLearning</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/db/" rel="tag">db</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%A4%8D%E7%9B%98/" rel="tag">复盘</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag">概率论</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%AF%9B%E9%80%89/" rel="tag">毛选</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" rel="tag">社会科学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%A7%84%E5%88%92/" rel="tag">规划</a></li></ul>
     </div>
   </div>
 
@@ -215,12 +221,12 @@
       
         <a class="archive-link" href="/archives/2025/07 ">
           July 2025 
-          <div class="archive-count">4 </div>
+          <div class="archive-count">3 </div>
         </a>
       
         <a class="archive-link" href="/archives/2025/06 ">
           June 2025 
-          <div class="archive-count">7 </div>
+          <div class="archive-count">6 </div>
         </a>
       
         <a class="archive-link" href="/archives/2025/05 ">
@@ -230,7 +236,7 @@
       
         <a class="archive-link" href="/archives/2024/10 ">
           October 2024 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">1 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/09 ">
@@ -240,7 +246,7 @@
       
         <a class="archive-link" href="/archives/2024/07 ">
           July 2024 
-          <div class="archive-count">13 </div>
+          <div class="archive-count">11 </div>
         </a>
       
         <a class="archive-link" href="/archives/2024/06 ">
@@ -274,15 +280,9 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/07/03/hexo-Latex-render/" title="Hexo LaTeX数学公式渲染" >
+          <a class="recent-link" href="/2025/07/03/tools/hexo-Latex-render/" title="Hexo LaTeX数学公式渲染" >
             <div class="recent-link-text">
               Hexo LaTeX数学公式渲染
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/07/03/Latex-Test/" title="Latex Test" >
-            <div class="recent-link-text">
-              Latex Test
             </div>
           </a>
         
@@ -298,9 +298,15 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/06/30/notes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E4%BD%9C%E4%B8%9A/" title="" >
+          <a class="recent-link" href="/2025/06/29/algorithm/Graph/" title="Graph" >
             <div class="recent-link-text">
-              (no title)
+              Graph
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/06/20/logs/%E6%97%A5%E5%BF%97/" title="日志" >
+            <div class="recent-link-text">
+              日志
             </div>
           </a>
         
@@ -362,22 +368,17 @@
 <p>“如果一个选手比你小还比你强，你就可以退役了。”——单调队列的原理</p>
 </blockquote>
 <p>单调队列是一种主要用于解决滑动窗口类问题的数据结构，即，在长度为<code>n</code>的序列中，求每个长度<code>k</code>的区间的区间最值。它的时间复杂度是<code>O(n)</code>。</p>
-<p><img
-src="../image/Review/DataStruct/Queue&amp;Stack/单调队列1.png" /></p>
+<p><img src="./单调队列1.png" /></p>
 <p>单调队列的基本思想是，维护一个双向队列（deque），遍历序列，仅当一个元素可能成为某个区间最值时才保留它。</p>
 <p>形象地打个比方，上面的序列可以看成学校里各个年级XCPC选手，数字越大代表能力越强。每个选手只能在大学四年间参赛，毕业了就没有机会了。那么，每一年的王牌选手都在哪个年级呢？</p>
 <p>一开始的时候，大三大四的学长都比较菜，大二的最强，而大一的等大二的毕业后还有机会上位，所以队列里有两个数。</p>
-<p><img
-src="../image/Review/DataStruct/Queue&amp;Stack/单调队列2.png" /></p>
+<p><img src="./单调队列2.png" /></p>
 <p>一年过去了，原本大一的成为大二，却发现新进校的新生非常强，自己再也没有机会成为最大值了，所以弹出队列。</p>
-<p><img
-src="../image/Review/DataStruct/Queue&amp;Stack/单调队列3.png" /></p>
+<p><img src="./单调队列3.png" /></p>
 <p>又过了一年，新入校的新生尽管能力只有1，但理论上只要后面的人比他还菜，还是可能成为区间最大值的，所以入队。</p>
-<p><img
-src="../image/Review/DataStruct/Queue&amp;Stack/单调队列4.png" /></p>
+<p><img src="./单调队列4.png" /></p>
 <p>终于，原本的王牌毕业了，后面的人以为熬出头了，谁知道这时一个巨佬级别的新生进入了集训队，这下其他所有人都没机会了。</p>
-<p><img
-src="../image/Review/DataStruct/Queue&amp;Stack/单调队列5.png" /></p>
+<p><img src="./单调队列5.png" /></p>
 <p>总之，观察就会发现，我们维护的这个队列总是单调递减的。如果维护区间最小值，那么维护的队列就是单调递增的。这就是为什么叫单调队列。</p>
 <h4 id="例题-滑动窗口最大值">例题 <a
 target="_blank" rel="noopener" href="https://leetcode.cn/problems/sliding-window-maximum/">滑动窗口最大值</a></h4>
