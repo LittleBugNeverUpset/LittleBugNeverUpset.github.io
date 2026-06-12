@@ -36,7 +36,119 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body>
   
@@ -161,6 +273,11 @@
                 <div class="category-count">3</div>
             </a>
         
+            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
+                日志
+                <div class="category-count">2</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
                 技术笔记
                 <div class="category-count">3</div>
@@ -169,11 +286,6 @@
             <a class="category-link" href="/categories/Hexo/">
                 Hexo
                 <div class="category-count">1</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">
-                日志
-                <div class="category-count">2</div>
             </a>
         
             <a class="category-link" href="/categories/%E5%A4%8D%E4%B9%A0/">
@@ -201,6 +313,11 @@
     <div class="widget">
       <h3 class="widget-title">Archives</h3>
       
+      
+        <a class="archive-link" href="/archives/2026/06 ">
+          June 2026 
+          <div class="archive-count">2 </div>
+        </a>
       
         <a class="archive-link" href="/archives/2025/10 ">
           October 2025 
@@ -273,6 +390,18 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2026/06/12/Cipher-Introduction/" title="Cipher Introduction" >
+            <div class="recent-link-text">
+              Cipher Introduction
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2026/06/12/Stream-Cipher/" title="Stream Cipher" >
+            <div class="recent-link-text">
+              Stream Cipher
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2025/10/31/algorithm/Leetcode/" title="Leetcode" >
             <div class="recent-link-text">
               Leetcode
@@ -291,18 +420,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/10/07/notes/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0%E6%A8%A1%E6%9D%BF/" title="文献笔记模板" >
-            <div class="recent-link-text">
-              文献笔记模板
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/10/07/notes/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/Transformer/" title="Transformer" >
-            <div class="recent-link-text">
-              Transformer
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -313,6 +430,163 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-Cipher-Introduction" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2026/06/12/Cipher-Introduction/">Cipher Introduction</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2026-06-12T09:51:15.000Z" itemprop="datePublished">2026-06-12</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            0 words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              
+
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2026/06/12/Cipher-Introduction/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+   
+
+
+<article id="post-Stream-Cipher" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2026/06/12/Stream-Cipher/">Stream Cipher</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2026-06-12T09:43:29.000Z" itemprop="datePublished">2026-06-12</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+    Uncategorized 
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2.5k words 
+          </div>
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              对称加密（Symmetric Ciphers）
+密码
+一个密码由三元组 (𝒦, ℳ, 𝒞) 和二元组
+(ℰ, 𝒟) 组成。其中，𝒦 为密钥空间、ℳ 为明文空间、𝒞 为密文空间、ℰ 为加密算法、𝒟 为解密算法：
+
+ℰ : 𝒦 × ℳ → 𝒞，𝒟 : 𝒦 × 𝒞 → ℳ
+
+且满足:
+
+∀m ∈ ℳ, k ∈ 𝒦 : 𝒟(k, ℰ(k, m)) = m
+
+其中，ℰ 常为随机算法，而 𝒟
+常为确定算法。对称加密相较于普通密码多一个密钥生成算法，用于生成密钥
+一次一密（One-Time Pad，OTP）
+对于一次一密，加密过程非常简单：取明文m ∈ {0, 1}n，密钥k ∈ {0, 1}n，其中密钥真正均匀随机，且只使用一次，密文m = c ⊕ k。直觉上讲：当你拿到一个密文c时，由于密钥k是完全随机的且只有你和对方知道，所有可能的明文m′都同样有可能。换句话说，对于攻击者而言，密文c不提供任何关于明文的统计信息——它可以是任何东西的密文。
+香农给出了完美保密的定义：如果对于任意两个明文m1, m2
+（长度相同）以及任意密文c有...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2026/06/12/Stream-Cipher/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
    
 
 
@@ -1149,217 +1423,6 @@ SOLID 原则收尾
 
 
 
-   
-
-
-<article id="post-408/操作系统题型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/07/16/408/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%A2%98%E5%9E%8B/">操作系统题型</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2025-07-16T05:16:19.000Z" itemprop="datePublished">2025-07-16</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    Uncategorized 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            135 words 
-          </div>
-        </div>
-        
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              操作系统
-调度算法的评价指标
-先来先服务 FCFS
-
-
-
-
-
-
-
-
-
-
-
-
-
-作业号
-提交时间
-运行时间
-开始时间
-等待时间
-完成时间
-周转时间
-带权周转时间
-
-
-
-
-1
-8
-2
-8
-0
-10
-2
-1
-
-
-2
-8.4
-1
-10
-1.6
-11
-2.6
-2.6
-
-
-3
-8.8
-0.5
-11
-2.2
-11.5
-2.7
-5.4
-
-
-4
-9
-0.2
-11.5
-2.5
-11.7
-2.7
-13.5
-
-
-
-短作业优先 SJF
-
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2025/07/16/408/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E9%A2%98%E5%9E%8B/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
-   
-
-
-<article id="post-408/数据结构题型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2025/07/16/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%A2%98%E5%9E%8B/">数据结构题型</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2025-07-16T05:15:36.000Z" itemprop="datePublished">2025-07-16</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-    Uncategorized 
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            0 words 
-          </div>
-        </div>
-        
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-              
-
-            
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2025/07/16/408/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%A2%98%E5%9E%8B/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
-
-
-
-
-
 
   <nav id="page-nav">
     <!-- 在第二页时 page.prev_link 不知为何无法返回正确的链接 -->
@@ -1367,7 +1430,7 @@ SOLID 原则收尾
       <i class="fa-solid fa-angle-left"></i>
     </a>
     <div id="num-bar">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a>  
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a>  
     </div>
     <a id="next-btn" class="page-nav-btn " href="/page/2/">
       <i class="fa-solid fa-angle-right"></i>
