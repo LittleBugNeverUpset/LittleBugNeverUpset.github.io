@@ -20,12 +20,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="网络层 网络层的一些重要概念 网络层提供的两种服务 网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）  网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？  IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。  可靠交付应由网络还是端系统负责？  端系统（运输层）   两种观点：  让网络负责可靠交付">
+  <meta name="description" content="网络层 网络层的一些重要概念 网络层提供的两种服务 网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）  网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？  IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。  可靠交付应由网络还是端系统负责？  端系统（运输层）   两种观点：  让网络负责可靠交付  模仿电信网络使用面向连接通信方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络网络层">
 <meta property="og:url" content="http://example.com/2024/07/03/notes/%E6%9C%AC%E7%A7%91%E5%9F%BA%E7%A1%80/408/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BD%91%E7%BB%9C%E5%B1%82/index.html">
 <meta property="og:site_name" content="LittleBug&#39;s Home">
-<meta property="og:description" content="网络层 网络层的一些重要概念 网络层提供的两种服务 网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）  网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？  IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。  可靠交付应由网络还是端系统负责？  端系统（运输层）   两种观点：  让网络负责可靠交付">
+<meta property="og:description" content="网络层 网络层的一些重要概念 网络层提供的两种服务 网络层的工作是让在不同的局域网的主机间的通信问题（异构网络终端的信息交互问题）  网络层应该向运输层提供“面向连接”&#x2F;“无链接”的服务？  IP协议采用无链接服务，灵活性强、实时性较差，采取尽最大努力交付的工作方式。  可靠交付应由网络还是端系统负责？  端系统（运输层）   两种观点：  让网络负责可靠交付  模仿电信网络使用面向连接通信方式">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E8%99%9A%E7%94%B5%E8%B7%AF.png">
 <meta property="og:image" content="http://example.com/image/Review/Network/%E7%BD%91%E7%BB%9C%E5%B1%82/%E7%82%B9%E5%88%86%E5%8D%81%E8%BF%9B%E5%88%B6%E8%AE%B0%E6%B3%95.png">
@@ -182,14 +182,14 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
-                考研
-                <div class="category-count">3</div>
-            </a>
-        
             <a class="category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
                 读书笔记
                 <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E8%80%83%E7%A0%94/">
+                考研
+                <div class="category-count">3</div>
             </a>
         
             <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
@@ -226,7 +226,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/408/" rel="tag">408</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/BinaryTree/" rel="tag">BinaryTree</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Computer-Organization/" rel="tag">Computer Organization</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Data-Struct/" rel="tag">Data Struct</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamental-Principles-of-Marxism/" rel="tag">Fundamental Principles of Marxism</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamentals-of-AI/" rel="tag">Fundamentals of AI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Graph/" rel="tag">Graph</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/OperatingSystem/" rel="tag">OperatingSystem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Politics/" rel="tag">Politics</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Queue/" rel="tag">Queue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ToolLearning/" rel="tag">ToolLearning</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/db/" rel="tag">db</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%A4%8D%E7%9B%98/" rel="tag">复盘</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%AF%9B%E9%80%89/" rel="tag">毛选</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" rel="tag">社会科学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%A7%84%E5%88%92/" rel="tag">规划</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/408/" rel="tag">408</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/BinaryTree/" rel="tag">BinaryTree</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Computer-Organization/" rel="tag">Computer Organization</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Data-Struct/" rel="tag">Data Struct</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamental-Principles-of-Marxism/" rel="tag">Fundamental Principles of Marxism</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Fundamentals-of-AI/" rel="tag">Fundamentals of AI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Graph/" rel="tag">Graph</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Network/" rel="tag">Network</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/OperatingSystem/" rel="tag">OperatingSystem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/PRG/" rel="tag">PRG</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Politics/" rel="tag">Politics</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Queue/" rel="tag">Queue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ToolLearning/" rel="tag">ToolLearning</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/db/" rel="tag">db</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%A4%8D%E7%9B%98/" rel="tag">复盘</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag">密码学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/" rel="tag">对称加密</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%AF%9B%E9%80%89/" rel="tag">毛选</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%81%E5%AF%86%E7%A0%81/" rel="tag">流密码</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/" rel="tag">社会科学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%A7%84%E5%88%92/" rel="tag">规划</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AF%AD%E4%B9%89%E5%AE%89%E5%85%A8/" rel="tag">语义安全</a></li></ul>
     </div>
   </div>
 
@@ -314,6 +314,12 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
+          <a class="recent-link" href="/2026/06/23/notes/%E6%9C%AC%E7%A7%91%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80/Stream-Cipher/" title="Stream Cipher（课堂笔记整理版）" >
+            <div class="recent-link-text">
+              Stream Cipher（课堂笔记整理版）
+            </div>
+          </a>
+        
           <a class="recent-link" href="/2026/06/22/Discrete-Probability/" title="Discrete Probability" >
             <div class="recent-link-text">
               Discrete Probability
@@ -323,12 +329,6 @@
           <a class="recent-link" href="/2026/06/12/Cipher-Introduction/" title="Cipher Introduction" >
             <div class="recent-link-text">
               Cipher Introduction
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2026/06/12/notes/%E6%9C%AC%E7%A7%91%E5%9F%BA%E7%A1%80/%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80/Stream-Cipher/" title="Stream Cipher" >
-            <div class="recent-link-text">
-              Stream Cipher
             </div>
           </a>
         
@@ -461,44 +461,44 @@ alt="数据报服务" /></p>
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>对比方面</th>
 <th>虚电路服务</th>
 <th>数据报服务</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>思路</td>
 <td>可靠通信由网络来保证</td>
 <td>可靠通信由主机来保证</td>
 </tr>
-<tr>
+<tr class="even">
 <td>连接的建立</td>
 <td>必须有</td>
 <td>不需要</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>终点地址</td>
 <td>仅在连接建立阶段使用，每个分组使用短的虚电路号</td>
 <td>每个分组都有终点的完整地址</td>
 </tr>
-<tr>
+<tr class="even">
 <td>分组的转发</td>
 <td>属于同一条虚电路的分组均由一条虚电路按照同一路由进行转发</td>
 <td>每个分组独立选择路由转发</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>当节点故障时</td>
 <td>所有通过故障节点的虚电路都不能工作</td>
 <td>出故障的节点可能会丢失分组，一些路由可能会发生变化</td>
 </tr>
-<tr>
+<tr class="even">
 <td>分组顺序</td>
 <td>所有分组按序到达终点</td>
 <td>到达终点不一定按照发送顺序</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>端到端的差错处理和流量控制</td>
 <td>可以由网络控制，也可以由主机负责</td>
 <td>由主机（运输层）负责</td>
@@ -544,7 +544,7 @@ alt="IP地址分类" /></li>
 <col style="width: 20%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>网络类别</th>
 <th>最大指派网络数</th>
 <th>第一个可使用网络号</th>
@@ -553,21 +553,21 @@ alt="IP地址分类" /></li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>A</td>
 <td>126（2^7-2）</td>
 <td>x</td>
 <td>x</td>
 <td>16777214</td>
 </tr>
-<tr>
+<tr class="even">
 <td>B</td>
 <td>16383(2^14 - 1)</td>
 <td>128.1</td>
 <td>191.255</td>
 <td>65534</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>C</td>
 <td>2097151(2^21 - 1)</td>
 <td>192.0.1</td>
@@ -579,7 +579,7 @@ alt="IP地址分类" /></li>
 <p><strong>一般不使用的IP地址</strong></p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>网络号</th>
 <th>主机号</th>
 <th>源地址使用</th>
@@ -588,35 +588,35 @@ alt="IP地址分类" /></li>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>0</td>
 <td>0</td>
 <td>可以</td>
 <td>不可</td>
 <td>在本网络上的主机</td>
 </tr>
-<tr>
+<tr class="even">
 <td>0</td>
 <td>host-id</td>
 <td>可以</td>
 <td>不可</td>
 <td>在本网络上的某台主机host-id</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>全1</td>
 <td>全1</td>
 <td>不可</td>
 <td>不可</td>
 <td>只在本网络上进行广播（各路由器均不转发）</td>
 </tr>
-<tr>
+<tr class="even">
 <td>net-id</td>
 <td>全1</td>
 <td>不可</td>
 <td>可以</td>
 <td>对net-id上的所有主机进行广播</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>127</td>
 <td>非全0或非全1的任何数</td>
 <td>可以</td>
@@ -658,7 +658,7 @@ src="/image/Review/Network/网络层/抽象.png" /></p>
 <col style="width: 20%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>路径</th>
 <th>网络层IP源地址</th>
 <th>网络层目的IP地址</th>
@@ -667,21 +667,21 @@ src="/image/Review/Network/网络层/抽象.png" /></p>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>H1-&gt;R1</td>
 <td>IP1</td>
 <td>IP2</td>
 <td>HA1</td>
 <td>HA3</td>
 </tr>
-<tr>
+<tr class="even">
 <td>R1-&gt;R2</td>
 <td>IP1</td>
 <td>IP2</td>
 <td>HA4</td>
 <td>HA5</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>R2-&gt;H2</td>
 <td>IP1</td>
 <td>IP2</td>
@@ -743,71 +743,71 @@ alt="IP数据报格式" />
 <col style="width: 33%" />
 </colgroup>
 <thead>
-<tr>
+<tr class="header">
 <th>名称</th>
 <th>：</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>版本</td>
 <td>：</td>
 <td>占四位，指IP协议版本（IPV4/IPV6）</td>
 </tr>
-<tr>
+<tr class="even">
 <td>首部长度</td>
 <td>：</td>
 <td>占四位，可表示的最大数值是15个单位（每个单位4字节）最大表示首部长度60字节</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>区分服务</td>
 <td>：</td>
 <td>占八位，只有使用DiffServ时才会起作用，一般都不使用者这字段。</td>
 </tr>
-<tr>
+<tr class="even">
 <td>总长度</td>
 <td>：</td>
 <td>占据16位，指首部和数据部分的总长度，最长65535字节</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>标识</td>
 <td>：</td>
 <td>占16位，是一个计数器，用来产生IP数据报的标识</td>
 </tr>
-<tr>
+<tr class="even">
 <td>标志</td>
 <td>：</td>
 <td>占三位，目前只有前两位有意义，最低为
 <code>MF=0</code>表示为最后一个分片，<code>MF = 1</code>表示后面“还有分片”；中间一位DF
 只有当<code>DF = 0</code>时才允许数据报分片</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>片偏移</td>
 <td>：</td>
 <td>占13位，指出较长分组在分片后某片在原分组中的相对位置。<strong>片偏移以8个字节位偏移单位</strong></td>
 </tr>
-<tr>
+<tr class="even">
 <td>生存时间</td>
 <td>：</td>
 <td>占八位，记为TTL，值时数据报在路由其中可以通过的最大数目</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>协议</td>
 <td>：</td>
 <td>占八位，指出数据包携带的数据使用何种协议，以便目的主机交给上层处理</td>
 </tr>
-<tr>
+<tr class="even">
 <td>首部检验和</td>
 <td>：</td>
 <td>占16位，<strong>只检验首部</strong>，不检验数据部分，只使用简单的计算方法</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>源地址和目的地址</td>
 <td>：</td>
 <td>都占4各字节</td>
 </tr>
-<tr>
+<tr class="even">
 <td>可变部分</td>
 <td>：</td>
 <td>首部可变部分是一个选项字段，用于支持<strong>排错、测量、安全等措施</strong>内容丰富长度从1个字节到40个字节不等，但很少使用</td>
@@ -825,7 +825,7 @@ alt="IP数据报格式" />
 </figure>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>数据报</th>
 <th>总长度</th>
 <th>标识</th>
@@ -835,7 +835,7 @@ alt="IP数据报格式" />
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>原始数据报</td>
 <td>3820</td>
 <td>12345</td>
@@ -843,7 +843,7 @@ alt="IP数据报格式" />
 <td>0</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="even">
 <td>数据报1</td>
 <td>1420</td>
 <td>12345</td>
@@ -851,7 +851,7 @@ alt="IP数据报格式" />
 <td>0</td>
 <td>0</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>数据报2</td>
 <td>1420</td>
 <td>12345</td>
@@ -859,7 +859,7 @@ alt="IP数据报格式" />
 <td>0</td>
 <td>175</td>
 </tr>
-<tr>
+<tr class="even">
 <td>数据报3</td>
 <td>1020</td>
 <td>12345</td>
@@ -1094,29 +1094,29 @@ RIP限制了网络规模，它能使用的最大距离为15 -
 <p>先执行距离向量算法第一步</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>路由器</th>
 <th>跳数</th>
 <th>下一跳</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>N1</td>
 <td>3</td>
 <td>C</td>
 </tr>
-<tr>
+<tr class="even">
 <td>N2</td>
 <td>2</td>
 <td>C</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>N3</td>
 <td>4</td>
 <td>C</td>
 </tr>
-<tr>
+<tr class="even">
 <td>N4</td>
 <td>8</td>
 <td>C</td>
@@ -1130,29 +1130,29 @@ A中旧的N4距离小于C中N4的距离，什么也不做</p>
 <p>答案如下：</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>路由器</th>
 <th>跳数</th>
 <th>下一跳</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>N1</td>
 <td>3</td>
 <td>C</td>
 </tr>
-<tr>
+<tr class="even">
 <td>N2</td>
 <td>2</td>
 <td>C</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>N3</td>
 <td>1</td>
 <td>F</td>
 </tr>
-<tr>
+<tr class="even">
 <td>N4</td>
 <td>5</td>
 <td>G</td>
